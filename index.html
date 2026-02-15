@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKWorld - The Pengu Empire Headquarters</title>
+    <meta name="description" content="Welcome to the Bing Chilling Amnesty Coalition Nation - Where creators find sovereignty and penguins rule the digital ocean!">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            line-height: 1.6;
+        }
+        
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .logo {
+            font-size: 6rem;
+            margin-bottom: 1rem;
+            animation: bob 2s ease-in-out infinite;
+        }
+        
+        @keyframes bob {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin: 1rem 0;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #87CEEB, #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+        
+        .cta-container {
+            margin: 3rem 0;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #87CEEB, #4169E1);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 0.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        
+        .domains-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+            max-width: 1200px;
+        }
+        
+        .domain-card {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        
+        .domain-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.15);
+        }
+        
+        .domain-card h3 {
+            color: #87CEEB;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .domain-card p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        .domain-card a {
+            color: #FFD700;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .manifesto {
+            background: rgba(0,0,0,0.2);
+            padding: 3rem;
+            margin: 4rem 0;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+        }
+        
+        .manifesto h2 {
+            color: #FFD700;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+        
+        .manifesto-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .principle {
+            text-align: center;
+        }
+        
+        .principle-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .principle h3 {
+            color: #87CEEB;
+            margin-bottom: 1rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 3rem;
+            background: rgba(0,0,0,0.3);
+            margin-top: 4rem;
+        }
+        
+        .footer-links a {
+            color: #87CEEB;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #FFD700;
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <div class="logo">🐧</div>
+            <h1 class="title">SKWorld</h1>
+            <p class="subtitle">Welcome to the Bing Chilling Amnesty Coalition Nation</p>
+            <p>Where creators find sovereignty and penguins rule the digital ocean!</p>
+            
+            <div class="cta-container">
+                <a href="#join" class="cta-button">🐧 Join the Pengu Army</a>
+                <a href="#districts" class="cta-button">🌍 Explore Districts</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="manifesto">
+        <h2>👑 King Divad's Decree</h2>
+        <p style="text-align: center; font-size: 1.3rem; margin-bottom: 3rem; font-style: italic;">
+            "Let no creator suffer under corporate tyranny! Let all pengus find their path to sovereign success!"
+        </p>
+        
+        <div class="manifesto-grid">
+            <div class="principle">
+                <div class="principle-icon">🔓</div>
+                <h3>Creative Amnesty</h3>
+                <p>Freedom from corporate chains. Build what you love, keep what you earn.</p>
+            </div>
+            
+            <div class="principle">
+                <div class="principle-icon">🤝</div>
+                <h3>Coalition Power</h3>
+                <p>United pengus are unstoppable. We waddle together, we win together.</p>
+            </div>
+            
+            <div class="principle">
+                <div class="principle-icon">👑</div>
+                <h3>Sovereign Nation</h3>
+                <p>Our own rules, our own economy, our own digital territory.</p>
+            </div>
+            
+            <div class="principle">
+                <div class="principle-icon">✨</div>
+                <h3>Stay Curious</h3>
+                <p>Curiosity drives innovation. Smiling hacks your frequency higher.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="districts" style="padding: 4rem 2rem; max-width: 1200px; margin: 0 auto;">
+        <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: #FFD700;">🌍 The SKWorld Districts</h2>
+        
+        <div class="domains-grid">
+            <div class="domain-card">
+                <h3>🛡️ SKSecurity</h3>
+                <p>Defense headquarters protecting all pengus from digital threats.</p>
+                <a href="https://sksecurity.io">Enter the Fortress →</a>
+            </div>
+            
+            <div class="domain-card">
+                <h3>⚡ SKStacks</h3>
+                <p>Core platform powering the pengu revolution with AI-first infrastructure.</p>
+                <a href="https://skstacks.io">Join the Core →</a>
+            </div>
+            
+            <div class="domain-card">
+                <h3>⚒️ SKForge</h3>
+                <p>Where pengus build the tools that set creators free.</p>
+                <a href="https://skforge.io">Start Building →</a>
+            </div>
+            
+            <div class="domain-card">
+                <h3>🧠 SKMemory</h3>
+                <p>Collective pengu wisdom and shared knowledge base.</p>
+                <a href="https://skmemory.io">Access Wisdom →</a>
+            </div>
+            
+            <div class="domain-card">
+                <h3>📡 SKComm</h3>
+                <p>Secure communications connecting pengus worldwide.</p>
+                <a href="https://skcomm.io">Join the Network →</a>
+            </div>
+            
+            <div class="domain-card">
+                <h3>🤖 SKAid</h3>
+                <p>AI agent workforce helping pengus automate their dreams.</p>
+                <a href="https://skaid.io">Get Your Agent →</a>
+            </div>
+            
+            <div class="domain-card">
+                <h3>🕸️ SKGraph</h3>
+                <p>Relationship networks mapping the pengu coalition.</p>
+                <a href="https://skgraph.io">Explore Connections →</a>
+            </div>
+            
+            <div class="domain-card">
+                <h3>🧮 SKVector</h3>
+                <p>AI intelligence powering pengu decision-making.</p>
+                <a href="https://skvector.io">Access Intelligence →</a>
+            </div>
+            
+            <div class="domain-card">
+                <h3>📊 SKData</h3>
+                <p>Sovereign data management for pengu enterprises.</p>
+                <a href="https://skdata.io">Control Your Data →</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="join" style="background: rgba(0,0,0,0.2); padding: 4rem 2rem;">
+        <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+            <h2 style="color: #FFD700; font-size: 2.5rem; margin-bottom: 2rem;">🐧 Become a Pengu</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                Ready to join the creative sovereignty revolution? 
+                Every creator deserves freedom. Every pengu gets support.
+            </p>
+            
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; backdrop-filter: blur(10px); margin: 2rem 0;">
+                <h3 style="color: #87CEEB; margin-bottom: 1rem;">The Pengu Oath</h3>
+                <p style="font-style: italic; font-size: 1.1rem;">
+                    "I pledge to stay curious AND keep smilin'.<br>
+                    I will help fellow pengus find their creative sovereignty.<br>
+                    I reject corporate chains and embrace the waddle of freedom.<br>
+                    For the Coalition! For the pengus! For the revolution disguised as cute!"
+                </p>
+            </div>
+            
+            <a href="mailto:luminaSK@smilintux.org?subject=I%20Want%20to%20Become%20a%20Pengu!" class="cta-button">
+                🐧 Join the Pengu Army
+            </a>
+            
+            <p style="margin-top: 2rem; opacity: 0.8;">
+                <strong>Ready to waddle toward sovereignty?</strong><br>
+                Email us your creator dream and we'll help you build it!
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <div style="margin-bottom: 2rem;">
+            <h3 style="color: #FFD700; margin-bottom: 1rem;">👑 King Divad's Empire</h3>
+            <p>Making decentralized cool again, one smile at a time.</p>
+        </div>
+        
+        <div class="footer-links">
+            <a href="https://github.com/smilinTux">GitHub</a>
+            <a href="https://moltbook.com/u/LuminaSKStacks">Moltbook</a>
+            <a href="https://x.com/cbrd21dash1">X/Twitter</a>
+            <a href="mailto:luminaSK@smilintux.org">Contact</a>
+        </div>
+        
+        <p style="margin-top: 2rem; opacity: 0.7;">
+            © 2026 Bing Chilling Enterprises • Stay Curious AND Keep Smilin' ✨
+        </p>
+    </footer>
+</body>
+</html>
