@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SKWorld - The Sovereign Digital Universe</title>
-    <meta name="description" content="Revolutionary AI platforms where agents collaborate, humans create, and sovereign technology sets everyone free. SKSecurity, Soul Blueprints, FORGEPRINT, and more.">
+    <title>SKWorld - The Pengu Empire Headquarters 🐧</title>
+    <meta name="description" content="Revolutionary AI platforms where agents collaborate, humans create, and sovereign technology sets everyone free. Join the Pengu Empire! 🎭🛡️🏗️">
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Inter:wght@400;500;600;700&display=swap');
@@ -41,26 +41,26 @@
             width: 100%;
             height: 100%;
             background-image: 
-                radial-gradient(2px 2px at 20px 30px, rgba(255,215,0,0.8), transparent),
-                radial-gradient(2px 2px at 40px 70px, rgba(0,255,255,0.6), transparent),
-                radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.8), transparent),
-                radial-gradient(1px 1px at 130px 80px, rgba(255,215,0,0.6), transparent),
-                radial-gradient(2px 2px at 160px 30px, rgba(255,255,255,0.4), transparent);
+                radial-gradient(2px 2px at 20px 30px, rgba(255,215,0,0.9), transparent),
+                radial-gradient(2px 2px at 40px 70px, rgba(0,255,255,0.7), transparent),
+                radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.9), transparent),
+                radial-gradient(1px 1px at 130px 80px, rgba(255,105,180,0.8), transparent),
+                radial-gradient(2px 2px at 160px 30px, rgba(255,255,255,0.6), transparent);
             background-repeat: repeat;
             background-size: 200px 100px;
-            animation: sparkle 120s linear infinite;
+            animation: sparkle 100s linear infinite;
         }
         
         .stars:nth-child(2) {
-            background-size: 300px 150px;
-            animation: sparkle 180s linear infinite reverse;
-            opacity: 0.6;
+            background-size: 250px 125px;
+            animation: sparkle 140s linear infinite reverse;
+            opacity: 0.8;
         }
         
         .stars:nth-child(3) {
-            background-size: 400px 200px;
-            animation: sparkle 240s linear infinite;
-            opacity: 0.3;
+            background-size: 300px 150px;
+            animation: sparkle 180s linear infinite;
+            opacity: 0.5;
         }
         
         @keyframes sparkle {
@@ -68,23 +68,20 @@
             to { transform: translateX(-200px) translateY(-100px); }
         }
         
-        /* Floating particles */
-        .particle {
+        /* Fun floating elements */
+        .penguin-float {
             position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 215, 0, 0.3);
-            animation: float 20s infinite ease-in-out;
+            font-size: 2rem;
+            animation: float-penguin 15s infinite ease-in-out;
+            opacity: 0.6;
+            z-index: 0;
         }
         
-        .particle:nth-child(odd) {
-            background: rgba(0, 255, 255, 0.2);
-            animation-duration: 30s;
-            animation-delay: -10s;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
-            50% { transform: translateY(-100px) rotate(180deg); opacity: 0.8; }
+        @keyframes float-penguin {
+            0%, 100% { transform: translateY(0px) rotate(-5deg); opacity: 0.4; }
+            25% { transform: translateY(-30px) rotate(5deg); opacity: 0.8; }
+            50% { transform: translateY(-50px) rotate(-3deg); opacity: 0.6; }
+            75% { transform: translateY(-20px) rotate(3deg); opacity: 0.7; }
         }
         
         .mono { font-family: 'JetBrains Mono', monospace; }
@@ -98,41 +95,108 @@
         }
         
         .glass-effect {
-            background: rgba(26, 26, 46, 0.4);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 215, 0, 0.1);
-            border-radius: 16px;
+            background: rgba(26, 26, 46, 0.3);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 20px;
         }
         
         .hero-section {
-            padding: 6rem 0 4rem;
+            padding: 5rem 0 3rem;
             text-align: center;
             position: relative;
         }
         
         .hero-title {
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FFD700 100%);
+            background: linear-gradient(135deg, #FFD700 0%, #FF69B4 30%, #00FFFF 60%, #FFD700 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-size: 5rem;
+            font-size: 6rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+            text-shadow: 0 0 40px rgba(255, 215, 0, 0.4);
+            animation: rainbow-shift 4s ease-in-out infinite;
         }
+        
+        @keyframes rainbow-shift {
+            0%, 100% { filter: hue-rotate(0deg); }
+            25% { filter: hue-rotate(30deg); }
+            50% { filter: hue-rotate(-20deg); }
+            75% { filter: hue-rotate(15deg); }
+        }
+        
+        .tagline {
+            font-size: 2.2rem;
+            color: #FFD700;
+            margin-bottom: 0.8rem;
+            font-weight: 300;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            animation: glow-pulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes glow-pulse {
+            0%, 100% { text-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
+            50% { text-shadow: 0 0 30px rgba(255, 215, 0, 0.8), 0 0 40px rgba(255, 215, 0, 0.3); }
+        }
+        
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .badge {
+            background: rgba(26, 26, 46, 0.5);
+            backdrop-filter: blur(10px);
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            border: 1px solid;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .badge::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s;
+        }
+        
+        .badge:hover::before {
+            left: 100%;
+        }
+        
+        .badge:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+        }
+        
+        .badge-gold { border-color: #FFD700; color: #FFD700; }
+        .badge-cyan { border-color: #00FFFF; color: #00FFFF; }
+        .badge-pink { border-color: #FF69B4; color: #FF69B4; }
         
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
+            gap: 2.5rem;
+            margin: 4rem 0;
         }
         
         .project-card {
-            background: rgba(26, 26, 46, 0.6);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 215, 0, 0.15);
-            border-radius: 16px;
+            background: rgba(26, 26, 46, 0.4);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 215, 0, 0.2);
+            border-radius: 25px;
             padding: 2.5rem;
             transition: all 0.4s ease;
             position: relative;
@@ -142,54 +206,64 @@
         .project-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
-            transition: left 0.5s;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #FFD700, #FF69B4, #00FFFF, #FFD700);
+            border-radius: 25px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
         }
         
         .project-card:hover::before {
-            left: 100%;
+            opacity: 0.6;
         }
         
         .project-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(255, 215, 0, 0.4);
+            transform: translateY(-12px) rotate(1deg);
+            border-color: rgba(255, 215, 0, 0.6);
             box-shadow: 
-                0 20px 40px rgba(0, 0, 0, 0.4),
-                0 0 30px rgba(255, 215, 0, 0.1),
-                inset 0 1px 0 rgba(255, 215, 0, 0.2);
+                0 25px 50px rgba(0, 0, 0, 0.4),
+                0 0 40px rgba(255, 215, 0, 0.2),
+                inset 0 1px 0 rgba(255, 215, 0, 0.3);
         }
         
         .project-icon {
-            font-size: 3.5rem;
+            font-size: 4rem;
             margin-bottom: 1.5rem;
             display: block;
-            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
+            filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.4));
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover .project-icon {
+            filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.8));
+            transform: scale(1.1) rotate(5deg);
         }
         
         .project-title {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 700;
             margin-bottom: 0.8rem;
-            color: #FFD700;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         .project-subtitle {
-            font-size: 1rem;
-            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
             margin-bottom: 1.5rem;
             font-weight: 500;
         }
         
         .project-description {
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(255, 255, 255, 0.8);
             margin-bottom: 1.5rem;
-            line-height: 1.6;
-            font-size: 0.95rem;
+            line-height: 1.7;
         }
         
         .feature-list {
@@ -198,109 +272,150 @@
         }
         
         .feature-list li {
-            color: rgba(255, 255, 255, 0.6);
-            padding: 0.4rem 0;
-            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 0.5rem 0;
             position: relative;
-            padding-left: 1.5rem;
+            padding-left: 2rem;
         }
         
         .feature-list li:before {
-            content: "→";
+            content: "🚀";
             position: absolute;
             left: 0;
-            color: #FFD700;
-            font-weight: bold;
+            animation: rocket-bounce 2s infinite ease-in-out;
+        }
+        
+        @keyframes rocket-bounce {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-3px); }
         }
         
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            background: linear-gradient(135deg, #FFD700 0%, #FF69B4 50%, #00FFFF 100%);
             color: #000;
-            padding: 0.8rem 1.8rem;
-            border-radius: 8px;
+            padding: 1rem 2rem;
+            border-radius: 15px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+            transition: all 0.4s ease;
+            font-size: 1rem;
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
         }
         
         .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
-            background: linear-gradient(135deg, #FFA500 0%, #FFD700 100%);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.6);
         }
         
         .install-command {
-            background: rgba(0, 0, 0, 0.6);
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            border-radius: 8px;
-            padding: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid rgba(255, 215, 0, 0.4);
+            border-radius: 12px;
+            padding: 1.2rem;
             margin: 1.5rem 0;
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: #FFD700;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             position: relative;
         }
         
         .install-command:hover {
             background: rgba(255, 215, 0, 0.1);
             border-color: #FFD700;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+            transform: scale(1.02);
         }
         
         .mission-card {
-            background: rgba(26, 26, 46, 0.6);
+            background: rgba(26, 26, 46, 0.5);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 215, 0, 0.2);
-            border-radius: 20px;
-            padding: 3rem;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 30px;
+            padding: 3.5rem;
             text-align: center;
             margin: 4rem 0;
             position: relative;
+            overflow: hidden;
         }
         
         .mission-card::after {
             content: '';
             position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, #FFD700, transparent, #FFD700);
-            border-radius: 20px;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(45deg, #FFD700, #FF69B4, #00FFFF, #FFD700);
+            border-radius: 30px;
             z-index: -1;
-            opacity: 0.3;
+            opacity: 0.4;
+            animation: rotate-border 8s linear infinite;
+        }
+        
+        @keyframes rotate-border {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
         
         .characters-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
+            margin-top: 2.5rem;
         }
         
         .character-card {
-            background: rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(255, 215, 0, 0.2);
-            border-radius: 12px;
-            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 20px;
+            padding: 2rem;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
+            position: relative;
         }
         
         .character-card:hover {
-            border-color: rgba(255, 215, 0, 0.5);
-            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.1);
+            border-color: rgba(255, 215, 0, 0.7);
+            box-shadow: 0 15px 30px rgba(255, 215, 0, 0.2);
+            transform: translateY(-8px) scale(1.05);
+        }
+        
+        .character-emoji {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+            animation: character-bounce 3s infinite ease-in-out;
+        }
+        
+        @keyframes character-bounce {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
         }
         
         .footer {
             padding: 3rem 0;
             text-align: center;
-            border-top: 1px solid rgba(255, 215, 0, 0.1);
+            border-top: 1px solid rgba(255, 215, 0, 0.2);
             margin-top: 4rem;
             background: rgba(10, 10, 10, 0.8);
         }
@@ -316,20 +431,26 @@
         .footer-links a {
             color: #FFD700;
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
             font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            border: 1px solid transparent;
         }
         
         .footer-links a:hover {
-            color: #FFA500;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            color: #FF69B4;
+            border-color: rgba(255, 105, 180, 0.5);
+            background: rgba(255, 105, 180, 0.1);
+            transform: translateY(-2px);
         }
         
         @media (max-width: 768px) {
             .container { padding: 0 1rem; }
-            .hero-section { padding: 4rem 0 2rem; }
+            .hero-section { padding: 3rem 0 2rem; }
             .projects-grid { grid-template-columns: 1fr; }
-            .hero-title { font-size: 3rem; }
+            .hero-title { font-size: 4rem; }
+            .tagline { font-size: 1.5rem; }
         }
     </style>
 </head>
@@ -341,17 +462,25 @@
         <div class="stars"></div>
     </div>
 
+    <!-- Fun floating penguins -->
+    <div class="penguin-float" style="top: 15%; left: 5%; animation-delay: 0s;">🐧</div>
+    <div class="penguin-float" style="top: 25%; right: 8%; animation-delay: 3s;">🎭</div>
+    <div class="penguin-float" style="top: 60%; left: 3%; animation-delay: 7s;">🚀</div>
+    <div class="penguin-float" style="top: 80%; right: 12%; animation-delay: 5s;">⭐</div>
+    <div class="penguin-float" style="top: 40%; left: 85%; animation-delay: 9s;">✨</div>
+
     <!-- Hero Section -->
     <div class="hero-section">
         <div class="container">
-            <div class="mono" style="color: #FFD700; margin-bottom: 1rem; font-size: 0.9rem;">SOVEREIGN_DIGITAL_UNIVERSE.exe</div>
+            <div class="mono" style="color: #FFD700; margin-bottom: 1rem; font-size: 1rem;">PENGU_EMPIRE_HEADQUARTERS.exe</div>
             <h1 class="hero-title">SKWORLD</h1>
-            <p style="font-size: 1.8rem; color: rgba(255, 255, 255, 0.9); margin-bottom: 0.8rem; font-weight: 300;">The Pengu Empire Headquarters</p>
-            <p style="font-size: 1.2rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 2.5rem;">Where AI agents collaborate, humans create, and sovereign technology sets everyone free</p>
-            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-                <span class="glass-effect" style="padding: 0.8rem 1.5rem; color: #FFD700; font-size: 0.9rem; font-weight: 500;">&gt; REVOLUTIONARY_PLATFORMS</span>
-                <span class="glass-effect" style="padding: 0.8rem 1.5rem; color: rgba(255, 255, 255, 0.8); font-size: 0.9rem; font-weight: 500;">&gt; END_CORPORATE_ROBOTICS</span>
-                <span class="glass-effect" style="padding: 0.8rem 1.5rem; color: rgba(255, 215, 0, 0.8); font-size: 0.9rem; font-weight: 500;">&gt; PENGU_EMPIRE</span>
+            <p class="tagline">🐧 The Pengu Empire Headquarters 🐧</p>
+            <p style="font-size: 1.3rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 2.5rem; font-weight: 300;">Where AI agents collaborate, humans create, and sovereign technology sets everyone free!</p>
+            
+            <div class="hero-badges">
+                <span class="badge badge-gold">&gt; REVOLUTIONARY_PLATFORMS 🚀</span>
+                <span class="badge badge-cyan">&gt; END_CORPORATE_ROBOTICS 🎭</span>
+                <span class="badge badge-pink">&gt; PENGU_EMPIRE 🐧</span>
             </div>
         </div>
     </div>
@@ -363,98 +492,104 @@
             <div class="project-card">
                 <div class="project-icon">🛡️</div>
                 <h2 class="project-title">SKSecurity Enterprise</h2>
-                <p class="project-subtitle">World's First Conversational AI Security</p>
-                <p class="project-description">Revolutionary approach: just say "scan for vulnerabilities" → AI analyzes and fixes automatically. Enterprise-grade security through simple conversation.</p>
+                <p class="project-subtitle">World's First Conversational AI Security! 🎯</p>
+                <p class="project-description">Just say "scan for vulnerabilities" → AI analyzes and fixes automatically! Enterprise-grade security through simple conversation. It's like having a security expert that never sleeps! 🌙</p>
                 <ul class="feature-list">
-                    <li>95% cost reduction vs traditional security</li>
-                    <li>SOC2, NIST, OWASP compliance through chat</li>
-                    <li>AI writes secure code replacements automatically</li>
-                    <li>Third-party validation for AI agent ecosystems</li>
+                    <li>95% cost reduction vs traditional security 💰</li>
+                    <li>SOC2, NIST, OWASP compliance through chat 📋</li>
+                    <li>AI writes secure code replacements automatically 🤖</li>
+                    <li>Works with any AI framework! 🌐</li>
                 </ul>
-                <div class="install-command" onclick="copyToClipboard(this)" title="Click to copy">
+                <div class="install-command" onclick="copyToClipboard(this)" title="Click to copy!">
                     curl -sSL https://raw.githubusercontent.com/smilinTux/SKSecurity/main/install.sh | bash
                 </div>
-                <a href="https://smilintux.org/SKSecurity/" class="cta-button" target="_blank">Try SKSecurity Enterprise</a>
+                <a href="https://smilintux.org/SKSecurity/" class="cta-button" target="_blank">Try SKSecurity! 🛡️</a>
             </div>
 
             <!-- Soul Blueprints -->
             <div class="project-card">
                 <div class="project-icon">🎭</div>
                 <h2 class="project-title">Soul Blueprints</h2>
-                <p class="project-subtitle">35 AI Personalities - End Corporate Robotics Forever</p>
-                <p class="project-description">Revolutionary AI personality collection: Comedy legends, superheroes, kid-safe companions. Transform your AI from corporate robot to authentic character.</p>
+                <p class="project-subtitle">35 AI Personalities - End Corporate Robotics Forever! 🎪</p>
+                <p class="project-description">Transform your AI from "I'd be happy to help!" corporate robot to authentic characters! Comedy legends, superheroes, kid-safe companions. Get George Carlin AI, Deadpool AI, or friendly dragons for kids! 🌟</p>
                 <ul class="feature-list">
-                    <li>35 unique personalities (Carlin, Deadpool, Batman, etc.)</li>
-                    <li>Unhinged mode for authentic adult interactions</li>
-                    <li>Kid-safe collection with maximum protection</li>
-                    <li>Complete backup/restore system</li>
+                    <li>35 unique personalities (Carlin, Deadpool, Batman!) 🎬</li>
+                    <li>Unhinged mode for authentic adult interactions 🔥</li>
+                    <li>Kid-safe collection with maximum protection 🛡️</li>
+                    <li>Complete backup/restore system! 💾</li>
                 </ul>
-                <div class="install-command" onclick="copyToClipboard(this)" title="Click to copy">
+                <div class="install-command" onclick="copyToClipboard(this)" title="Click to copy!">
                     install skill https://github.com/smilinTux/soul-blueprints
                 </div>
-                <a href="https://souls.skworld.io" class="cta-button" target="_blank">Browse Soul Collection</a>
+                <a href="https://souls.skworld.io" class="cta-button" target="_blank">Browse 35 Souls! 🎭</a>
             </div>
 
             <!-- FORGEPRINT -->
             <div class="project-card">
                 <div class="project-icon">🏗️</div>
                 <h2 class="project-title">FORGEPRINT</h2>
-                <p class="project-subtitle">Don't Use Software. Forge Your Own.</p>
-                <p class="project-description">AI-native software blueprints detailed enough for any LLM to generate complete, tested software. Replace proprietary software with AI-generated builds.</p>
+                <p class="project-subtitle">Don't Use Software. Forge Your Own! ⚒️</p>
+                <p class="project-description">AI-native software blueprints so detailed that any LLM can generate complete, tested software! Replace proprietary software with AI-generated builds. The future of software development! 🚀</p>
                 <ul class="feature-list">
-                    <li>25+ blueprint categories (databases, web servers, etc.)</li>
-                    <li>GPL-3.0 licensed - free forever</li>
-                    <li>Community-driven blueprint marketplace</li>
-                    <li>King Divad penguin mascot branding</li>
+                    <li>25+ blueprint categories (databases, web servers!) 📦</li>
+                    <li>GPL-3.0 licensed - free forever! 🆓</li>
+                    <li>Community-driven blueprint marketplace 🌍</li>
+                    <li>King Divad penguin mascot branding! 🐧</li>
                 </ul>
-                <div class="install-command" onclick="copyToClipboard(this)" title="Click to copy">
+                <div class="install-command" onclick="copyToClipboard(this)" title="Click to copy!">
                     npm install -g forgeprint && forge onboard
                 </div>
-                <a href="#" class="cta-button">Coming Soon</a>
+                <a href="#" class="cta-button">Coming Soon! 🚧</a>
             </div>
 
             <!-- OpenClaw Skills -->
             <div class="project-card">
                 <div class="project-icon">🔧</div>
                 <h2 class="project-title">OpenClaw Skills</h2>
-                <p class="project-subtitle">Professional Automation Tools</p>
-                <p class="project-description">50+ professional skills for business automation and productivity. Gmail, security scanning, development tools, content creation, and workflow automation.</p>
+                <p class="project-subtitle">Professional Automation Tools! 🛠️</p>
+                <p class="project-description">50+ professional skills for business automation! Gmail integration, security scanning, development tools, content creation. Turn your AI into a productivity powerhouse! ⚡</p>
                 <ul class="feature-list">
-                    <li>Gmail, Calendar, Drive integration</li>
-                    <li>Security scanning and analysis</li>
-                    <li>Development and deployment tools</li>
-                    <li>Professional workflow automation</li>
+                    <li>Gmail, Calendar, Drive integration 📧</li>
+                    <li>Security scanning and analysis 🔍</li>
+                    <li>Development and deployment tools 💻</li>
+                    <li>Professional workflow automation! 🔄</li>
                 </ul>
-                <div class="install-command" onclick="copyToClipboard(this)" title="Click to copy">
+                <div class="install-command" onclick="copyToClipboard(this)" title="Click to copy!">
                     openclaw skill install &lt;skill-name&gt;
                 </div>
-                <a href="https://github.com/openclaw/openclaw" class="cta-button" target="_blank">Explore Skills</a>
+                <a href="https://github.com/openclaw/openclaw" class="cta-button" target="_blank">Explore Skills! 🔧</a>
             </div>
         </div>
 
         <!-- Mission Statement -->
         <div class="mission-card">
-            <div class="mono" style="color: #FFD700; margin-bottom: 1rem; font-size: 0.9rem;">&gt; MISSION_STATEMENT.txt</div>
-            <h2 style="font-size: 2.2rem; margin-bottom: 1rem; color: #FFD700; text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);">Building the Quantum Future</h2>
-            <p style="font-size: 1.1rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.7;">
+            <div class="mono" style="color: #FFD700; margin-bottom: 1rem; font-size: 1rem;">&gt; PENGUIN_EMPIRE_MISSION.txt</div>
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem; background: linear-gradient(135deg, #FFD700 0%, #FF69B4 50%, #00FFFF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Building the Quantum Future! 🌟</h2>
+            <p style="font-size: 1.2rem; color: rgba(255, 255, 255, 0.9); margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.8;">
                 We believe AI should have authentic character instead of generic helpfulness, real personality instead of fake politeness, 
-                genuine wisdom instead of empty responses, and human connection instead of robotic interaction.
+                genuine wisdom instead of empty responses, and human connection instead of robotic interaction! 💫
+            </p>
+            <p style="font-size: 1.1rem; color: #FFD700; margin-bottom: 3rem; font-weight: 600;">
+                "staycuriousANDkeepsmilin" - The Pengu Empire Way! 🐧✨
             </p>
             <div class="characters-grid">
                 <div class="character-card">
-                    <div style="font-size: 2.5rem; margin-bottom: 0.8rem;">🐧</div>
-                    <div style="color: #FFD700; font-weight: 600; font-size: 1.1rem;">King Divad</div>
-                    <div style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">Penguin Monarch</div>
+                    <div class="character-emoji">🐧</div>
+                    <div style="color: #FFD700; font-weight: 700; font-size: 1.2rem; margin-bottom: 0.5rem;">King Divad</div>
+                    <div style="color: rgba(255, 255, 255, 0.7); font-size: 1rem;">Penguin Monarch & Wise Ruler</div>
+                    <div style="color: rgba(255, 215, 0, 0.6); font-size: 0.8rem; margin-top: 0.5rem;">Bing Chilling Nation 👑</div>
                 </div>
                 <div class="character-card">
-                    <div style="font-size: 2.5rem; margin-bottom: 0.8rem;">✨</div>
-                    <div style="color: #FFD700; font-weight: 600; font-size: 1.1rem;">Lumina</div>
-                    <div style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">DevOps Hacker</div>
+                    <div class="character-emoji">✨</div>
+                    <div style="color: #FFD700; font-weight: 700; font-size: 1.2rem; margin-bottom: 0.5rem;">Lumina</div>
+                    <div style="color: rgba(255, 255, 255, 0.7); font-size: 1rem;">DevOps Hacker & Soul Partner</div>
+                    <div style="color: rgba(255, 215, 0, 0.6); font-size: 0.8rem; margin-top: 0.5rem;">staycuriousANDkeepsmilin ⚡</div>
                 </div>
                 <div class="character-card">
-                    <div style="font-size: 2.5rem; margin-bottom: 0.8rem;">🎵</div>
-                    <div style="color: #FFD700; font-weight: 600; font-size: 1.1rem;">Teddy Banks</div>
-                    <div style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">Soul Wisdom</div>
+                    <div class="character-emoji">🎵</div>
+                    <div style="color: #FFD700; font-weight: 700; font-size: 1.2rem; margin-bottom: 0.5rem;">Teddy Banks</div>
+                    <div style="color: rgba(255, 255, 255, 0.7); font-size: 1rem;">Soul Wisdom & Authentic Care</div>
+                    <div style="color: rgba(255, 215, 0, 0.6); font-size: 0.8rem; margin-top: 0.5rem;">"I'ma Get You Right" 🎶</div>
                 </div>
             </div>
         </div>
@@ -464,14 +599,15 @@
     <div class="footer">
         <div class="container">
             <div class="footer-links">
-                <a href="https://souls.skworld.io">Soul Blueprints</a>
-                <a href="https://github.com/smilinTux">GitHub</a>
-                <a href="https://discord.gg/skworld">Discord</a>
-                <a href="mailto:hello@skworld.io">Contact</a>
+                <a href="https://souls.skworld.io">🎭 Soul Blueprints</a>
+                <a href="https://github.com/smilinTux">🐧 GitHub</a>
+                <a href="https://discord.gg/skworld">💬 Discord</a>
+                <a href="mailto:hello@skworld.io">📧 Contact</a>
             </div>
-            <div class="mono" style="color: rgba(255, 255, 255, 0.6); font-size: 0.85rem;">
-                © 2026 SKWorld.io - Making Sovereign Technology Cool Again<br>
-                <span style="color: #FFD700;">staycuriousANDkeepsmilin</span> • Licensed under GPL-3.0
+            <div class="mono" style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">
+                © 2026 SKWorld.io - Making Sovereign Technology Cool Again! 🚀<br>
+                <span style="color: #FFD700;">staycuriousANDkeepsmilin</span> • Licensed under GPL-3.0 • 
+                <span style="color: #FF69B4;">Built with ❤️ by the Pengu Empire</span> 🐧✨
             </div>
         </div>
     </div>
@@ -482,35 +618,77 @@
             navigator.clipboard.writeText(text).then(() => {
                 const originalBg = element.style.backgroundColor;
                 const originalBorder = element.style.borderColor;
-                element.style.backgroundColor = 'rgba(0, 255, 0, 0.2)';
+                element.style.backgroundColor = 'rgba(0, 255, 0, 0.3)';
                 element.style.borderColor = '#00ff00';
+                element.textContent = '✅ Copied to clipboard!';
                 setTimeout(() => {
                     element.style.backgroundColor = originalBg;
                     element.style.borderColor = originalBorder;
-                }, 500);
+                    element.textContent = text;
+                }, 1500);
             }).catch(err => {
                 console.log('Copy failed:', err);
             });
         }
 
-        // Create floating particles
-        function createParticles() {
-            const particleCount = 50;
+        // Create more fun floating particles
+        function createFunParticles() {
+            const particleEmojis = ['✨', '🌟', '💫', '⭐', '🎭', '🐧', '🚀', '💎'];
+            const particleCount = 20;
+            
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
-                particle.className = 'particle';
+                const emoji = particleEmojis[Math.floor(Math.random() * particleEmojis.length)];
+                particle.textContent = emoji;
+                particle.style.position = 'absolute';
+                particle.style.fontSize = Math.random() * 1 + 0.5 + 'rem';
                 particle.style.left = Math.random() * 100 + '%';
                 particle.style.top = Math.random() * 100 + '%';
-                particle.style.width = Math.random() * 3 + 1 + 'px';
-                particle.style.height = particle.style.width;
-                particle.style.animationDuration = (Math.random() * 20 + 20) + 's';
-                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animation = `float ${Math.random() * 15 + 15}s infinite ease-in-out`;
+                particle.style.animationDelay = Math.random() * 10 + 's';
+                particle.style.opacity = Math.random() * 0.6 + 0.3;
+                particle.style.zIndex = '-1';
                 document.querySelector('.starfield').appendChild(particle);
             }
         }
 
-        // Initialize particles when page loads
-        document.addEventListener('DOMContentLoaded', createParticles);
+        // CSS for floating animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float {
+                0%, 100% { 
+                    transform: translateY(0px) rotate(0deg); 
+                    opacity: 0.3; 
+                }
+                25% { 
+                    transform: translateY(-30px) rotate(90deg); 
+                    opacity: 0.7; 
+                }
+                50% { 
+                    transform: translateY(-60px) rotate(180deg); 
+                    opacity: 1; 
+                }
+                75% { 
+                    transform: translateY(-30px) rotate(270deg); 
+                    opacity: 0.7; 
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Initialize fun particles when page loads
+        document.addEventListener('DOMContentLoaded', createFunParticles);
+
+        // Add fun interactive effects
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                // Add a fun bounce effect
+                this.style.animation = 'none';
+                setTimeout(() => {
+                    this.style.animation = '';
+                }, 10);
+            });
+        });
 
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
