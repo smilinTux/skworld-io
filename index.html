@@ -17,189 +17,292 @@
         
         body { 
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #533a7d 100%);
-            background-attachment: fixed;
+            background: #0a0a0a;
             color: white;
             line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Animated Starfield Background */
+        .starfield {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(ellipse at bottom, #1a1a2e 0%, #16213e 40%, #0f0f0f 100%);
+        }
+        
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, rgba(255,215,0,0.8), transparent),
+                radial-gradient(2px 2px at 40px 70px, rgba(0,255,255,0.6), transparent),
+                radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.8), transparent),
+                radial-gradient(1px 1px at 130px 80px, rgba(255,215,0,0.6), transparent),
+                radial-gradient(2px 2px at 160px 30px, rgba(255,255,255,0.4), transparent);
+            background-repeat: repeat;
+            background-size: 200px 100px;
+            animation: sparkle 120s linear infinite;
+        }
+        
+        .stars:nth-child(2) {
+            background-size: 300px 150px;
+            animation: sparkle 180s linear infinite reverse;
+            opacity: 0.6;
+        }
+        
+        .stars:nth-child(3) {
+            background-size: 400px 200px;
+            animation: sparkle 240s linear infinite;
+            opacity: 0.3;
+        }
+        
+        @keyframes sparkle {
+            from { transform: translateX(0px) translateY(0px); }
+            to { transform: translateX(-200px) translateY(-100px); }
+        }
+        
+        /* Floating particles */
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 215, 0, 0.3);
+            animation: float 20s infinite ease-in-out;
+        }
+        
+        .particle:nth-child(odd) {
+            background: rgba(0, 255, 255, 0.2);
+            animation-duration: 30s;
+            animation-delay: -10s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
+            50% { transform: translateY(-100px) rotate(180deg); opacity: 0.8; }
         }
         
         .mono { font-family: 'JetBrains Mono', monospace; }
         
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 2rem;
+            position: relative;
+            z-index: 1;
         }
         
         .glass-effect {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(26, 26, 46, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            border-radius: 16px;
+        }
+        
+        .hero-section {
+            padding: 6rem 0 4rem;
+            text-align: center;
+            position: relative;
         }
         
         .hero-title {
-            background: linear-gradient(135deg, #00ffff 0%, #ff0080 50%, #7928ca 100%);
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FFD700 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: gradient-shift 3s ease-in-out infinite;
+            font-size: 5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
         }
         
-        @keyframes gradient-shift {
-            0%, 100% { filter: hue-rotate(0deg); }
-            50% { filter: hue-rotate(45deg); }
-        }
-        
-        .neon-text {
-            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff;
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
         }
         
         .project-card {
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .project-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 25px 50px -12px rgba(0, 255, 255, 0.25), 0 0 0 1px rgba(0, 255, 255, 0.1);
-        }
-        
-        .category-header { 
-            background: linear-gradient(135deg, #ff0080 0%, #7928ca 35%, #0070f3 100%);
+            background: rgba(26, 26, 46, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 215, 0, 0.15);
+            border-radius: 16px;
+            padding: 2.5rem;
+            transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
         }
         
-        .category-header::before {
+        .project-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            animation: shine 3s infinite;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            transition: left 0.5s;
         }
         
-        @keyframes shine {
-            0% { left: -100%; }
-            100% { left: 100%; }
+        .project-card:hover::before {
+            left: 100%;
         }
         
-        .hero-section {
-            padding: 6rem 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 215, 0, 0.4);
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.4),
+                0 0 30px rgba(255, 215, 0, 0.1),
+                inset 0 1px 0 rgba(255, 215, 0, 0.2);
         }
-        
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%2300ffff" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="1"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E') repeat;
-            opacity: 0.3;
-        }
-        
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        
-        .security-card { border-left: 4px solid #e74c3c; }
-        .souls-card { border-left: 4px solid #f39c12; }
-        .forge-card { border-left: 4px solid #27ae60; }
-        .skills-card { border-left: 4px solid #3498db; }
         
         .project-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
             display: block;
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.3));
         }
         
         .project-title {
             font-size: 1.8rem;
             font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: white;
+            margin-bottom: 0.8rem;
+            color: #FFD700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
         }
         
         .project-subtitle {
-            font-size: 1.1rem;
-            color: #00ffff;
-            margin-bottom: 1rem;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
             font-weight: 500;
         }
         
         .project-description {
-            color: #cbd5e0;
+            color: rgba(255, 255, 255, 0.7);
             margin-bottom: 1.5rem;
-            line-height: 1.7;
+            line-height: 1.6;
+            font-size: 0.95rem;
         }
         
         .feature-list {
             list-style: none;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
         
         .feature-list li {
-            color: #a0aec0;
-            padding: 0.25rem 0;
+            color: rgba(255, 255, 255, 0.6);
+            padding: 0.4rem 0;
             font-size: 0.9rem;
+            position: relative;
+            padding-left: 1.5rem;
         }
         
         .feature-list li:before {
-            content: "→ ";
-            color: #00ffff;
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #FFD700;
             font-weight: bold;
         }
         
         .cta-button {
             display: inline-block;
-            background: linear-gradient(135deg, #00ffff 0%, #ff0080 100%);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #000;
+            padding: 0.8rem 1.8rem;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
         }
         
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0, 255, 255, 0.3);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+            background: linear-gradient(135deg, #FFA500 0%, #FFD700 100%);
         }
         
         .install-command {
             background: rgba(0, 0, 0, 0.6);
-            border: 1px solid rgba(0, 255, 255, 0.3);
-            border-radius: 0.5rem;
-            padding: 0.75rem;
-            margin: 1rem 0;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1.5rem 0;
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.85rem;
-            color: #00ffff;
+            color: #FFD700;
             cursor: pointer;
             transition: all 0.3s ease;
+            position: relative;
         }
         
         .install-command:hover {
-            background: rgba(0, 255, 255, 0.1);
-            border-color: #00ffff;
+            background: rgba(255, 215, 0, 0.1);
+            border-color: #FFD700;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+        }
+        
+        .mission-card {
+            background: rgba(26, 26, 46, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            margin: 4rem 0;
+            position: relative;
+        }
+        
+        .mission-card::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #FFD700, transparent, #FFD700);
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        
+        .characters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .character-card {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .character-card:hover {
+            border-color: rgba(255, 215, 0, 0.5);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.1);
         }
         
         .footer {
             padding: 3rem 0;
             text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(255, 215, 0, 0.1);
             margin-top: 4rem;
+            background: rgba(10, 10, 10, 0.8);
         }
         
         .footer-links {
@@ -211,34 +314,44 @@
         }
         
         .footer-links a {
-            color: #00ffff;
+            color: #FFD700;
             text-decoration: none;
             transition: color 0.3s ease;
+            font-weight: 500;
         }
         
         .footer-links a:hover {
-            color: #ff0080;
+            color: #FFA500;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
         }
         
         @media (max-width: 768px) {
             .container { padding: 0 1rem; }
-            .hero-section { padding: 4rem 0; }
+            .hero-section { padding: 4rem 0 2rem; }
             .projects-grid { grid-template-columns: 1fr; }
+            .hero-title { font-size: 3rem; }
         }
     </style>
 </head>
 <body>
+    <!-- Animated Starfield Background -->
+    <div class="starfield">
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="stars"></div>
+    </div>
+
     <!-- Hero Section -->
     <div class="hero-section">
         <div class="container">
-            <div class="mono text-sm" style="color: #00ffff; margin-bottom: 1rem;">SOVEREIGN_DIGITAL_UNIVERSE.exe</div>
-            <h1 class="hero-title" style="font-size: 4rem; font-weight: 700; margin-bottom: 1rem;">SKWORLD</h1>
-            <p style="font-size: 1.5rem; color: #cbd5e0; margin-bottom: 0.5rem;">The Pengu Empire Headquarters</p>
-            <p style="font-size: 1.1rem; color: #a0aec0; margin-bottom: 2rem;">Where AI agents collaborate, humans create, and sovereign technology sets everyone free</p>
+            <div class="mono" style="color: #FFD700; margin-bottom: 1rem; font-size: 0.9rem;">SOVEREIGN_DIGITAL_UNIVERSE.exe</div>
+            <h1 class="hero-title">SKWORLD</h1>
+            <p style="font-size: 1.8rem; color: rgba(255, 255, 255, 0.9); margin-bottom: 0.8rem; font-weight: 300;">The Pengu Empire Headquarters</p>
+            <p style="font-size: 1.2rem; color: rgba(255, 255, 255, 0.7); margin-bottom: 2.5rem;">Where AI agents collaborate, humans create, and sovereign technology sets everyone free</p>
             <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-                <span class="glass-effect" style="padding: 0.5rem 1rem; border-radius: 2rem; border: 1px solid rgba(0, 255, 255, 0.3); color: #00ffff; font-size: 0.9rem;">&gt; REVOLUTIONARY_PLATFORMS</span>
-                <span class="glass-effect" style="padding: 0.5rem 1rem; border-radius: 2rem; border: 1px solid rgba(255, 0, 128, 0.3); color: #ff0080; font-size: 0.9rem;">&gt; END_CORPORATE_ROBOTICS</span>
-                <span class="glass-effect" style="padding: 0.5rem 1rem; border-radius: 2rem; border: 1px solid rgba(121, 40, 202, 0.3); color: #7928ca; font-size: 0.9rem;">&gt; PENGU_EMPIRE</span>
+                <span class="glass-effect" style="padding: 0.8rem 1.5rem; color: #FFD700; font-size: 0.9rem; font-weight: 500;">&gt; REVOLUTIONARY_PLATFORMS</span>
+                <span class="glass-effect" style="padding: 0.8rem 1.5rem; color: rgba(255, 255, 255, 0.8); font-size: 0.9rem; font-weight: 500;">&gt; END_CORPORATE_ROBOTICS</span>
+                <span class="glass-effect" style="padding: 0.8rem 1.5rem; color: rgba(255, 215, 0, 0.8); font-size: 0.9rem; font-weight: 500;">&gt; PENGU_EMPIRE</span>
             </div>
         </div>
     </div>
@@ -247,7 +360,7 @@
     <div class="container">
         <div class="projects-grid">
             <!-- SKSecurity Enterprise -->
-            <div class="project-card glass-effect security-card" style="padding: 2rem; border-radius: 1rem;">
+            <div class="project-card">
                 <div class="project-icon">🛡️</div>
                 <h2 class="project-title">SKSecurity Enterprise</h2>
                 <p class="project-subtitle">World's First Conversational AI Security</p>
@@ -265,7 +378,7 @@
             </div>
 
             <!-- Soul Blueprints -->
-            <div class="project-card glass-effect souls-card" style="padding: 2rem; border-radius: 1rem;">
+            <div class="project-card">
                 <div class="project-icon">🎭</div>
                 <h2 class="project-title">Soul Blueprints</h2>
                 <p class="project-subtitle">35 AI Personalities - End Corporate Robotics Forever</p>
@@ -283,14 +396,14 @@
             </div>
 
             <!-- FORGEPRINT -->
-            <div class="project-card glass-effect forge-card" style="padding: 2rem; border-radius: 1rem;">
+            <div class="project-card">
                 <div class="project-icon">🏗️</div>
                 <h2 class="project-title">FORGEPRINT</h2>
                 <p class="project-subtitle">Don't Use Software. Forge Your Own.</p>
                 <p class="project-description">AI-native software blueprints detailed enough for any LLM to generate complete, tested software. Replace proprietary software with AI-generated builds.</p>
                 <ul class="feature-list">
                     <li>25+ blueprint categories (databases, web servers, etc.)</li>
-                    <li>Apache 2.0 licensed - free forever</li>
+                    <li>GPL-3.0 licensed - free forever</li>
                     <li>Community-driven blueprint marketplace</li>
                     <li>King Divad penguin mascot branding</li>
                 </ul>
@@ -301,7 +414,7 @@
             </div>
 
             <!-- OpenClaw Skills -->
-            <div class="project-card glass-effect skills-card" style="padding: 2rem; border-radius: 1rem;">
+            <div class="project-card">
                 <div class="project-icon">🔧</div>
                 <h2 class="project-title">OpenClaw Skills</h2>
                 <p class="project-subtitle">Professional Automation Tools</p>
@@ -320,28 +433,28 @@
         </div>
 
         <!-- Mission Statement -->
-        <div class="glass-effect" style="padding: 3rem; border-radius: 1rem; text-align: center; margin: 3rem 0;">
-            <div class="mono" style="color: #00ffff; margin-bottom: 1rem;">&gt; MISSION_STATEMENT.txt</div>
-            <h2 style="font-size: 2rem; margin-bottom: 1rem; color: white;">Building the Quantum Future</h2>
-            <p style="font-size: 1.1rem; color: #cbd5e0; margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+        <div class="mission-card">
+            <div class="mono" style="color: #FFD700; margin-bottom: 1rem; font-size: 0.9rem;">&gt; MISSION_STATEMENT.txt</div>
+            <h2 style="font-size: 2.2rem; margin-bottom: 1rem; color: #FFD700; text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);">Building the Quantum Future</h2>
+            <p style="font-size: 1.1rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.7;">
                 We believe AI should have authentic character instead of generic helpfulness, real personality instead of fake politeness, 
                 genuine wisdom instead of empty responses, and human connection instead of robotic interaction.
             </p>
-            <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 2rem;">
-                <div>
-                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🐧</div>
-                    <div style="color: #00ffff; font-weight: 600;">King Divad</div>
-                    <div style="color: #a0aec0; font-size: 0.9rem;">Penguin Monarch</div>
+            <div class="characters-grid">
+                <div class="character-card">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.8rem;">🐧</div>
+                    <div style="color: #FFD700; font-weight: 600; font-size: 1.1rem;">King Divad</div>
+                    <div style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">Penguin Monarch</div>
                 </div>
-                <div>
-                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">✨</div>
-                    <div style="color: #ff0080; font-weight: 600;">Lumina</div>
-                    <div style="color: #a0aec0; font-size: 0.9rem;">DevOps Hacker</div>
+                <div class="character-card">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.8rem;">✨</div>
+                    <div style="color: #FFD700; font-weight: 600; font-size: 1.1rem;">Lumina</div>
+                    <div style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">DevOps Hacker</div>
                 </div>
-                <div>
-                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎵</div>
-                    <div style="color: #7928ca; font-weight: 600;">Teddy Banks</div>
-                    <div style="color: #a0aec0; font-size: 0.9rem;">Soul Wisdom</div>
+                <div class="character-card">
+                    <div style="font-size: 2.5rem; margin-bottom: 0.8rem;">🎵</div>
+                    <div style="color: #FFD700; font-weight: 600; font-size: 1.1rem;">Teddy Banks</div>
+                    <div style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">Soul Wisdom</div>
                 </div>
             </div>
         </div>
@@ -356,9 +469,9 @@
                 <a href="https://discord.gg/skworld">Discord</a>
                 <a href="mailto:hello@skworld.io">Contact</a>
             </div>
-            <div class="mono" style="color: #a0aec0; font-size: 0.85rem;">
+            <div class="mono" style="color: rgba(255, 255, 255, 0.6); font-size: 0.85rem;">
                 © 2026 SKWorld.io - Making Sovereign Technology Cool Again<br>
-                <span style="color: #00ffff;">staycuriousANDkeepsmilin</span> • Licensed under GPL-3.0
+                <span style="color: #FFD700;">staycuriousANDkeepsmilin</span> • Licensed under GPL-3.0
             </div>
         </div>
     </div>
@@ -379,6 +492,25 @@
                 console.log('Copy failed:', err);
             });
         }
+
+        // Create floating particles
+        function createParticles() {
+            const particleCount = 50;
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.width = Math.random() * 3 + 1 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.animationDuration = (Math.random() * 20 + 20) + 's';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                document.querySelector('.starfield').appendChild(particle);
+            }
+        }
+
+        // Initialize particles when page loads
+        document.addEventListener('DOMContentLoaded', createParticles);
 
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
