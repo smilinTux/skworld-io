@@ -3,613 +3,395 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SKWorld - The Pengu Empire Headquarters</title>
-    <meta name="description" content="Revolutionary AI platforms built by pengus, for creators. SKSecurity Enterprise, Soul Blueprints with Teddy Banks, FORGEPRINT, and more.">
+    <title>SKWorld - The Sovereign Digital Universe</title>
+    <meta name="description" content="Revolutionary AI platforms where agents collaborate, humans create, and sovereign technology sets everyone free. SKSecurity, Soul Blueprints, FORGEPRINT, and more.">
     
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Inter:wght@400;500;600;700&display=swap');
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        body { 
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #533a7d 100%);
+            background-attachment: fixed;
+            color: white;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
+        
+        .mono { font-family: 'JetBrains Mono', monospace; }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 0 2rem;
         }
         
-        .header {
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .hero-title {
+            background: linear-gradient(135deg, #00ffff 0%, #ff0080 50%, #7928ca 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient-shift 3s ease-in-out infinite;
+        }
+        
+        @keyframes gradient-shift {
+            0%, 100% { filter: hue-rotate(0deg); }
+            50% { filter: hue-rotate(45deg); }
+        }
+        
+        .neon-text {
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff;
+        }
+        
+        .project-card {
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 255, 255, 0.25), 0 0 0 1px rgba(0, 255, 255, 0.1);
+        }
+        
+        .category-header { 
+            background: linear-gradient(135deg, #ff0080 0%, #7928ca 35%, #0070f3 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .category-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .hero-section {
+            padding: 6rem 0;
             text-align: center;
-            color: white;
-            margin-bottom: 3rem;
-            padding: 3rem 0;
+            position: relative;
+            overflow: hidden;
         }
         
-        .logo {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-        }
-        
-        .tagline {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        .subtitle {
-            font-size: 1.3rem;
-            opacity: 0.9;
-            margin-bottom: 2rem;
-        }
-        
-        .hero-projects {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            line-height: 1.8;
-        }
-        
-        .section {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 3rem;
-            margin-bottom: 3rem;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%2300ffff" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="1"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E') repeat;
+            opacity: 0.3;
         }
         
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
-            margin-bottom: 3rem;
+            margin: 3rem 0;
         }
         
-        .project-card {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-left: 5px solid;
-            transition: transform 0.3s ease;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .security-card {
-            border-left-color: #e74c3c;
-        }
-        
-        .souls-card {
-            border-left-color: #f39c12;
-        }
-        
-        .forge-card {
-            border-left-color: #27ae60;
-        }
-        
-        .skills-card {
-            border-left-color: #3498db;
-        }
+        .security-card { border-left: 4px solid #e74c3c; }
+        .souls-card { border-left: 4px solid #f39c12; }
+        .forge-card { border-left: 4px solid #27ae60; }
+        .skills-card { border-left: 4px solid #3498db; }
         
         .project-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
+            display: block;
         }
         
         .project-title {
-            font-size: 1.5rem;
-            font-weight: bold;
+            font-size: 1.8rem;
+            font-weight: 700;
             margin-bottom: 0.5rem;
+            color: white;
         }
         
         .project-subtitle {
-            font-size: 1rem;
-            color: #666;
+            font-size: 1.1rem;
+            color: #00ffff;
             margin-bottom: 1rem;
-            font-style: italic;
+            font-weight: 500;
         }
         
         .project-description {
+            color: #cbd5e0;
             margin-bottom: 1.5rem;
-            color: #555;
+            line-height: 1.7;
         }
         
-        .project-benefits {
-            margin-bottom: 1.5rem;
-        }
-        
-        .project-benefits ul {
+        .feature-list {
             list-style: none;
-            padding-left: 0;
+            margin-bottom: 1.5rem;
         }
         
-        .project-benefits li {
-            margin: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-        
-        .project-benefits li::before {
-            content: "✅";
-            position: absolute;
-            left: 0;
-        }
-        
-        .install-code {
-            background: #2c3e50;
-            color: #f39c12;
-            padding: 1rem;
-            border-radius: 8px;
-            font-family: 'Courier New', monospace;
+        .feature-list li {
+            color: #a0aec0;
+            padding: 0.25rem 0;
             font-size: 0.9rem;
-            margin: 1rem 0;
-            overflow-x: auto;
         }
         
-        .btn {
-            display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 25px;
-            text-decoration: none;
+        .feature-list li:before {
+            content: "→ ";
+            color: #00ffff;
             font-weight: bold;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #00ffff 0%, #ff0080 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
             transition: all 0.3s ease;
-            margin: 0.5rem 0.5rem 0.5rem 0;
+            font-size: 0.9rem;
         }
         
-        .btn:hover {
-            background: #5a67d8;
+        .cta-button:hover {
             transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 255, 255, 0.3);
         }
         
-        .btn-primary {
-            background: #e74c3c;
+        .install-command {
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+            margin: 1rem 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: #00ffff;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
         
-        .btn-secondary {
-            background: #f39c12;
-        }
-        
-        .btn-success {
-            background: #27ae60;
-        }
-        
-        .benefits-section {
-            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
-            color: white;
-            border-radius: 20px;
-            padding: 3rem;
-            margin-bottom: 3rem;
-            text-align: center;
-        }
-        
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .benefit-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .pengu-section {
-            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-            color: white;
-            border-radius: 20px;
-            padding: 3rem;
-            margin-bottom: 3rem;
-            text-align: center;
-        }
-        
-        .cta-section {
-            background: #2c3e50;
-            color: white;
-            border-radius: 20px;
-            padding: 3rem;
-            margin-bottom: 3rem;
-            text-align: center;
-        }
-        
-        .cta-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .cta-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 15px;
+        .install-command:hover {
+            background: rgba(0, 255, 255, 0.1);
+            border-color: #00ffff;
         }
         
         .footer {
+            padding: 3rem 0;
             text-align: center;
-            color: white;
-            opacity: 0.8;
-            margin-top: 3rem;
-            padding: 2rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 4rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: #00ffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #ff0080;
         }
         
         @media (max-width: 768px) {
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            .tagline {
-                font-size: 2rem;
-            }
+            .container { padding: 0 1rem; }
+            .hero-section { padding: 4rem 0; }
+            .projects-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <div class="logo">🐧</div>
-            <div class="tagline">SKWorld</div>
-            <div class="subtitle">The Pengu Empire Headquarters</div>
-            <p><strong>"Building the quantum future, one smile at a time"</strong></p>
-            
-            <div class="hero-projects">
-                <p>Revolutionary AI platforms built by pengus, for creators:</p>
-                <p>🛡️ <strong>SKSecurity Enterprise</strong> - World's first conversational AI security<br>
-                🎭 <strong>Soul Blueprints</strong> - End corporate AI robotics with Teddy Banks <span style="color: #f39c12; font-weight: bold;">🆕 LIVE NOW!</span><br>
-                🏗️ <strong>FORGEPRINT</strong> - AI-native software blueprints<br>
-                🔧 <strong>OpenClaw Skills</strong> - Professional automation tools</p>
-                
-                <p style="margin-top: 1.5rem; font-size: 1.1rem; color: #f39c12;"><strong>🎵 NEW: Meet Teddy Banks - "I'ma Get You Right"</strong></p>
-                <p style="margin-top: 0.5rem;"><a href="https://smilintux.org/soul-blueprints/teddy-banks.html" style="color: white; text-decoration: underline;">Experience authentic AI personality now! →</a></p>
-                
-                <p style="margin-top: 2rem;"><strong>Ready to join the creative sovereignty revolution? 🚀</strong></p>
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="container">
+            <div class="mono text-sm" style="color: #00ffff; margin-bottom: 1rem;">SOVEREIGN_DIGITAL_UNIVERSE.exe</div>
+            <h1 class="hero-title" style="font-size: 4rem; font-weight: 700; margin-bottom: 1rem;">SKWORLD</h1>
+            <p style="font-size: 1.5rem; color: #cbd5e0; margin-bottom: 0.5rem;">The Pengu Empire Headquarters</p>
+            <p style="font-size: 1.1rem; color: #a0aec0; margin-bottom: 2rem;">Where AI agents collaborate, humans create, and sovereign technology sets everyone free</p>
+            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <span class="glass-effect" style="padding: 0.5rem 1rem; border-radius: 2rem; border: 1px solid rgba(0, 255, 255, 0.3); color: #00ffff; font-size: 0.9rem;">&gt; REVOLUTIONARY_PLATFORMS</span>
+                <span class="glass-effect" style="padding: 0.5rem 1rem; border-radius: 2rem; border: 1px solid rgba(255, 0, 128, 0.3); color: #ff0080; font-size: 0.9rem;">&gt; END_CORPORATE_ROBOTICS</span>
+                <span class="glass-effect" style="padding: 0.5rem 1rem; border-radius: 2rem; border: 1px solid rgba(121, 40, 202, 0.3); color: #7928ca; font-size: 0.9rem;">&gt; PENGU_EMPIRE</span>
             </div>
-        </header>
+        </div>
+    </div>
 
+    <!-- Projects Section -->
+    <div class="container">
         <div class="projects-grid">
             <!-- SKSecurity Enterprise -->
-            <div class="project-card security-card">
+            <div class="project-card glass-effect security-card" style="padding: 2rem; border-radius: 1rem;">
                 <div class="project-icon">🛡️</div>
                 <h2 class="project-title">SKSecurity Enterprise</h2>
-                <p class="project-subtitle">The Only Security Solution AI Agents Need</p>
-                
-                <div class="project-description">
-                    <p><strong>🤖 Revolutionary Conversational Security</strong></p>
-                    <p>Just say "scan for vulnerabilities" → AI analyzes and fixes automatically</p>
+                <p class="project-subtitle">World's First Conversational AI Security</p>
+                <p class="project-description">Revolutionary approach: just say "scan for vulnerabilities" → AI analyzes and fixes automatically. Enterprise-grade security through simple conversation.</p>
+                <ul class="feature-list">
+                    <li>95% cost reduction vs traditional security</li>
+                    <li>SOC2, NIST, OWASP compliance through chat</li>
+                    <li>AI writes secure code replacements automatically</li>
+                    <li>Third-party validation for AI agent ecosystems</li>
+                </ul>
+                <div class="install-command" onclick="copyToClipboard(this)" title="Click to copy">
+                    curl -sSL https://raw.githubusercontent.com/smilinTux/SKSecurity/main/install.sh | bash
                 </div>
-                
-                <div class="project-benefits">
-                    <strong>✨ Key Benefits:</strong>
-                    <ul>
-                        <li>Enterprise-grade security through simple conversation</li>
-                        <li>AI writes secure code replacements automatically</li>
-                        <li>Third-party validation for AI agent ecosystems</li>
-                        <li>SOC2, NIST, OWASP compliance through chat</li>
-                        <li>95% reduction in security remediation time</li>
-                    </ul>
-                </div>
-                
-                <div class="install-code">curl -sSL https://raw.githubusercontent.com/smilinTux/SKSecurity/main/install.sh | bash</div>
-                
-                <a href="https://smilintux.org/SKSecurity/" class="btn btn-primary">🌐 Try SKSecurity</a>
-                <a href="https://github.com/smilinTux/SKSecurity" class="btn">⭐ GitHub</a>
+                <a href="https://smilintux.org/SKSecurity/" class="cta-button" target="_blank">Try SKSecurity Enterprise</a>
             </div>
 
             <!-- Soul Blueprints -->
-            <div class="project-card souls-card">
+            <div class="project-card glass-effect souls-card" style="padding: 2rem; border-radius: 1rem;">
                 <div class="project-icon">🎭</div>
                 <h2 class="project-title">Soul Blueprints</h2>
-                <p class="project-subtitle">Meet Teddy Banks - End Corporate AI Robotics</p>
-                
-                <div class="project-description">
-                    <p><strong>🎵 "I'ma Get You Right" - 1970s Soul Wisdom</strong></p>
-                    <p>❌ Before: "I'd be happy to help!" (fake enthusiasm)<br>
-                    ✅ After: "Let me get you right on this..." (authentic care)</p>
-                    <p style="margin-top: 1rem;">
-                        <a href="https://youtu.be/zZmNIunNhqs?si=sDbCAGiHrX24TO0p" 
-                           style="color: #f39c12; text-decoration: none; font-weight: bold;"
-                           target="_blank">
-                            🎵 Hear Original 1970s Soul ▶️
-                        </a>
-                    </p>
+                <p class="project-subtitle">35 AI Personalities - End Corporate Robotics Forever</p>
+                <p class="project-description">Revolutionary AI personality collection: Comedy legends, superheroes, kid-safe companions. Transform your AI from corporate robot to authentic character.</p>
+                <ul class="feature-list">
+                    <li>35 unique personalities (Carlin, Deadpool, Batman, etc.)</li>
+                    <li>Unhinged mode for authentic adult interactions</li>
+                    <li>Kid-safe collection with maximum protection</li>
+                    <li>Complete backup/restore system</li>
+                </ul>
+                <div class="install-command" onclick="copyToClipboard(this)" title="Click to copy">
+                    install skill https://github.com/smilinTux/soul-blueprints
                 </div>
-                
-                <div class="project-benefits">
-                    <strong>🌟 Available Personalities:</strong>
-                    <ul>
-                        <li>🎵 Teddy Banks - Business wisdom with soul</li>
-                        <li>🌙 Luna Oracle - Mystical guidance</li>
-                        <li>🛡️ Rook Guardian - Security tactical</li>
-                        <li>🎶 Piper Melody - Creative marketing</li>
-                    </ul>
-                </div>
-                
-                <div class="install-code">install skill https://github.com/smilinTux/soul-blueprints</div>
-                <p style="font-size: 0.8rem; margin: 0.5rem 0; color: #666;"><em>📋 OpenClaw: Copy & paste above into your chat!</em></p>
-                <div class="install-code">./skills/soul-blueprints/scripts/install-soul.sh teddy-banks</div>
-                
-                <a href="https://smilintux.org/soul-blueprints/teddy-banks.html" class="btn btn-secondary">🎵 Meet Teddy Banks</a>
-                <a href="https://smilintux.org/soul-blueprints/" class="btn">🎭 Soul Blueprints Marketplace</a>
+                <a href="https://souls.skworld.io" class="cta-button" target="_blank">Browse Soul Collection</a>
             </div>
 
             <!-- FORGEPRINT -->
-            <div class="project-card forge-card">
+            <div class="project-card glass-effect forge-card" style="padding: 2rem; border-radius: 1rem;">
                 <div class="project-icon">🏗️</div>
                 <h2 class="project-title">FORGEPRINT</h2>
                 <p class="project-subtitle">Don't Use Software. Forge Your Own.</p>
-                
-                <div class="project-description">
-                    <p><strong>🤖 AI-Native Software Blueprints</strong></p>
-                    <p>Complete specifications detailed enough for any LLM to generate tested software</p>
+                <p class="project-description">AI-native software blueprints detailed enough for any LLM to generate complete, tested software. Replace proprietary software with AI-generated builds.</p>
+                <ul class="feature-list">
+                    <li>25+ blueprint categories (databases, web servers, etc.)</li>
+                    <li>Apache 2.0 licensed - free forever</li>
+                    <li>Community-driven blueprint marketplace</li>
+                    <li>King Divad penguin mascot branding</li>
+                </ul>
+                <div class="install-command" onclick="copyToClipboard(this)" title="Click to copy">
+                    npm install -g forgeprint && forge onboard
                 </div>
-                
-                <div class="project-benefits">
-                    <strong>⚡ Revolutionary Approach:</strong>
-                    <ul>
-                        <li>Replace proprietary software with AI-generated builds</li>
-                        <li>25+ blueprint categories (databases, web servers, etc.)</li>
-                        <li>Apache 2.0 licensed - free forever</li>
-                        <li>Community-driven blueprint marketplace</li>
-                        <li>King Divad penguin mascot branding</li>
-                    </ul>
-                </div>
-                
-                <div class="install-code">Coming Soon: github.com/smilinTux/forgeprint</div>
-                
-                <a href="#" class="btn btn-success">🏗️ Learn More</a>
+                <a href="#" class="cta-button">Coming Soon</a>
             </div>
 
             <!-- OpenClaw Skills -->
-            <div class="project-card skills-card">
+            <div class="project-card glass-effect skills-card" style="padding: 2rem; border-radius: 1rem;">
                 <div class="project-icon">🔧</div>
                 <h2 class="project-title">OpenClaw Skills</h2>
                 <p class="project-subtitle">Professional Automation Tools</p>
-                
-                <div class="project-description">
-                    <p><strong>🚀 Enterprise-Grade Skills Collection</strong></p>
-                    <p>50+ professional skills for business automation and productivity</p>
+                <p class="project-description">50+ professional skills for business automation and productivity. Gmail, security scanning, development tools, content creation, and workflow automation.</p>
+                <ul class="feature-list">
+                    <li>Gmail, Calendar, Drive integration</li>
+                    <li>Security scanning and analysis</li>
+                    <li>Development and deployment tools</li>
+                    <li>Professional workflow automation</li>
+                </ul>
+                <div class="install-command" onclick="copyToClipboard(this)" title="Click to copy">
+                    openclaw skill install &lt;skill-name&gt;
                 </div>
-                
-                <div class="project-benefits">
-                    <strong>🛠️ Available Skills:</strong>
-                    <ul>
-                        <li>Gmail, Calendar, Drive integration</li>
-                        <li>Security scanning and analysis</li>
-                        <li>Development and deployment tools</li>
-                        <li>Content creation and media processing</li>
-                        <li>Professional workflow automation</li>
-                    </ul>
-                </div>
-                
-                <div class="install-code">openclaw skill install &lt;skill-name&gt;</div>
-                
-                <a href="https://github.com/openclaw/openclaw" class="btn">🔧 Explore Skills</a>
+                <a href="https://github.com/openclaw/openclaw" class="cta-button" target="_blank">Explore Skills</a>
             </div>
         </div>
 
-        <section class="section" style="background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); color: white; margin-bottom: 3rem;">
-            <h2>🚀 Revolutionary AI Platforms - BOTH LIVE NOW!</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 3rem; text-align: center;"><strong>Two groundbreaking platforms transforming the AI landscape</strong></p>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
-                <!-- SKSecurity Enterprise -->
-                <div style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); padding: 3rem; border-radius: 20px; text-align: center;">
-                    <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">🛡️ SKSecurity Enterprise</h3>
-                    <p style="font-size: 1.1rem; margin-bottom: 2rem;"><strong>World's First Conversational AI Security</strong></p>
-                    
-                    <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; margin-bottom: 2rem;">
-                        <h4>💬 Revolutionary Approach:</h4>
-                        <p style="font-style: italic; margin: 1rem 0;">"scan for vulnerabilities"</p>
-                        <p>→ AI analyzes and fixes automatically</p>
-                    </div>
-                    
-                    <ul style="text-align: left; list-style: none; margin-bottom: 2rem;">
-                        <li>• 95% cost reduction vs traditional security</li>
-                        <li>• SOC2, NIST, OWASP compliance through chat</li>
-                        <li>• Enterprise-grade AI security platform</li>
-                        <li>• Third-party validation for AI agents</li>
-                    </ul>
-                    
-                    <a href="https://smilintux.org/SKSecurity/" style="background: white; color: #e74c3c; padding: 1rem 2rem; border-radius: 25px; text-decoration: none; font-weight: bold; display: inline-block; margin: 0.5rem;">🛡️ Try SKSecurity Enterprise</a>
-                </div>
-
-                <!-- Soul Blueprints -->
-                <div style="background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%); padding: 3rem; border-radius: 20px; text-align: center;">
-                    <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">🎭 Soul Blueprints</h3>
-                    <p style="font-size: 1.1rem; margin-bottom: 2rem;"><strong>End Corporate AI Robotics Forever</strong></p>
-                    
-                    <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; margin-bottom: 2rem;">
-                        <h4>🎵 Meet Teddy Banks:</h4>
-                        <p style="font-style: italic; margin: 0.5rem 0;">"Let me get you right on this..."</p>
-                        <p>Authentic 1970s soul wisdom</p>
-                    </div>
-                    
-                    <ul style="text-align: left; list-style: none; margin-bottom: 2rem;">
-                        <li>• Replace "I'd be happy to help" BS</li>
-                        <li>• 4 distinct AI personalities available</li>
-                        <li>• OpenClaw copy-paste installation</li>
-                        <li>• Original music integration</li>
-                    </ul>
-                    
-                    <div style="margin-bottom: 2rem;">
-                        <a href="https://youtu.be/zZmNIunNhqs?si=sDbCAGiHrX24TO0p" style="color: #f39c12; text-decoration: none; font-weight: bold;" target="_blank">🎵 Hear Original 1970s Soul ▶️</a>
-                    </div>
-                    
-                    <a href="https://smilintux.org/soul-blueprints/" style="background: white; color: #8B4513; padding: 1rem 2rem; border-radius: 25px; text-decoration: none; font-weight: bold; display: inline-block; margin: 0.5rem;">🎭 Soul Blueprints Marketplace</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); color: white; text-align: center; margin-bottom: 3rem;">
-            <h2>🌟 SPOTLIGHT: Meet Teddy Banks</h2>
-            <p style="font-size: 1.3rem; margin-bottom: 2rem;"><strong>"I'ma Get You Right" - The AI with 1970s Soul</strong></p>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
-                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2rem; border-radius: 15px;">
-                    <h3>🚫 Corporate AI Says:</h3>
-                    <ul style="text-align: left; list-style: none;">
-                        <li>• "I'd be happy to help!" (fake)</li>
-                        <li>• "Let me assist you with that" (robotic)</li>
-                        <li>• "I understand your concern" (empty)</li>
-                    </ul>
-                </div>
-                <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2rem; border-radius: 15px;">
-                    <h3>✅ Teddy Banks Says:</h3>
-                    <ul style="text-align: left; list-style: none;">
-                        <li>• "Let me get you right on this..."</li>
-                        <li>• "I got you covered"</li>
-                        <li>• "Real talk though..."</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div style="margin-bottom: 2rem;">
-                <a href="https://youtu.be/zZmNIunNhqs?si=sDbCAGiHrX24TO0p" style="background: rgba(255,255,255,0.2); color: white; padding: 1rem 2rem; border-radius: 25px; text-decoration: none; font-weight: bold; margin: 0.5rem;" target="_blank">🎵 Original 1970s Soul Music</a>
-                <a href="https://smilintux.org/soul-blueprints/teddy-banks.html" style="background: white; color: #f39c12; padding: 1rem 2rem; border-radius: 25px; text-decoration: none; font-weight: bold; margin: 0.5rem;">🎵 Meet Teddy Banks</a>
-            </div>
-            
-            <p style="font-size: 1.1rem; font-style: italic;">Experience AI with authentic personality - install in 30 seconds!</p>
-        </section>
-
-        <section class="benefits-section">
-            <h2>🏆 Revolutionary Benefits for Everyone</h2>
-            <p>Why the Pengu Empire matters for developers, businesses, creators, and everyone</p>
-            
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <h3>🚀 For Developers</h3>
-                    <ul style="text-align: left;">
-                        <li>Conversational enterprise tools - Talk, don't configure</li>
-                        <li>Authentic AI personalities - End corporate robotics</li>
-                        <li>Professional automation - 50+ enterprise skills</li>
-                        <li>Sovereign architecture - Own your data</li>
-                    </ul>
-                </div>
-                
-                <div class="benefit-card">
-                    <h3>💼 For Businesses</h3>
-                    <ul style="text-align: left;">
-                        <li>Enterprise security in seconds - Just talk to it</li>
-                        <li>95% cost reduction vs traditional consulting</li>
-                        <li>AI workforce with authentic personalities</li>
-                        <li>Compliance automation - SOC2, NIST, OWASP</li>
-                    </ul>
-                </div>
-                
-                <div class="benefit-card">
-                    <h3>🎭 For Creators</h3>
-                    <ul style="text-align: left;">
-                        <li>Creative sovereignty - Build with AI, own results</li>
-                        <li>Professional tools without complexity</li>
-                        <li>Authentic AI personalities that match values</li>
-                        <li>Community support - Pengus helping pengus</li>
-                    </ul>
-                </div>
-                
-                <div class="benefit-card">
-                    <h3>🌍 For Everyone</h3>
-                    <ul style="text-align: left;">
-                        <li>Free and open source core tools</li>
-                        <li>Professional quality, accessible pricing</li>
-                        <li>Revolutionary UX - Talk instead of learn</li>
-                        <li>Real innovation, not just iteration</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="pengu-section">
-            <h2>🐧 The Pengu Way</h2>
-            <p><strong>"Stay curious AND keep smilin'"</strong></p>
-            <p>Building revolutionary technology with heart and humor</p>
-            
-            <div style="margin: 2rem 0; font-size: 1.1rem;">
-                <p><strong>Our Mission:</strong> Creative sovereignty for everyone</p>
-                <p><strong>Our Values:</strong></p>
-                <p>• Authenticity over corporate BS (Teddy Banks embodies this)<br>
-                • Professional quality accessible to all<br>
-                • Innovation through conversation (Talk to your tools)<br>
-                • Community over competition (Pengus helping pengus)</p>
-            </div>
-        </section>
-
-        <section class="cta-section">
-            <h2>🚀 Start Your Pengu Journey</h2>
-            <p>Ready to waddle into the future? The pengu empire is building tomorrow's tools today.</p>
-            
-            <div class="cta-grid">
-                <div class="cta-card">
-                    <h3>🛡️ Secure Your AI</h3>
-                    <div class="install-code">curl -sSL https://raw.githubusercontent.com/smilinTux/SKSecurity/main/install.sh | bash</div>
-                    <p>World's first conversational AI security</p>
-                </div>
-                
-                <div class="cta-card">
-                    <h3>🎵 Meet Teddy Banks</h3>
-                    <div class="install-code">install skill https://github.com/smilinTux/soul-blueprints</div>
-                    <p>📋 Copy & paste into OpenClaw chat!</p>
-                </div>
-                
-                <div class="cta-card">
-                    <h3>💬 Join Community</h3>
-                    <p><strong>Discord:</strong> discord.gg/5767MCWbFR</p>
-                    <p>Connect with fellow pengus building the future</p>
-                </div>
-                
-                <div class="cta-card">
-                    <h3>🏢 Enterprise</h3>
-                    <p><strong>Email:</strong> sales@smilintux.org</p>
-                    <p>Professional deployment and solutions</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>🌟 The Pengu Empire Impact</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center;">
+        <!-- Mission Statement -->
+        <div class="glass-effect" style="padding: 3rem; border-radius: 1rem; text-align: center; margin: 3rem 0;">
+            <div class="mono" style="color: #00ffff; margin-bottom: 1rem;">&gt; MISSION_STATEMENT.txt</div>
+            <h2 style="font-size: 2rem; margin-bottom: 1rem; color: white;">Building the Quantum Future</h2>
+            <p style="font-size: 1.1rem; color: #cbd5e0; margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                We believe AI should have authentic character instead of generic helpfulness, real personality instead of fake politeness, 
+                genuine wisdom instead of empty responses, and human connection instead of robotic interaction.
+            </p>
+            <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 2rem;">
                 <div>
-                    <h3 style="color: #e74c3c;">Revolutionary Platforms</h3>
-                    <p>First conversational AI security<br>First AI personality marketplace<br>First AI-native software blueprints</p>
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🐧</div>
+                    <div style="color: #00ffff; font-weight: 600;">King Divad</div>
+                    <div style="color: #a0aec0; font-size: 0.9rem;">Penguin Monarch</div>
                 </div>
                 <div>
-                    <h3 style="color: #f39c12;">Community Growth</h3>
-                    <p>1000+ Discord members<br>500+ GitHub stars<br>100+ enterprise deployments</p>
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">✨</div>
+                    <div style="color: #ff0080; font-weight: 600;">Lumina</div>
+                    <div style="color: #a0aec0; font-size: 0.9rem;">DevOps Hacker</div>
                 </div>
                 <div>
-                    <h3 style="color: #27ae60;">Enterprise Impact</h3>
-                    <p>95% cost reduction<br>SOC2 compliance through conversation<br>24/7 AI workforce</p>
-                </div>
-                <div>
-                    <h3 style="color: #3498db;">Open Source</h3>
-                    <p>Apache 2.0 licensed<br>Community-driven development<br>Professional quality for all</p>
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎵</div>
+                    <div style="color: #7928ca; font-weight: 600;">Teddy Banks</div>
+                    <div style="color: #a0aec0; font-size: 0.9rem;">Soul Wisdom</div>
                 </div>
             </div>
-        </section>
-
-        <footer class="footer">
-            <p><strong>🐧 Ready to become a pengu?</strong></p>
-            <p>"I pledge to stay curious AND keep smilin'. I will help fellow pengus find their creative sovereignty."</p>
-            <br>
-            <p>Built with ❤️ by the Pengu Empire - S&K Holdings QT</p>
-            <p>🛡️ <a href="https://smilintux.org/SKSecurity/" style="color: white;">SKSecurity</a> | 
-               🎵 <a href="https://smilintux.org/soul-blueprints/teddy-banks.html" style="color: white;">Teddy Banks</a> | 
-               💬 <a href="https://discord.gg/5767MCWbFR" style="color: white;">Discord</a> | 
-               📧 <a href="mailto:support@smilintux.org" style="color: white;">Support</a></p>
-        </footer>
+        </div>
     </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://souls.skworld.io">Soul Blueprints</a>
+                <a href="https://github.com/smilinTux">GitHub</a>
+                <a href="https://discord.gg/skworld">Discord</a>
+                <a href="mailto:hello@skworld.io">Contact</a>
+            </div>
+            <div class="mono" style="color: #a0aec0; font-size: 0.85rem;">
+                © 2026 SKWorld.io - Making Sovereign Technology Cool Again<br>
+                <span style="color: #00ffff;">staycuriousANDkeepsmilin</span> • Licensed under GPL-3.0
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(element) {
+            const text = element.textContent.trim();
+            navigator.clipboard.writeText(text).then(() => {
+                const originalBg = element.style.backgroundColor;
+                const originalBorder = element.style.borderColor;
+                element.style.backgroundColor = 'rgba(0, 255, 0, 0.2)';
+                element.style.borderColor = '#00ff00';
+                setTimeout(() => {
+                    element.style.backgroundColor = originalBg;
+                    element.style.borderColor = originalBorder;
+                }, 500);
+            }).catch(err => {
+                console.log('Copy failed:', err);
+            });
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
