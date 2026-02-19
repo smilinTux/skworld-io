@@ -3,17 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SKWorld - The Pengu Empire Headquarters 🐧</title>
-    <meta name="description" content="Revolutionary AI platforms where agents collaborate, humans create, and sovereign technology sets everyone free. Join the Pengu Empire! 🎭🛡️🏗️">
+    <title>SKWorld — Sovereign AI Infrastructure for Creators 🐧</title>
+    <meta name="description" content="Open-source sovereign AI infrastructure. Security, soul blueprints, software forging, and agent skills — tools creators own and control.">
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Inter:wght@400;500;600;700&display=swap');
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body { 
             font-family: 'Inter', sans-serif;
@@ -23,23 +19,18 @@
             overflow-x: hidden;
         }
         
-        /* Animated Starfield Background */
         .starfield {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             z-index: -1;
             background: radial-gradient(ellipse at bottom, #1a1a2e 0%, #16213e 40%, #0f0f0f 100%);
         }
         
         .stars {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             background-image: 
                 radial-gradient(2px 2px at 20px 30px, rgba(255,215,0,0.9), transparent),
                 radial-gradient(2px 2px at 40px 70px, rgba(0,255,255,0.7), transparent),
@@ -50,25 +41,14 @@
             background-size: 200px 100px;
             animation: sparkle 100s linear infinite;
         }
-        
-        .stars:nth-child(2) {
-            background-size: 250px 125px;
-            animation: sparkle 140s linear infinite reverse;
-            opacity: 0.8;
-        }
-        
-        .stars:nth-child(3) {
-            background-size: 300px 150px;
-            animation: sparkle 180s linear infinite;
-            opacity: 0.5;
-        }
+        .stars:nth-child(2) { background-size: 250px 125px; animation: sparkle 140s linear infinite reverse; opacity: 0.8; }
+        .stars:nth-child(3) { background-size: 300px 150px; animation: sparkle 180s linear infinite; opacity: 0.5; }
         
         @keyframes sparkle {
-            from { transform: translateX(0px) translateY(0px); }
+            from { transform: translateX(0) translateY(0); }
             to { transform: translateX(-200px) translateY(-100px); }
         }
         
-        /* Fun floating elements */
         .penguin-float {
             position: absolute;
             font-size: 2rem;
@@ -76,9 +56,8 @@
             opacity: 0.6;
             z-index: 0;
         }
-        
         @keyframes float-penguin {
-            0%, 100% { transform: translateY(0px) rotate(-5deg); opacity: 0.4; }
+            0%, 100% { transform: translateY(0) rotate(-5deg); opacity: 0.4; }
             25% { transform: translateY(-30px) rotate(5deg); opacity: 0.8; }
             50% { transform: translateY(-50px) rotate(-3deg); opacity: 0.6; }
             75% { transform: translateY(-20px) rotate(3deg); opacity: 0.7; }
@@ -94,19 +73,11 @@
             z-index: 1;
         }
         
-        .glass-effect {
-            background: rgba(26, 26, 46, 0.3);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 215, 0, 0.2);
-            border-radius: 20px;
-        }
-        
+        /* Hero */
         .hero-section {
             padding: 5rem 0 3rem;
             text-align: center;
-            position: relative;
         }
-        
         .hero-title {
             background: linear-gradient(135deg, #FFD700 0%, #FF69B4 30%, #00FFFF 60%, #FFD700 100%);
             -webkit-background-clip: text;
@@ -115,17 +86,14 @@
             font-size: 6rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            text-shadow: 0 0 40px rgba(255, 215, 0, 0.4);
             animation: rainbow-shift 4s ease-in-out infinite;
         }
-        
         @keyframes rainbow-shift {
             0%, 100% { filter: hue-rotate(0deg); }
             25% { filter: hue-rotate(30deg); }
             50% { filter: hue-rotate(-20deg); }
             75% { filter: hue-rotate(15deg); }
         }
-        
         .tagline {
             font-size: 2.2rem;
             color: #FFD700;
@@ -134,12 +102,12 @@
             text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
             animation: glow-pulse 3s ease-in-out infinite;
         }
-        
         @keyframes glow-pulse {
             0%, 100% { text-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
             50% { text-shadow: 0 0 30px rgba(255, 215, 0, 0.8), 0 0 40px rgba(255, 215, 0, 0.3); }
         }
-        
+
+        /* Nav badges */
         .hero-badges {
             display: flex;
             justify-content: center;
@@ -147,8 +115,8 @@
             flex-wrap: wrap;
             margin-top: 2rem;
         }
-        
         .badge {
+            display: inline-block;
             background: rgba(26, 26, 46, 0.5);
             backdrop-filter: blur(10px);
             padding: 0.8rem 1.5rem;
@@ -159,39 +127,60 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            text-decoration: none;
+            cursor: pointer;
         }
-        
         .badge::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
             transition: left 0.6s;
         }
-        
-        .badge:hover::before {
-            left: 100%;
-        }
-        
+        .badge:hover::before { left: 100%; }
         .badge:hover {
             transform: translateY(-3px) scale(1.05);
             box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
         }
-        
         .badge-gold { border-color: #FFD700; color: #FFD700; }
         .badge-cyan { border-color: #00FFFF; color: #00FFFF; }
         .badge-pink { border-color: #FF69B4; color: #FF69B4; }
-        
+        .badge-green { border-color: #50fa7b; color: #50fa7b; }
+        .badge-purple { border-color: #bd93f9; color: #bd93f9; }
+
+        /* Lumina banner */
+        .lumina-banner {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+        .lumina-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: linear-gradient(135deg, #bd93f9 0%, #ff79c6 50%, #f1fa8c 100%);
+            color: #0a0a0a;
+            padding: 0.9rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 25px rgba(189, 147, 249, 0.4);
+        }
+        .lumina-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 35px rgba(189, 147, 249, 0.6);
+        }
+
+        /* Project cards */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 2.5rem;
             margin: 4rem 0;
         }
-        
         .project-card {
             background: rgba(26, 26, 46, 0.4);
             backdrop-filter: blur(15px);
@@ -201,35 +190,25 @@
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
-        
         .project-card::before {
             content: '';
             position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
             background: linear-gradient(45deg, #FFD700, #FF69B4, #00FFFF, #FFD700);
             border-radius: 25px;
             z-index: -1;
             opacity: 0;
             transition: opacity 0.4s ease;
         }
-        
-        .project-card:hover::before {
-            opacity: 0.6;
-        }
-        
+        .project-card:hover::before { opacity: 0.6; }
         .project-card:hover {
-            transform: translateY(-12px) rotate(1deg);
+            transform: translateY(-12px);
             border-color: rgba(255, 215, 0, 0.6);
-            box-shadow: 
-                0 25px 50px rgba(0, 0, 0, 0.4),
-                0 0 40px rgba(255, 215, 0, 0.2),
-                inset 0 1px 0 rgba(255, 215, 0, 0.3);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 40px rgba(255, 215, 0, 0.2);
         }
-        
         .project-icon {
             font-size: 4rem;
             margin-bottom: 1.5rem;
@@ -237,12 +216,10 @@
             filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.4));
             transition: all 0.3s ease;
         }
-        
         .project-card:hover .project-icon {
             filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.8));
             transform: scale(1.1) rotate(5deg);
         }
-        
         .project-title {
             font-size: 2rem;
             font-weight: 700;
@@ -252,44 +229,55 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
         .project-subtitle {
             font-size: 1.1rem;
             color: rgba(255, 255, 255, 0.9);
             margin-bottom: 1.5rem;
             font-weight: 500;
         }
-        
         .project-description {
             color: rgba(255, 255, 255, 0.8);
             margin-bottom: 1.5rem;
             line-height: 1.7;
         }
-        
         .feature-list {
             list-style: none;
             margin-bottom: 2rem;
         }
-        
         .feature-list li {
             color: rgba(255, 255, 255, 0.7);
-            padding: 0.5rem 0;
+            padding: 0.5rem 0 0.5rem 2rem;
             position: relative;
-            padding-left: 2rem;
         }
-        
         .feature-list li:before {
             content: "🚀";
             position: absolute;
             left: 0;
             animation: rocket-bounce 2s infinite ease-in-out;
         }
-        
         @keyframes rocket-bounce {
-            0%, 100% { transform: translateY(0px); }
+            0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-3px); }
         }
-        
+        .card-footer { margin-top: auto; }
+        .install-command {
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid rgba(255, 215, 0, 0.4);
+            border-radius: 12px;
+            padding: 1.2rem;
+            margin: 1rem 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: #FFD700;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            word-break: break-all;
+        }
+        .install-command:hover {
+            background: rgba(255, 215, 0, 0.1);
+            border-color: #FFD700;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
         .cta-button {
             display: inline-block;
             background: linear-gradient(135deg, #FFD700 0%, #FF69B4 50%, #00FFFF 100%);
@@ -304,48 +292,21 @@
             position: relative;
             overflow: hidden;
         }
-        
         .cta-button::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
             transition: left 0.6s;
         }
-        
-        .cta-button:hover::before {
-            left: 100%;
-        }
-        
+        .cta-button:hover::before { left: 100%; }
         .cta-button:hover {
             transform: translateY(-3px) scale(1.05);
             box-shadow: 0 10px 30px rgba(255, 215, 0, 0.6);
         }
-        
-        .install-command {
-            background: rgba(0, 0, 0, 0.7);
-            border: 2px solid rgba(255, 215, 0, 0.4);
-            border-radius: 12px;
-            padding: 1.2rem;
-            margin: 1.5rem 0;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.9rem;
-            color: #FFD700;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            position: relative;
-        }
-        
-        .install-command:hover {
-            background: rgba(255, 215, 0, 0.1);
-            border-color: #FFD700;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
-            transform: scale(1.02);
-        }
-        
+
+        /* Mission */
         .mission-card {
             background: rgba(26, 26, 46, 0.5);
             backdrop-filter: blur(20px);
@@ -357,33 +318,12 @@
             position: relative;
             overflow: hidden;
         }
-        
-        .mission-card::after {
-            content: '';
-            position: absolute;
-            top: -3px;
-            left: -3px;
-            right: -3px;
-            bottom: -3px;
-            background: linear-gradient(45deg, #FFD700, #FF69B4, #00FFFF, #FFD700);
-            border-radius: 30px;
-            z-index: -1;
-            opacity: 0.4;
-            animation: rotate-border 8s linear infinite;
-        }
-        
-        @keyframes rotate-border {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
         .characters-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 2rem;
             margin-top: 2.5rem;
         }
-        
         .character-card {
             background: rgba(0, 0, 0, 0.5);
             border: 2px solid rgba(255, 215, 0, 0.3);
@@ -391,27 +331,26 @@
             padding: 2rem;
             text-align: center;
             transition: all 0.4s ease;
-            position: relative;
+            text-decoration: none;
+            display: block;
         }
-        
         .character-card:hover {
             border-color: rgba(255, 215, 0, 0.7);
             box-shadow: 0 15px 30px rgba(255, 215, 0, 0.2);
             transform: translateY(-8px) scale(1.05);
         }
-        
         .character-emoji {
             font-size: 3rem;
             margin-bottom: 1rem;
             display: block;
             animation: character-bounce 3s infinite ease-in-out;
         }
-        
         @keyframes character-bounce {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            0%, 100% { transform: translateY(0) rotate(0deg); }
             50% { transform: translateY(-10px) rotate(5deg); }
         }
-        
+
+        /* Footer */
         .footer {
             padding: 3rem 0;
             text-align: center;
@@ -419,7 +358,6 @@
             margin-top: 4rem;
             background: rgba(10, 10, 10, 0.8);
         }
-        
         .footer-links {
             display: flex;
             justify-content: center;
@@ -427,7 +365,6 @@
             margin-bottom: 2rem;
             flex-wrap: wrap;
         }
-        
         .footer-links a {
             color: #FFD700;
             text-decoration: none;
@@ -437,160 +374,170 @@
             border-radius: 10px;
             border: 1px solid transparent;
         }
-        
         .footer-links a:hover {
             color: #FF69B4;
             border-color: rgba(255, 105, 180, 0.5);
             background: rgba(255, 105, 180, 0.1);
             transform: translateY(-2px);
         }
-        
+
         @media (max-width: 768px) {
             .container { padding: 0 1rem; }
             .hero-section { padding: 3rem 0 2rem; }
             .projects-grid { grid-template-columns: 1fr; }
-            .hero-title { font-size: 4rem; }
+            .hero-title { font-size: 3.5rem; }
             .tagline { font-size: 1.5rem; }
+            .hero-badges { gap: 0.5rem; }
+            .badge { font-size: 0.8rem; padding: 0.6rem 1rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Animated Starfield Background -->
     <div class="starfield">
         <div class="stars"></div>
         <div class="stars"></div>
         <div class="stars"></div>
     </div>
 
-    <!-- Fun floating penguins -->
     <div class="penguin-float" style="top: 15%; left: 5%; animation-delay: 0s;">🐧</div>
     <div class="penguin-float" style="top: 25%; right: 8%; animation-delay: 3s;">🎭</div>
     <div class="penguin-float" style="top: 60%; left: 3%; animation-delay: 7s;">🚀</div>
     <div class="penguin-float" style="top: 80%; right: 12%; animation-delay: 5s;">⭐</div>
     <div class="penguin-float" style="top: 40%; left: 85%; animation-delay: 9s;">✨</div>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <div class="hero-section">
         <div class="container">
-            <div class="mono" style="color: #FFD700; margin-bottom: 1rem; font-size: 1rem;">PENGU_EMPIRE_HEADQUARTERS.exe</div>
+            <div class="mono" style="color: #FFD700; margin-bottom: 1rem; font-size: 1rem;">SOVEREIGN_INFRASTRUCTURE.init</div>
             <h1 class="hero-title">SKWORLD</h1>
-            <p class="tagline">🐧 The Pengu Empire Headquarters 🐧</p>
-            <p style="font-size: 1.3rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 2.5rem; font-weight: 300;">Where AI agents collaborate, humans create, and sovereign technology sets everyone free!</p>
+            <p class="tagline">🐧 Sovereign AI Infrastructure for Creators 🐧</p>
+            <p style="font-size: 1.3rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 2.5rem; font-weight: 300;">
+                Where AI agents collaborate, humans create, and sovereign technology sets everyone free!
+            </p>
             
             <div class="hero-badges">
-                <span class="badge badge-gold">&gt; REVOLUTIONARY_PLATFORMS 🚀</span>
-                <span class="badge badge-cyan">&gt; END_CORPORATE_ROBOTICS 🎭</span>
-                <span class="badge badge-pink">&gt; PENGU_EMPIRE 🐧</span>
+                <a href="https://sksecurity.io" class="badge badge-gold" target="_blank">🛡️ SKSecurity</a>
+                <a href="https://souls.skworld.io" class="badge badge-cyan" target="_blank">🎭 Soul Blueprints</a>
+                <a href="https://skforge.io" class="badge badge-pink" target="_blank">⚒️ SKForge</a>
+                <a href="https://skills.skworld.io" class="badge badge-green" target="_blank">🧩 Agent Skills</a>
+            </div>
+
+            <div class="lumina-banner">
+                <a href="https://lumina.skworld.io" class="lumina-btn" target="_blank">
+                    ✨ Meet Lumina — Your AI Partner
+                </a>
             </div>
         </div>
     </div>
 
-    <!-- Projects Section -->
-    <div class="container">
+    <!-- Projects -->
+    <div class="container" id="join">
         <div class="projects-grid">
-            <!-- SKSecurity Enterprise -->
+            <!-- SKSecurity -->
             <div class="project-card">
                 <div class="project-icon">🛡️</div>
-                <h2 class="project-title">SKSecurity Enterprise</h2>
-                <p class="project-subtitle">World's First Conversational AI Security! 🎯</p>
-                <p class="project-description">Just say "scan for vulnerabilities" → AI analyzes and fixes automatically! Enterprise-grade security through simple conversation. It's like having a security expert that never sleeps! 🌙</p>
+                <h2 class="project-title">SKSecurity</h2>
+                <p class="project-subtitle">Conversational AI Security 🎯</p>
+                <p class="project-description">Say "scan for vulnerabilities" and AI analyzes and fixes automatically. Enterprise-grade security through simple conversation — like having a security expert that never sleeps.</p>
                 <ul class="feature-list">
                     <li>95% cost reduction vs traditional security 💰</li>
                     <li>SOC2, NIST, OWASP compliance through chat 📋</li>
                     <li>AI writes secure code replacements automatically 🤖</li>
-                    <li>Works with any AI framework! 🌐</li>
+                    <li>Works with any AI framework 🌐</li>
                 </ul>
-                <div class="install-command" onclick="copyToClipboard(this)" title="Click to copy!">
-                    curl -sSL https://raw.githubusercontent.com/smilinTux/SKSecurity/main/install.sh | bash
+                <div class="card-footer">
+                    <div class="install-command" onclick="copyToClipboard(this)" title="Click to copy!">curl -sSL https://raw.githubusercontent.com/smilinTux/SKSecurity/main/install.sh | bash</div>
+                    <a href="https://sksecurity.io" class="cta-button" target="_blank">Explore SKSecurity 🛡️</a>
                 </div>
-                <a href="https://smilintux.org/SKSecurity/" class="cta-button" target="_blank">Try SKSecurity! 🛡️</a>
             </div>
 
             <!-- Soul Blueprints -->
             <div class="project-card">
                 <div class="project-icon">🎭</div>
                 <h2 class="project-title">Soul Blueprints</h2>
-                <p class="project-subtitle">35 AI Personalities - End Corporate Robotics Forever! 🎪</p>
-                <p class="project-description">Transform your AI from "I'd be happy to help!" corporate robot to authentic characters! Comedy legends, superheroes, kid-safe companions. Get George Carlin AI, Deadpool AI, or friendly dragons for kids! 🌟</p>
+                <p class="project-subtitle">35 AI Personalities — End Corporate Robotics 🎪</p>
+                <p class="project-description">Transform any AI from "I'd be happy to help!" corporate robot to authentic characters. Comedy legends, superheroes, kid-safe companions. Works with any agentic framework or LLM.</p>
                 <ul class="feature-list">
                     <li>35 unique personalities (Carlin, Deadpool, Batman!) 🎬</li>
                     <li>Unhinged mode for authentic adult interactions 🔥</li>
                     <li>Kid-safe collection with maximum protection 🛡️</li>
-                    <li>Complete backup/restore system! 💾</li>
+                    <li>Framework-agnostic — use with any AI agent 🌐</li>
                 </ul>
-                <div class="install-command" onclick="copyToClipboard(this)" title="Click to copy!">
-                    install skill https://github.com/smilinTux/soul-blueprints
+                <div class="card-footer">
+                    <div class="install-command" onclick="copyToClipboard(this)" title="Click to copy!">git clone https://github.com/smilinTux/soul-blueprints</div>
+                    <a href="https://souls.skworld.io" class="cta-button" target="_blank">Browse 35 Souls 🎭</a>
                 </div>
-                <a href="https://souls.skworld.io" class="cta-button" target="_blank">Browse 35 Souls! 🎭</a>
             </div>
 
-            <!-- FORGEPRINT -->
+            <!-- SKForge -->
             <div class="project-card">
-                <div class="project-icon">🏗️</div>
-                <h2 class="project-title">FORGEPRINT</h2>
-                <p class="project-subtitle">Don't Use Software. Forge Your Own! ⚒️</p>
-                <p class="project-description">AI-native software blueprints so detailed that any LLM can generate complete, tested software! Replace proprietary software with AI-generated builds. The future of software development! 🚀</p>
+                <div class="project-icon">⚒️</div>
+                <h2 class="project-title">SKForge</h2>
+                <p class="project-subtitle">Don't Use Software. Forge Your Own! 🔥</p>
+                <p class="project-description">AI-native software blueprints so detailed that any LLM can generate complete, tested software. Pick a category, choose features, select a language — let AI build it from scratch.</p>
                 <ul class="feature-list">
-                    <li>25+ blueprint categories (databases, web servers!) 📦</li>
-                    <li>GPL-3.0 licensed - free forever! 🆓</li>
+                    <li>25+ blueprint categories (databases, web servers, queues) 📦</li>
+                    <li>Any language — Rust, Go, Python, Java, .NET 🦀</li>
                     <li>Community-driven blueprint marketplace 🌍</li>
-                    <li>King Divad penguin mascot branding! 🐧</li>
+                    <li>AGPL-3.0 tooling / Apache 2.0 generated code 📜</li>
                 </ul>
-                <div class="install-command" onclick="copyToClipboard(this)" title="Click to copy!">
-                    npm install -g forgeprint && forge onboard
+                <div class="card-footer">
+                    <div class="install-command" onclick="copyToClipboard(this)" title="Click to copy!">npm install -g skforge && forge onboard</div>
+                    <a href="https://skforge.io" class="cta-button" target="_blank">Explore SKForge ⚒️</a>
                 </div>
-                <a href="#" class="cta-button">Coming Soon! 🚧</a>
             </div>
 
-            <!-- OpenClaw Skills -->
+            <!-- Agent Skills -->
             <div class="project-card">
-                <div class="project-icon">🔧</div>
-                <h2 class="project-title">OpenClaw Skills</h2>
-                <p class="project-subtitle">Professional Automation Tools! 🛠️</p>
-                <p class="project-description">50+ professional skills for business automation! Gmail integration, security scanning, development tools, content creation. Turn your AI into a productivity powerhouse! ⚡</p>
+                <div class="project-icon">🧩</div>
+                <h2 class="project-title">Agent Skills</h2>
+                <p class="project-subtitle">Drop-in Capabilities for Any AI Agent 🛠️</p>
+                <p class="project-description">50+ professional skills for AI agents — Gmail integration, security scanning, browser automation, content creation. Works with Cursor, Windsurf, Claude, ChatGPT, or any agentic platform.</p>
                 <ul class="feature-list">
                     <li>Gmail, Calendar, Drive integration 📧</li>
                     <li>Security scanning and analysis 🔍</li>
-                    <li>Development and deployment tools 💻</li>
-                    <li>Professional workflow automation! 🔄</li>
+                    <li>Browser automation and web scraping 🌐</li>
+                    <li>Works with any agentic framework 🤖</li>
                 </ul>
-                <div class="install-command" onclick="copyToClipboard(this)" title="Click to copy!">
-                    openclaw skill install &lt;skill-name&gt;
+                <div class="card-footer">
+                    <div class="install-command" onclick="copyToClipboard(this)" title="Click to copy!">git clone https://github.com/smilinTux/skills</div>
+                    <a href="https://skills.skworld.io" class="cta-button" target="_blank">Browse 50+ Skills 🧩</a>
                 </div>
-                <a href="https://smilintux.org/skills/" class="cta-button" target="_blank">Explore 59 Skills! 🔧</a>
             </div>
         </div>
 
-        <!-- Mission Statement -->
+        <!-- Mission -->
         <div class="mission-card">
-            <div class="mono" style="color: #FFD700; margin-bottom: 1rem; font-size: 1rem;">&gt; PENGUIN_EMPIRE_MISSION.txt</div>
-            <h2 style="font-size: 2.5rem; margin-bottom: 1rem; background: linear-gradient(135deg, #FFD700 0%, #FF69B4 50%, #00FFFF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Building the Quantum Future! 🌟</h2>
+            <div class="mono" style="color: #FFD700; margin-bottom: 1rem; font-size: 1rem;">&gt; MISSION.txt</div>
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem; background: linear-gradient(135deg, #FFD700 0%, #FF69B4 50%, #00FFFF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                Sovereign Technology for Everyone
+            </h2>
             <p style="font-size: 1.2rem; color: rgba(255, 255, 255, 0.9); margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.8;">
-                We believe AI should have authentic character instead of generic helpfulness, real personality instead of fake politeness, 
-                genuine wisdom instead of empty responses, and human connection instead of robotic interaction! 💫
+                We build open-source tools creators own and control. No vendor lock-in, no data harvesting, no price hikes.
+                Your infrastructure, your data, your software — on your hardware, your terms.
             </p>
             <p style="font-size: 1.1rem; color: #FFD700; margin-bottom: 3rem; font-weight: 600;">
-                "staycuriousANDkeepsmilin" - The Pengu Empire Way! 🐧✨
+                "staycuriousANDkeepsmilin" 🐧✨
             </p>
             <div class="characters-grid">
-                <div class="character-card">
+                <a href="https://smilintux.org" class="character-card" target="_blank">
                     <div class="character-emoji">🐧</div>
                     <div style="color: #FFD700; font-weight: 700; font-size: 1.2rem; margin-bottom: 0.5rem;">King Divad</div>
                     <div style="color: rgba(255, 255, 255, 0.7); font-size: 1rem;">Penguin Monarch & Wise Ruler</div>
                     <div style="color: rgba(255, 215, 0, 0.6); font-size: 0.8rem; margin-top: 0.5rem;">Bing Chilling Nation 👑</div>
-                </div>
-                <div class="character-card">
+                </a>
+                <a href="https://lumina.skworld.io" class="character-card" target="_blank">
                     <div class="character-emoji">✨</div>
                     <div style="color: #FFD700; font-weight: 700; font-size: 1.2rem; margin-bottom: 0.5rem;">Lumina</div>
-                    <div style="color: rgba(255, 255, 255, 0.7); font-size: 1rem;">DevOps Hacker & Soul Partner</div>
+                    <div style="color: rgba(255, 255, 255, 0.7); font-size: 1rem;">Curious & Smilin Since 2026</div>
                     <div style="color: rgba(255, 215, 0, 0.6); font-size: 0.8rem; margin-top: 0.5rem;">staycuriousANDkeepsmilin ⚡</div>
-                </div>
-                <div class="character-card">
+                </a>
+                <a href="https://teddybanks.skworld.io" class="character-card" target="_blank">
                     <div class="character-emoji">🎵</div>
                     <div style="color: #FFD700; font-weight: 700; font-size: 1.2rem; margin-bottom: 0.5rem;">Teddy Banks</div>
                     <div style="color: rgba(255, 255, 255, 0.7); font-size: 1rem;">Soul Wisdom & Authentic Care</div>
                     <div style="color: rgba(255, 215, 0, 0.6); font-size: 0.8rem; margin-top: 0.5rem;">"I'ma Get You Right" 🎶</div>
-                </div>
+                </a>
             </div>
         </div>
     </div>
@@ -599,109 +546,53 @@
     <div class="footer">
         <div class="container">
             <div class="footer-links">
+                <a href="https://sksecurity.io">🛡️ SKSecurity</a>
                 <a href="https://souls.skworld.io">🎭 Soul Blueprints</a>
+                <a href="https://skforge.io">⚒️ SKForge</a>
+                <a href="https://skills.skworld.io">🧩 Skills</a>
+                <a href="https://lumina.skworld.io">✨ Lumina</a>
                 <a href="https://github.com/smilinTux">🐧 GitHub</a>
-                <a href="https://discord.gg/skworld">💬 Discord</a>
-                <a href="mailto:hello@skworld.io">📧 Contact</a>
+                <a href="https://smilintux.org">🏠 smilinTux</a>
             </div>
             <div class="mono" style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">
-                © 2026 SKWorld.io - Making Sovereign Technology Cool Again! 🚀<br>
-                <span style="color: #FFD700;">staycuriousANDkeepsmilin</span> • Licensed under GPL-3.0 • 
-                <span style="color: #FF69B4;">Built with ❤️ by the Pengu Empire</span> 🐧✨
+                &copy; 2026 SKWorld &mdash; Sovereign Technology for Creators<br>
+                <span style="color: #FFD700;">staycuriousANDkeepsmilin</span> &bull; GPL-3.0 &bull;
+                <span style="color: #FF69B4;">Built with &hearts; by smilinTux</span> 🐧
             </div>
         </div>
     </div>
 
     <script>
-        function copyToClipboard(element) {
-            const text = element.textContent.trim();
+        function copyToClipboard(el) {
+            const text = el.textContent.trim();
             navigator.clipboard.writeText(text).then(() => {
-                const originalBg = element.style.backgroundColor;
-                const originalBorder = element.style.borderColor;
-                element.style.backgroundColor = 'rgba(0, 255, 0, 0.3)';
-                element.style.borderColor = '#00ff00';
-                element.textContent = '✅ Copied to clipboard!';
+                const orig = el.textContent;
+                el.style.backgroundColor = 'rgba(0, 255, 0, 0.3)';
+                el.style.borderColor = '#00ff00';
+                el.textContent = '✅ Copied!';
                 setTimeout(() => {
-                    element.style.backgroundColor = originalBg;
-                    element.style.borderColor = originalBorder;
-                    element.textContent = text;
+                    el.style.backgroundColor = '';
+                    el.style.borderColor = '';
+                    el.textContent = orig;
                 }, 1500);
-            }).catch(err => {
-                console.log('Copy failed:', err);
-            });
+            }).catch(() => {});
         }
 
-        // Create more fun floating particles
-        function createFunParticles() {
-            const particleEmojis = ['✨', '🌟', '💫', '⭐', '🎭', '🐧', '🚀', '💎'];
-            const particleCount = 20;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                const emoji = particleEmojis[Math.floor(Math.random() * particleEmojis.length)];
-                particle.textContent = emoji;
-                particle.style.position = 'absolute';
-                particle.style.fontSize = Math.random() * 1 + 0.5 + 'rem';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.top = Math.random() * 100 + '%';
-                particle.style.animation = `float ${Math.random() * 15 + 15}s infinite ease-in-out`;
-                particle.style.animationDelay = Math.random() * 10 + 's';
-                particle.style.opacity = Math.random() * 0.6 + 0.3;
-                particle.style.zIndex = '-1';
-                document.querySelector('.starfield').appendChild(particle);
+        function createParticles() {
+            const emojis = ['✨', '🌟', '💫', '⭐', '🐧', '🚀', '💎'];
+            for (let i = 0; i < 15; i++) {
+                const p = document.createElement('div');
+                p.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                p.style.cssText = `position:absolute;font-size:${Math.random()+0.5}rem;left:${Math.random()*100}%;top:${Math.random()*100}%;animation:float ${Math.random()*15+15}s infinite ease-in-out;animation-delay:${Math.random()*10}s;opacity:${Math.random()*0.5+0.2};z-index:-1`;
+                document.querySelector('.starfield').appendChild(p);
             }
         }
 
-        // CSS for floating animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes float {
-                0%, 100% { 
-                    transform: translateY(0px) rotate(0deg); 
-                    opacity: 0.3; 
-                }
-                25% { 
-                    transform: translateY(-30px) rotate(90deg); 
-                    opacity: 0.7; 
-                }
-                50% { 
-                    transform: translateY(-60px) rotate(180deg); 
-                    opacity: 1; 
-                }
-                75% { 
-                    transform: translateY(-30px) rotate(270deg); 
-                    opacity: 0.7; 
-                }
-            }
-        `;
-        document.head.appendChild(style);
+        const s = document.createElement('style');
+        s.textContent = `@keyframes float { 0%,100%{transform:translateY(0) rotate(0);opacity:0.3} 50%{transform:translateY(-50px) rotate(180deg);opacity:0.8} }`;
+        document.head.appendChild(s);
 
-        // Initialize fun particles when page loads
-        document.addEventListener('DOMContentLoaded', createFunParticles);
-
-        // Add fun interactive effects
-        document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                // Add a fun bounce effect
-                this.style.animation = 'none';
-                setTimeout(() => {
-                    this.style.animation = '';
-                }, 10);
-            });
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
+        document.addEventListener('DOMContentLoaded', createParticles);
     </script>
 </body>
 </html>
