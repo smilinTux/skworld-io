@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SKWorld — Sovereign AI Infrastructure for Creators 🐧</title>
     <meta name="description" content="Open-source sovereign AI infrastructure. Security, soul blueprints, software forging, and agent skills — tools creators own and control.">
-    <link rel="canonical" href="https://skworld.io">
-
     <!-- Open Graph -->
     <meta property="og:title" content="SKWorld — Sovereign AI Infrastructure for Creators">
     <meta property="og:description" content="Open-source sovereign AI infrastructure. Security, soul blueprints, software forging, and agent skills — tools creators own and control.">
@@ -452,17 +450,49 @@
   <meta property="og:locale" content="en_US">
   <meta name="twitter:site" content="@smilinTux">
   <meta name="theme-color" content="#0a0a1a">
+  <link rel="canonical" href="https://skworld.io/">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "SKWorld",
-    "description": "The sovereign AI ecosystem — open-source infrastructure for creators who want to own their AI agents, data, and identity.",
-    "url": "https://skworld.io",
-    "sameAs": ["https://github.com/smilinTux"],
-    "foundedDate": "2026",
-    "keywords": "sovereign AI, AI agents, local AI, privacy, data sovereignty, open source, SKStacks, SKMemory, SKCapstone"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://smilintux.github.io/#organization",
+        "name": "smilinTux",
+        "url": "https://smilintux.github.io",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://skworld.io/logo.png",
+          "width": 512,
+          "height": 512
+        },
+        "sameAs": ["https://github.com/smilinTux"],
+        "description": "Sovereign AI infrastructure — building open, authentic, human-first technology. Home of the Pengu Empire.",
+        "foundingDate": "2024",
+        "knowsAbout": ["Sovereign AI", "AI agent infrastructure", "Open source security", "Persistent AI memory", "Decentralized identity"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://skworld.io/#website",
+        "name": "SKWorld",
+        "url": "https://skworld.io",
+        "publisher": {"@id": "https://smilintux.github.io/#organization"},
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://skworld.io/#app",
+        "name": "SKWorld",
+        "description": "The Pengu Empire headquarters — sovereign AI ecosystem hub linking SKMemory, SKSecurity, CapAuth, SKComm, SKGraph, SKVector, and the full smilinTux toolchain.",
+        "url": "https://skworld.io",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Linux, macOS",
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "license": "https://www.gnu.org/licenses/gpl-3.0.en.html",
+        "publisher": {"@id": "https://smilintux.github.io/#organization"}
+      }
+    ]
   }
   </script>
 </head>
