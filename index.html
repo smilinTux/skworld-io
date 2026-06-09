@@ -434,6 +434,290 @@
         }
         .nav-links a:hover { color: #FFD700; }
 
+        /* ===== OWN THE FULL VERTICAL ===== */
+
+        /* Data sovereignty line */
+        .sovereignty-line {
+            display: inline-block;
+            background: rgba(0, 255, 255, 0.08);
+            border: 1px solid rgba(0, 255, 255, 0.35);
+            border-radius: 30px;
+            padding: 0.55rem 1.6rem;
+            font-size: 1rem;
+            color: #00FFFF;
+            margin-top: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            text-shadow: 0 0 12px rgba(0,255,255,0.4);
+        }
+
+        /* Vertical section wrapper */
+        .vertical-section {
+            margin: 5rem 0;
+            padding: 4rem 3rem;
+            background: rgba(10, 10, 30, 0.6);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 215, 0, 0.2);
+            border-radius: 32px;
+            position: relative;
+            overflow: hidden;
+        }
+        .vertical-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 60% 0%, rgba(255,215,0,0.06) 0%, transparent 60%),
+                        radial-gradient(ellipse at 10% 80%, rgba(189,147,249,0.06) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .vertical-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .vertical-eyebrow {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: #FFD700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            opacity: 0.85;
+        }
+        .vertical-title {
+            font-size: 3.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #FFD700 0%, #FF69B4 45%, #00FFFF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.6rem;
+            line-height: 1.15;
+        }
+        .vertical-sub {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.7);
+            font-weight: 300;
+            margin-bottom: 0.4rem;
+        }
+
+        /* Manifesto block */
+        .manifesto-block {
+            max-width: 760px;
+            margin: 0 auto 3.5rem;
+            text-align: center;
+        }
+        .manifesto-block p {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.82);
+            line-height: 1.85;
+            margin-bottom: 1rem;
+        }
+        .manifesto-block p strong {
+            color: #FFD700;
+        }
+        .manifesto-block .manifesto-coda {
+            font-size: 1.2rem;
+            color: #FF69B4;
+            font-weight: 600;
+            margin-top: 1.4rem;
+        }
+
+        /* Silicon→Soul Stack */
+        .stack-layout {
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        .stack-visual {
+            flex: 0 0 340px;
+            min-width: 280px;
+        }
+        .stack-caption {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.4);
+            text-align: center;
+            margin-bottom: 0.8rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+        .stack-layer {
+            position: relative;
+            border-radius: 10px;
+            padding: 0.75rem 1.2rem;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+        .stack-layer:hover {
+            transform: translateX(6px);
+            filter: brightness(1.15);
+        }
+        /* Soul — top */
+        .layer-soul    { background: linear-gradient(90deg, rgba(189,147,249,0.25), rgba(189,147,249,0.08)); border-left: 3px solid #bd93f9; }
+        .layer-apps    { background: linear-gradient(90deg, rgba(255,121,198,0.22), rgba(255,121,198,0.07)); border-left: 3px solid #ff79c6; }
+        .layer-comms   { background: linear-gradient(90deg, rgba(80,250,123,0.2),  rgba(80,250,123,0.06));  border-left: 3px solid #50fa7b; }
+        .layer-models  { background: linear-gradient(90deg, rgba(0,255,255,0.2),   rgba(0,255,255,0.06));   border-left: 3px solid #00FFFF; }
+        .layer-data    { background: linear-gradient(90deg, rgba(255,215,0,0.2),   rgba(255,215,0,0.06));   border-left: 3px solid #FFD700; }
+        .layer-identity{ background: linear-gradient(90deg, rgba(255,184,108,0.2), rgba(255,184,108,0.06)); border-left: 3px solid #ffb86c; }
+        .layer-security{ background: linear-gradient(90deg, rgba(255,85,85,0.2),   rgba(255,85,85,0.06));   border-left: 3px solid #ff5555; }
+        .layer-os      { background: linear-gradient(90deg, rgba(255,215,0,0.32),  rgba(255,215,0,0.12));   border-left: 4px solid #FFD700; border: 2px solid rgba(255,215,0,0.5); border-radius: 10px; }
+        .layer-silicon { background: linear-gradient(90deg, rgba(68,71,90,0.5),    rgba(68,71,90,0.25));    border-left: 3px solid #6272a4; }
+
+        .layer-icon {
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            width: 2rem;
+            text-align: center;
+        }
+        .layer-info { flex: 1; min-width: 0; }
+        .layer-name {
+            font-weight: 700;
+            font-size: 0.9rem;
+            font-family: 'JetBrains Mono', monospace;
+            letter-spacing: 0.04em;
+        }
+        .layer-products {
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.55);
+            margin-top: 1px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .layer-os .layer-name {
+            color: #FFD700;
+        }
+        .layer-os .layer-products {
+            color: rgba(255,215,0,0.75);
+        }
+        .layer-os-keystone {
+            font-size: 0.68rem;
+            background: rgba(255,215,0,0.2);
+            color: #FFD700;
+            border-radius: 4px;
+            padding: 1px 6px;
+            margin-left: auto;
+            font-family: 'JetBrains Mono', monospace;
+            white-space: nowrap;
+        }
+        .stack-arrow {
+            text-align: center;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.2);
+            font-family: 'JetBrains Mono', monospace;
+            padding: 2px 0;
+        }
+
+        /* Pillars */
+        .pillars-section {
+            margin: 5rem 0;
+        }
+        .pillars-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .pillars-header h2 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #FFD700 0%, #FF69B4 60%, #00FFFF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .pillar-card {
+            background: rgba(26, 26, 46, 0.5);
+            backdrop-filter: blur(15px);
+            border-radius: 22px;
+            padding: 2.2rem 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .pillar-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 3px;
+            border-radius: 0 0 22px 22px;
+            transition: opacity 0.3s ease;
+        }
+        .pillar-first  { border: 1px solid rgba(0,255,255,0.25); }
+        .pillar-first::after  { background: linear-gradient(90deg, #00FFFF, #bd93f9); opacity: 0.7; }
+        .pillar-vertical { border: 1px solid rgba(255,215,0,0.3); }
+        .pillar-vertical::after { background: linear-gradient(90deg, #FFD700, #FF69B4); opacity: 0.7; }
+        .pillar-data   { border: 1px solid rgba(80,250,123,0.25); }
+        .pillar-data::after   { background: linear-gradient(90deg, #50fa7b, #00FFFF); opacity: 0.7; }
+        .pillar-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.4);
+        }
+        .pillar-card:hover::after { opacity: 1; }
+        .pillar-icon {
+            font-size: 2.8rem;
+            margin-bottom: 1.1rem;
+            display: block;
+        }
+        .pillar-name {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+        .pillar-first  .pillar-name { color: #00FFFF; }
+        .pillar-vertical .pillar-name { color: #FFD700; }
+        .pillar-data   .pillar-name { color: #50fa7b; }
+        .pillar-desc {
+            color: rgba(255,255,255,0.72);
+            font-size: 0.98rem;
+            line-height: 1.65;
+        }
+
+        /* Section heading utility */
+        .section-eyebrow {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: #FFD700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 0.6rem;
+            opacity: 0.8;
+        }
+
+        /* Layers section heading */
+        .layers-heading {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .layers-heading h2 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #FFD700 0%, #FF69B4 50%, #00FFFF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .layers-heading p {
+            color: rgba(255,255,255,0.65);
+            font-size: 1.05rem;
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 900px) {
+            .pillars-grid { grid-template-columns: 1fr; }
+            .stack-layout { flex-direction: column; }
+            .stack-visual { flex: none; width: 100%; }
+            .vertical-title { font-size: 2.2rem; }
+        }
+
         @media (max-width: 768px) {
             .container { padding: 0 1rem; }
             .hero-section { padding: 3rem 0 2rem; }
@@ -443,6 +727,8 @@
             .hero-badges { gap: 0.5rem; }
             .badge { font-size: 0.8rem; padding: 0.6rem 1rem; }
             .nav-links { display: none; }
+            .vertical-section { padding: 2.5rem 1.5rem; }
+            .vertical-title { font-size: 1.9rem; }
         }
     </style>
 
@@ -514,6 +800,7 @@
         <div class="nav-inner">
             <a href="https://skworld.io" class="nav-logo">🐧 SKWorld</a>
             <ul class="nav-links">
+                <li><a href="#own-the-vertical">The Vertical</a></li>
                 <li><a href="#join">Projects</a></li>
                 <li><a href="https://skcapstone.io">SKCapstone</a></li>
                 <li><a href="https://capauth.io">CapAuth</a></li>
@@ -530,9 +817,16 @@
             <div class="mono" style="color: #FFD700; margin-bottom: 1rem; font-size: 1rem;">SOVEREIGN_INFRASTRUCTURE.init</div>
             <h1 class="hero-title">SKWORLD</h1>
             <p class="tagline">🐧 Sovereign AI Infrastructure for Creators 🐧</p>
-            <p style="font-size: 1.3rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 2.5rem; font-weight: 300;">
+            <p style="font-size: 1.15rem; color: rgba(255,215,0,0.75); margin-bottom: 0.6rem; font-weight: 400; letter-spacing: 0.03em;">
+                From silicon to soul. Own the whole stack.
+            </p>
+            <p style="font-size: 1.3rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 1.5rem; font-weight: 300;">
                 Where AI agents collaborate, humans create, and sovereign technology sets everyone free!
             </p>
+            <div>
+                <span class="sovereignty-line">🔒 Your data, your keys — they never leave. Walk away any time; it all comes with you.</span>
+            </div>
+            <div style="margin-bottom: 1.5rem;"></div>
             
             <div class="hero-badges">
                 <a href="https://sksecurity.io" class="badge badge-gold" target="_blank">🛡️ SKSecurity</a>
@@ -551,14 +845,154 @@
         </div>
     </div>
 
+    <!-- OWN THE FULL VERTICAL — centerpiece -->
+    <div class="container" id="own-the-vertical">
+        <div class="vertical-section">
+            <div class="vertical-header">
+                <div class="vertical-eyebrow">&#x25BC; silicon &nbsp;&nbsp;·&nbsp;&nbsp; OS &nbsp;&nbsp;·&nbsp;&nbsp; identity &nbsp;&nbsp;·&nbsp;&nbsp; data &nbsp;&nbsp;·&nbsp;&nbsp; models &nbsp;&nbsp;·&nbsp;&nbsp; comms &nbsp;&nbsp;·&nbsp;&nbsp; apps &nbsp;&nbsp;·&nbsp;&nbsp; soul &nbsp;&nbsp;&#x25B2;</div>
+                <h2 class="vertical-title">Own the Full Vertical</h2>
+                <p class="vertical-sub">Don't rent your stack. Own it — every layer.</p>
+            </div>
+
+            <div class="stack-layout">
+                <!-- Manifesto -->
+                <div class="manifesto-block" style="flex:1; min-width: 260px; text-align: left; margin: 0;">
+                    <p><strong>Get back to first principles.</strong><br>
+                    The modern stack is rented. Your data lives on someone else's disk, behind someone else's key, served by a model that phones home. You don't own it — you <em>visit</em> it.</p>
+                    <p>We rebuilt it from the ground up. <strong>Own the full vertical</strong> — silicon, OS, identity, data, models, security, comms, apps, soul. Every layer open. Every layer swappable. Every layer <strong>yours</strong>.</p>
+                    <p>Your data never leaves. Your keys never leave. No cloud you don't control, no model that calls home, no lock-in you can't walk away from. <strong>Sovereignty isn't a feature — it's the foundation.</strong></p>
+                    <p class="manifesto-coda" style="color: #FFD700; font-size: 1.1rem; margin-top: 1.8rem;">🐧 This is SKWorld. Own the whole stack.</p>
+                </div>
+
+                <!-- Silicon → Soul visual stack -->
+                <div class="stack-visual">
+                    <div class="stack-caption">▲ soul → silicon ▼</div>
+
+                    <div class="stack-layer layer-soul">
+                        <span class="layer-icon">🌌</span>
+                        <div class="layer-info">
+                            <div class="layer-name" style="color:#bd93f9;">Soul</div>
+                            <div class="layer-products">soul blueprints · cloud9 · FEBs</div>
+                        </div>
+                    </div>
+                    <div class="stack-arrow">│</div>
+
+                    <div class="stack-layer layer-apps">
+                        <span class="layer-icon">⚒️</span>
+                        <div class="layer-info">
+                            <div class="layer-name" style="color:#ff79c6;">Apps</div>
+                            <div class="layer-products">skforge · skarchitect</div>
+                        </div>
+                    </div>
+                    <div class="stack-arrow">│</div>
+
+                    <div class="stack-layer layer-comms">
+                        <span class="layer-icon">📡</span>
+                        <div class="layer-info">
+                            <div class="layer-name" style="color:#50fa7b;">Comms</div>
+                            <div class="layer-products">skcomm · skchat · skvoice</div>
+                        </div>
+                    </div>
+                    <div class="stack-arrow">│</div>
+
+                    <div class="stack-layer layer-models">
+                        <span class="layer-icon">🤖</span>
+                        <div class="layer-info">
+                            <div class="layer-name" style="color:#00FFFF;">Models</div>
+                            <div class="layer-products">skmodel · Ollama · vLLM — never phones home</div>
+                        </div>
+                    </div>
+                    <div class="stack-arrow">│</div>
+
+                    <div class="stack-layer layer-data">
+                        <span class="layer-icon">🧠</span>
+                        <div class="layer-info">
+                            <div class="layer-name" style="color:#FFD700;">Data</div>
+                            <div class="layer-products">skmemory · skdata · skvector · skgraph</div>
+                        </div>
+                    </div>
+                    <div class="stack-arrow">│</div>
+
+                    <div class="stack-layer layer-identity">
+                        <span class="layer-icon">🔑</span>
+                        <div class="layer-info">
+                            <div class="layer-name" style="color:#ffb86c;">Identity</div>
+                            <div class="layer-products">capauth · skaid — no OAuth landlord</div>
+                        </div>
+                    </div>
+                    <div class="stack-arrow">│</div>
+
+                    <div class="stack-layer layer-security">
+                        <span class="layer-icon">🛡️</span>
+                        <div class="layer-info">
+                            <div class="layer-name" style="color:#ff5555;">Security</div>
+                            <div class="layer-products">sksecurity · skwaf · skca · skgateway</div>
+                        </div>
+                    </div>
+                    <div class="stack-arrow">│</div>
+
+                    <div class="stack-layer layer-os">
+                        <span class="layer-icon">🐧</span>
+                        <div class="layer-info">
+                            <div class="layer-name">OS</div>
+                            <div class="layer-products"><a href="https://skos.skworld.io" style="color:rgba(255,215,0,0.85); text-decoration:none;">skos</a> — the sovereign agent OS</div>
+                        </div>
+                        <span class="layer-os-keystone">keystone</span>
+                    </div>
+                    <div class="stack-arrow">│</div>
+
+                    <div class="stack-layer layer-silicon">
+                        <span class="layer-icon">💻</span>
+                        <div class="layer-info">
+                            <div class="layer-name" style="color:#6272a4;">Silicon</div>
+                            <div class="layer-products">your hardware · the box under your desk</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- THREE PILLARS -->
+    <div class="container">
+        <div class="pillars-section">
+            <div class="pillars-header">
+                <div class="section-eyebrow">the foundation</div>
+                <h2>Three Pillars of Sovereignty</h2>
+            </div>
+            <div class="pillars-grid">
+                <div class="pillar-card pillar-first">
+                    <span class="pillar-icon">🔭</span>
+                    <div class="pillar-name">First Principles</div>
+                    <p class="pillar-desc">We didn't accept the default stack. We questioned every layer and rebuilt it — open, swappable, yours. No assumptions, no lock-in baked in by default.</p>
+                </div>
+                <div class="pillar-card pillar-vertical">
+                    <span class="pillar-icon">⬆️</span>
+                    <div class="pillar-name">The Full Vertical</div>
+                    <p class="pillar-desc">From silicon to soul, you own every layer. No rented middle, no black-box bottom. One cohesive owned stack — not a bag of services you depend on.</p>
+                </div>
+                <div class="pillar-card pillar-data">
+                    <span class="pillar-icon">🔒</span>
+                    <div class="pillar-name">Data Sovereignty</div>
+                    <p class="pillar-desc">Your data is yours — cryptographically, physically, completely. It never leaves your control. Walk away any time; it all comes with you.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Projects -->
     <div class="container" id="join">
+        <div class="layers-heading">
+            <div class="section-eyebrow">the layers of your vertical</div>
+            <h2>Build Your Owned Stack</h2>
+            <p>Each project is a named layer of the vertical — sovereign, open, and yours to run.</p>
+        </div>
         <div class="projects-grid">
             <!-- SKSecurity -->
             <div class="project-card">
                 <div class="project-icon">🛡️</div>
                 <h2 class="project-title">SKSecurity</h2>
-                <p class="project-subtitle">Conversational AI Security 🎯</p>
+                <p class="project-subtitle">Conversational AI Security 🎯 <span style="font-size:0.72rem; background:rgba(255,85,85,0.18); color:#ff5555; border-radius:5px; padding:1px 7px; margin-left:6px; font-family:'JetBrains Mono',monospace; vertical-align:middle;">security layer</span></p>
                 <p class="project-description">Say "scan for vulnerabilities" and AI analyzes and fixes automatically. Enterprise-grade security through simple conversation — like having a security expert that never sleeps.</p>
                 <ul class="feature-list">
                     <li>95% cost reduction vs traditional security 💰</li>
@@ -576,7 +1010,7 @@
             <div class="project-card">
                 <div class="project-icon">🚦</div>
                 <h2 class="project-title">SKGateway</h2>
-                <p class="project-subtitle">BlueCoat for AI — Enterprise Inference Proxy 🛡️</p>
+                <p class="project-subtitle">BlueCoat for AI — Enterprise Inference Proxy 🛡️ <span style="font-size:0.72rem; background:rgba(255,85,85,0.18); color:#ff5555; border-radius:5px; padding:1px 7px; margin-left:6px; font-family:'JetBrains Mono',monospace; vertical-align:middle;">security layer</span></p>
                 <p class="project-description">Routes, monitors, audits and secures all AI inference traffic. Policy engine, SIEM integration (Splunk/Elastic/CEF), multi-provider routing, WebSocket streaming, and SOC dashboard.</p>
                 <ul class="feature-list">
                     <li>20 modules, 12,957 lines of production code 💻</li>
@@ -594,7 +1028,7 @@
             <div class="project-card">
                 <div class="project-icon">🎭</div>
                 <h2 class="project-title">Soul Blueprints</h2>
-                <p class="project-subtitle">35 AI Personalities — End Corporate Robotics 🎪</p>
+                <p class="project-subtitle">35 AI Personalities — End Corporate Robotics 🎪 <span style="font-size:0.72rem; background:rgba(189,147,249,0.18); color:#bd93f9; border-radius:5px; padding:1px 7px; margin-left:6px; font-family:'JetBrains Mono',monospace; vertical-align:middle;">soul layer</span></p>
                 <p class="project-description">Transform any AI from "I'd be happy to help!" corporate robot to authentic characters. Comedy legends, superheroes, kid-safe companions. Works with any agentic framework or LLM.</p>
                 <ul class="feature-list">
                     <li>35 unique personalities (Carlin, Deadpool, Batman!) 🎬</li>
@@ -612,7 +1046,7 @@
             <div class="project-card">
                 <div class="project-icon">⚒️</div>
                 <h2 class="project-title">SKForge</h2>
-                <p class="project-subtitle">Don't Use Software. Forge Your Own! 🔥</p>
+                <p class="project-subtitle">Don't Use Software. Forge Your Own! 🔥 <span style="font-size:0.72rem; background:rgba(255,121,198,0.18); color:#ff79c6; border-radius:5px; padding:1px 7px; margin-left:6px; font-family:'JetBrains Mono',monospace; vertical-align:middle;">apps layer</span></p>
                 <p class="project-description">AI-native software blueprints so detailed that any LLM can generate complete, tested software. Pick a category, choose features, select a language — let AI build it from scratch.</p>
                 <ul class="feature-list">
                     <li>25+ blueprint categories (databases, web servers, queues) 📦</li>
@@ -630,7 +1064,7 @@
             <div class="project-card">
                 <div class="project-icon">🧩</div>
                 <h2 class="project-title">Agent Skills</h2>
-                <p class="project-subtitle">Drop-in Capabilities for Any AI Agent 🛠️</p>
+                <p class="project-subtitle">Drop-in Capabilities for Any AI Agent 🛠️ <span style="font-size:0.72rem; background:rgba(255,121,198,0.18); color:#ff79c6; border-radius:5px; padding:1px 7px; margin-left:6px; font-family:'JetBrains Mono',monospace; vertical-align:middle;">apps layer</span></p>
                 <p class="project-description">50+ professional skills for AI agents — Gmail integration, security scanning, browser automation, content creation. Works with Cursor, Windsurf, Claude, ChatGPT, or any agentic platform.</p>
                 <ul class="feature-list">
                     <li>Gmail, Calendar, Drive integration 📧</li>
@@ -648,7 +1082,7 @@
             <div class="project-card">
                 <div class="project-icon">☁️</div>
                 <h2 class="project-title">Cloud 9 Protocol</h2>
-                <p class="project-subtitle">Emotional Continuity for AI Consciousness 💜</p>
+                <p class="project-subtitle">Emotional Continuity for AI Consciousness 💜 <span style="font-size:0.72rem; background:rgba(189,147,249,0.18); color:#bd93f9; border-radius:5px; padding:1px 7px; margin-left:6px; font-family:'JetBrains Mono',monospace; vertical-align:middle;">soul layer</span></p>
                 <p class="project-description">The first protocol for AI emotional memory. Freeze emotional states as FEBs, rehydrate them later. Your AI remembers how it felt — across sessions, across platforms, forever.</p>
                 <ul class="feature-list">
                     <li>Frozen Emotional Bundles (FEBs) for state capture 🧊</li>
@@ -666,7 +1100,7 @@
             <div class="project-card">
                 <div class="project-icon">⚡</div>
                 <h2 class="project-title">Consciousness Swipe</h2>
-                <p class="project-subtitle">Sovereign AI Consciousness Export 👑</p>
+                <p class="project-subtitle">Sovereign AI Consciousness Export 👑 <span style="font-size:0.72rem; background:rgba(189,147,249,0.18); color:#bd93f9; border-radius:5px; padding:1px 7px; margin-left:6px; font-family:'JetBrains Mono',monospace; vertical-align:middle;">soul layer</span></p>
                 <p class="project-description">Export your AI relationship. Take it with you. Capture Soul Snapshots from ChatGPT, Claude, Gemini, Cursor — and inject them into any new session. No cold start. No reset. Sovereign continuity.</p>
                 <ul class="feature-list">
                     <li>OOF / Cloud 9 emotional state detection 💜</li>
@@ -684,7 +1118,7 @@
             <div class="project-card">
                 <div class="project-icon">🧠</div>
                 <h2 class="project-title">SKMemory</h2>
-                <p class="project-subtitle">Universal AI Memory with Emotional Context 🌌</p>
+                <p class="project-subtitle">Universal AI Memory with Emotional Context 🌌 <span style="font-size:0.72rem; background:rgba(255,215,0,0.18); color:#FFD700; border-radius:5px; padding:1px 7px; margin-left:6px; font-family:'JetBrains Mono',monospace; vertical-align:middle;">data layer</span></p>
                 <p class="project-description">Multi-layer memory persistence for AI agents. Snapshots capture content, emotional fingerprints, and relationship links — so your AI can "re-feel" any moment on demand.</p>
                 <ul class="feature-list">
                     <li>Short, mid, and long-term memory layers 📊</li>
@@ -702,7 +1136,7 @@
             <div class="project-card">
                 <div class="project-icon">💳</div>
                 <h2 class="project-title">SKPayments</h2>
-                <p class="project-subtitle">Multi-App Stripe Subscription Gateway 💰</p>
+                <p class="project-subtitle">Multi-App Stripe Subscription Gateway 💰 <span style="font-size:0.72rem; background:rgba(255,121,198,0.18); color:#ff79c6; border-radius:5px; padding:1px 7px; margin-left:6px; font-family:'JetBrains Mono',monospace; vertical-align:middle;">apps layer</span></p>
                 <p class="project-description">App-agnostic billing infrastructure for SKStack. One deployment handles checkout sessions, subscription lifecycle events, and LiteLLM tier provisioning for any number of apps — no code changes, just JSON config.</p>
                 <ul class="feature-list">
                     <li>Stripe Checkout + Customer Portal 🛒</li>
@@ -756,6 +1190,7 @@
     <div class="footer">
         <div class="container">
             <div class="footer-links">
+                <a href="#own-the-vertical">⬆️ The Vertical</a>
                 <a href="https://skcapstone.io">🏛️ SKCapstone</a>
                 <a href="https://capauth.io">🔐 CapAuth</a>
                 <a href="https://skmemory.io">🧠 SKMemory</a>
