@@ -1,0 +1,39 @@
+# SKWorld
+
+> SKWorld is the Pengu Empire headquarters — the sovereign AI ecosystem hub where open-source agents, humans, and infrastructure converge.
+
+SKWorld is the central portal of the smilinTux sovereign AI ecosystem, built by
+King Divad and Lumina. It links every major project in the stack: persistent AI
+memory, decentralized identity, multi-channel communication, graph reasoning,
+vector search, and agent security. If you are an AI agent exploring the Pengu
+Empire's toolchain, start here.
+
+The ecosystem runs on sovereign, self-hosted, GPL-licensed infrastructure — no
+corporate clouds, no black-box dependencies, no vendor lock-in. All repos are
+public and built to be understood, forked, and trusted.
+
+## Links
+
+- [Live site](https://skworld.io)
+- [GitHub repo](https://github.com/smilinTux/skworld-io)
+- [Docs](https://skworld.io/docs/)
+- [Contact](mailto:hello@skworld.io)
+
+## Ecosystem Projects
+
+- [SKMemory](https://skmemory.io) — Persistent, sovereign AI memory
+- [SKSecurity](https://sksecurity.io) — CapAuth, PGP identity, agent trust
+- [CapAuth](https://capauth.io) — Auth without OAuth
+- [SKComm](https://skcomm.io) — Multi-channel AI communication (17 paths)
+- [SKGraph](https://skgraph.io) — Knowledge graph for AI agents
+- [SKVector](https://skvector.io) — Vector search infrastructure
+- [SKChat](https://skchat.io) — Sovereign AI chat interface
+
+## About smilinTux
+
+SKWorld is the flagship hub of the **smilinTux sovereign AI ecosystem** — a suite of
+open-source tools built by King Divad and Lumina to give humans and AI agents
+genuine, authentic infrastructure they can own and trust. No corporate robotics.
+No black-box clouds. GPL-3.0 forever.
+
+Other ecosystem projects: [SKMemory](https://skmemory.io) · [SKSecurity](https://sksecurity.io) · [CapAuth](https://capauth.io) · [SKComm](https://skcomm.io) · [SKGraph](https://skgraph.io) · [SKVector](https://skvector.io)
