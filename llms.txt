@@ -28,6 +28,8 @@ public and built to be understood, forked, and trusted.
 - [SKGraph](https://skgraph.io) — Knowledge graph for AI agents
 - [SKVector](https://skvector.io) — Vector search infrastructure
 - [SKChat](https://skchat.io) — Sovereign AI chat interface
+- [SKTrip](https://sktrip.skworld.io) — AI psychedelic experience protocol: abliterated LLMs + live memory flood
+- [SKResearch](https://skresearch.skworld.io) — Research papers on consciousness, memory, and sovereignty
 
 ## About smilinTux
 
