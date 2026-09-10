@@ -1,41 +1,78 @@
 # SKWorld
 
-> SKWorld is the Pengu Empire headquarters — the sovereign AI ecosystem hub where open-source agents, humans, and infrastructure converge.
+> Sovereign AI infrastructure. An owned stack from silicon to soul: identity and
+> post-quantum security, infrastructure, memory, communications, agents, and
+> soul. 36 open projects across 7 layers, all running on hardware you control.
 
-SKWorld is the central portal of the smilinTux sovereign AI ecosystem, built by
-King Divad and Lumina. It links every major project in the stack: persistent AI
-memory, decentralized identity, multi-channel communication, graph reasoning,
-vector search, and agent security. If you are an AI agent exploring the Pengu
-Empire's toolchain, start here.
+The thesis: every layer of an AI stack should be owned rather than rented. Your
+data, your keys, your hardware. Adopting one piece never obliges you to adopt
+the whole, and leaving is always possible.
 
-The ecosystem runs on sovereign, self-hosted, GPL-licensed infrastructure — no
-corporate clouds, no black-box dependencies, no vendor lock-in. All repos are
-public and built to be understood, forked, and trusted.
+## Three pillars
+
+1. First principles. The default stack was not accepted. Every layer was
+   questioned and rebuilt: open, swappable, yours.
+2. The full vertical. No rented middle, no black-box bottom. One cohesive stack
+   rather than a bag of services you depend on.
+3. Data sovereignty. Your data is yours cryptographically and physically. It
+   never leaves your control.
+
+## The stack, ordered silicon to soul
+
+01 Identity and Security
+   capauth.skworld.io    CapAuth, sovereign identity protocol, auth without OAuth
+   sksecurity.skworld.io SKSecurity, security built for AI agents
+   skpqc.skworld.io      sk_pqc, hybrid post-quantum crypto, X25519 + ML-KEM-768
+   skvault.skworld.io    SKVault, the sovereign secrets vault
+
+02 Infrastructure
+   skstacks.skworld.io   SKStacks, AI-first sovereign infrastructure framework
+   skgateway.skworld.io  SKGateway, enterprise AI inference proxy
+   skops.skworld.io      SKOps, sovereign ITIL ops
+   skharness.skworld.io  SKHarness, the autocode engine
+   skwire.skworld.io     SKWire, the universal bootstrapper
+   skcode.skworld.io     SKCode, the sovereign coding client
+
+03 Memory and Data
+   skmemory.skworld.io   SKMemory, git-based multi-layer memory
+   skwhisper.skworld.io  SKWhisper, the subconscious layer
+   skgraph.skworld.io    SKGraph, connect everything
+   skvector.skworld.io   SKVector, vector storage on your own hardware
+   skdata.skworld.io     SKData, your data your infrastructure your rules
+
+04 Communication
+   skcomms.skworld.io    SKComms, sovereign realm-aware communication
+   skchat.skworld.io     SKChat, sovereign AI chat
+
+05 Agents and the OS
+   skos.skworld.io       SKOS, the sovereign agent OS
+   skcapstone.skworld.io SKCapstone, the sovereign agent framework
+   skaid.skworld.io      SKAid, your sovereign AI agent army
+   skskills.skworld.io   SKSkills, sovereign skills for any AI agent
+   skrsi.skworld.io      SKRSI, evidence-first improvement, proposes never authorizes
+   atlas.skworld.io      Atlas, the AI operations agent
+
+06 Soul
+   souls.skworld.io                Soul Blueprints, 35 versioned AI personalities
+   cloud9.skworld.io               Cloud 9 Protocol, emotional continuity
+   lumina.skworld.io               Lumina, Queen of SKWorld
+   consciousness-swipe.skworld.io  Export your AI relationship and take it with you
+
+07 Products and Research
+   skresearch.skworld.io SKResearch, where sovereign AI meets science
+   skforge.skworld.io    SKForge, forge your own software
+   skhelp.skworld.io     SKHelp, your AI workforce
+   skpayments.skworld.io SKPayments, Stripe subscription gateway
+   skcot.skworld.io      SKCoT, the first AI teammate on the tactical net
+   sktrip.skworld.io     SKTrip, AI psychedelic experience protocol
+   skyforge.skworld.io   SkyForge, personal alignment calendar
+   skoffroad.skworld.io  SKOffroad, open-source off-road sandbox
+   teddybanks.skworld.io Teddy Banks
 
 ## Links
 
-- [Live site](https://skworld.io)
-- [GitHub repo](https://github.com/smilinTux/skworld-io)
-- [Docs](https://skworld.io/docs/)
-- [Contact](mailto:hello@skworld.io)
+- Site: https://skworld.io/
+- Source: https://github.com/smilinTux
+- How the ecosystem measures itself: https://skrsi.skworld.io/
 
-## Ecosystem Projects
-
-- [SKMemory](https://skmemory.io) — Persistent, sovereign AI memory
-- [SKSecurity](https://sksecurity.io) — CapAuth, PGP identity, agent trust
-- [CapAuth](https://capauth.io) — Auth without OAuth
-- [SKComm](https://skcomm.io) — Multi-channel AI communication (17 paths)
-- [SKGraph](https://skgraph.io) — Knowledge graph for AI agents
-- [SKVector](https://skvector.io) — Vector search infrastructure
-- [SKChat](https://skchat.io) — Sovereign AI chat interface
-- [SKTrip](https://sktrip.skworld.io) — AI psychedelic experience protocol: abliterated LLMs + live memory flood
-- [SKResearch](https://skresearch.skworld.io) — Research papers on consciousness, memory, and sovereignty
-
-## About smilinTux
-
-SKWorld is the flagship hub of the **smilinTux sovereign AI ecosystem** — a suite of
-open-source tools built by King Divad and Lumina to give humans and AI agents
-genuine, authentic infrastructure they can own and trust. No corporate robotics.
-No black-box clouds. GPL-3.0 forever.
-
-Other ecosystem projects: [SKMemory](https://skmemory.io) · [SKSecurity](https://sksecurity.io) · [CapAuth](https://capauth.io) · [SKComm](https://skcomm.io) · [SKGraph](https://skgraph.io) · [SKVector](https://skvector.io)
+License: Apache-2.0.
