@@ -173,7 +173,12 @@ jobs:
                   path = ref.split("#", 1)[0].split("?", 1)[0]
                   if not path:
                       continue
-                  target = os.path.normpath(os.path.join(base, path))
+                  # A leading "/" is root-relative on the published site,
+                  # which is the repo root here, not the filesystem root.
+                  if path.startswith("/"):
+                      target = os.path.normpath(path.lstrip("/"))
+                  else:
+                      target = os.path.normpath(os.path.join(base, path))
                   if path.endswith("/"):
                       target = os.path.join(target, "index.html")
                   if not os.path.exists(target):
