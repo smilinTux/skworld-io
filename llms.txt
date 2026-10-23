@@ -22,6 +22,7 @@ the whole, and leaving is always possible.
 01 Identity and Security
    capauth.skworld.io    CapAuth, sovereign identity protocol, auth without OAuth
    sksecurity.skworld.io SKSecurity, security built for AI agents
+   sksec.skworld.io      SKSec, CrowdSec at the edge, fail-closed, fighting AI-speed attacks
    skpqc.skworld.io      sk_pqc, hybrid post-quantum crypto, X25519 + ML-KEM-768
    skvault.skworld.io    SKVault, the sovereign secrets vault
 

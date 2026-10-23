@@ -1,8 +1,22 @@
+# Optional hero spotlight: one project called out above the stack grid.
+# (slug, eyebrow, headline, blurb, cta_text)
+SPOTLIGHT = (
+  "sksec",
+  "New · Identity and Security",
+  "Fighting back against AI-speed attacks",
+  "Exploit chains now go from disclosure to active exploitation in days, run by scanners "
+  "and agentic tooling that never sleep. SKSec puts CrowdSec's behavioral detection and "
+  "crowd-sourced reputation at the edge, fail-closed, in front of every service, with an "
+  "SSO-gated dashboard (sksec-web) for the humans watching it.",
+  "See how SKSec fights back",
+)
+
 # Layers ordered silicon -> soul, matching SKWorld's own "full vertical" thesis.
 LAYERS = [
  ("identity", "Identity and Security", "The floor. Who you are, and what only you can open.", [
    ("capauth","CapAuth","Sovereign identity protocol. Authentication without OAuth, without a landlord."),
    ("sksecurity","SKSecurity","Security built for AI agents, not retrofitted onto them."),
+   ("sksec","SKSec","CrowdSec at the edge, fail-closed, fighting back against AI-speed attacks."),
    ("skpqc","sk_pqc","Hybrid post-quantum crypto you can actually install. X25519 plus ML-KEM-768."),
    ("skvault","SKVault","The sovereign secrets vault. Your keys stay yours."),
  ]),

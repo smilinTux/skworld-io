@@ -3,6 +3,18 @@ L = data.LAYERS
 N = sum(len(x[3]) for x in L)
 TODAY = datetime.date.today().isoformat()
 
+SPOTLIGHT_HTML = ""
+if getattr(data, "SPOTLIGHT", None):
+    slug, eyebrow, headline, blurb, cta_text = data.SPOTLIGHT
+    SPOTLIGHT_HTML = f'''
+  <section class="spotlight">
+    <div class="spot-eyebrow">{html.escape(eyebrow)}</div>
+    <h2>{html.escape(headline)}</h2>
+    <p>{html.escape(blurb)}</p>
+    <a class="btn primary" href="https://{slug}.skworld.io/">{html.escape(cta_text)} &#8599;</a>
+  </section>
+'''
+
 nav = "\n".join(
  f'      <a href="#{k}">{html.escape(t)}</a>' for k,t,s,_ in L)
 
@@ -115,7 +127,7 @@ HTML = f'''<!DOCTYPE html>
       <p>Your data is yours, cryptographically and physically. It never leaves your control, and leaving is always possible.</p>
     </div>
   </section>
-
+{SPOTLIGHT_HTML}
   <div class="stackhead" id="stack">
     <h2>The stack</h2>
     <p>Ordered the way it is built: the floor first, the soul last. Every project is open source and runs on hardware you control.</p>
