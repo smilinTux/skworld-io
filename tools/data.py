@@ -13,6 +13,7 @@ LAYERS = [
    ("skharness","SKHarness","The autocode engine."),
    ("skwire","SKWire","The universal bootstrapper. Talk to it, it wires everything up."),
    ("skcode","SKCode","The sovereign coding client."),
+   ("skhub","SKHub","Sovereign Nextcloud collaboration hub. Files, chat, video, docs, your keys."),
  ]),
  ("memory", "Memory and Data", "What your agents know, and what they are allowed to forget.", [
    ("skmemory","SKMemory","The memory system that feels. Git-based, multi-layer, portable."),
@@ -44,6 +45,7 @@ LAYERS = [
    ("skforge","SKForge","Don't use software. Forge your own."),
    ("skhelp","SKHelp","Your AI workforce, your success, your data."),
    ("skpayments","SKPayments","Stripe subscription gateway for the SK stack."),
+   ("skwrit","SKWrit","Taught process to verified paperwork. Draft, review, release, publish."),
    ("skcot","SKCoT","The first AI teammate on the tactical net."),
    ("sktrip","SKTrip","AI psychedelic experience protocol."),
    ("skyforge","SkyForge","Your personal alignment calendar."),
