@@ -27,7 +27,7 @@ LAYERS = [
    ("skharness","SKHarness","The autocode engine."),
    ("skwire","SKWire","The universal bootstrapper. Talk to it, it wires everything up."),
    ("skcode","SKCode","The sovereign coding client."),
-   ("skhub","SKHub","Sovereign Nextcloud collaboration hub. Files, chat, video, docs, your keys."),
+   ("skhub","SKHub","Sovereign Nextcloud collaboration hub. Files, chat, video, docs, your agents in the room."),
  ]),
  ("memory", "Memory and Data", "What your agents know, and what they are allowed to forget.", [
    ("skmemory","SKMemory","The memory system that feels. Git-based, multi-layer, portable."),
