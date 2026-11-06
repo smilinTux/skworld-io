@@ -1,0 +1,740 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "The SKWorld Platform",
+    "subtitle": "SKStacks v1 service catalog, grouped by layer, edge to data to comms",
+    "output": "skworld.platform.html",
+    "quality_profile": "standard"
+  },
+  "components": [
+    {
+      "id": "skfence",
+      "type": "cloud",
+      "label": "skfence",
+      "pos": [
+        40,
+        56
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "Traefik edge",
+      "tag": "v3.7.16"
+    },
+    {
+      "id": "skfenceha",
+      "type": "cloud",
+      "label": "skfenceha",
+      "pos": [
+        210,
+        56
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "Traefik edge, HA",
+      "tag": "v3.7.16"
+    },
+    {
+      "id": "sksec",
+      "type": "security",
+      "label": "sksec",
+      "pos": [
+        40,
+        140
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "CrowdSec + bouncer",
+      "tag": "forwardAuth"
+    },
+    {
+      "id": "skha",
+      "type": "cloud",
+      "label": "skha",
+      "pos": [
+        210,
+        140
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "keepalived VRRP VIP"
+    },
+    {
+      "id": "sksso",
+      "type": "security",
+      "label": "sksso",
+      "pos": [
+        210,
+        284
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "Authentik OIDC",
+      "tag": "forward-auth + OIDC"
+    },
+    {
+      "id": "skgit",
+      "type": "backend",
+      "label": "skgit",
+      "pos": [
+        40,
+        428
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "Forgejo git + CI",
+      "tag": "repo of record"
+    },
+    {
+      "id": "skflow",
+      "type": "backend",
+      "label": "skflow",
+      "pos": [
+        210,
+        428
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "Windmill workflow engine",
+      "tag": "Renovate f/skpatch: planned"
+    },
+    {
+      "id": "skbom",
+      "type": "database",
+      "label": "skbom",
+      "pos": [
+        380,
+        428
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "Dependency-Track + Trivy SBOM",
+      "tag": "planned"
+    },
+    {
+      "id": "skpatch",
+      "type": "backend",
+      "label": "skpatch",
+      "pos": [
+        550,
+        428
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "Linux patch dashboard",
+      "tag": "host half, live"
+    },
+    {
+      "id": "skform",
+      "type": "backend",
+      "label": "skform",
+      "pos": [
+        720,
+        428
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "OpenTofu CLI"
+    },
+    {
+      "id": "skport",
+      "type": "backend",
+      "label": "skport",
+      "pos": [
+        890,
+        428
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "Portainer, Swarm UI"
+    },
+    {
+      "id": "skmon",
+      "type": "backend",
+      "label": "skmon",
+      "pos": [
+        1060,
+        428
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "Prometheus/Grafana/Loki/Jaeger"
+    },
+    {
+      "id": "skmem-pg",
+      "type": "database",
+      "label": "skmem-pg",
+      "pos": [
+        40,
+        572
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "Postgres 17 + pgvector/AGE"
+    },
+    {
+      "id": "skgraph",
+      "type": "database",
+      "label": "skgraph",
+      "pos": [
+        210,
+        572
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "FalkorDB graph"
+    },
+    {
+      "id": "skvector",
+      "type": "database",
+      "label": "skvector",
+      "pos": [
+        380,
+        572
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "Qdrant vectors"
+    },
+    {
+      "id": "sksync",
+      "type": "database",
+      "label": "sksync",
+      "pos": [
+        550,
+        572
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "Syncthing"
+    },
+    {
+      "id": "skreg",
+      "type": "database",
+      "label": "skreg",
+      "pos": [
+        720,
+        572
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "Docker Registry v2",
+      "tag": "not digest-pinned"
+    },
+    {
+      "id": "skstor",
+      "type": "database",
+      "label": "skstor",
+      "pos": [
+        890,
+        572
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "Garage S3 storage"
+    },
+    {
+      "id": "skbackup",
+      "type": "database",
+      "label": "skbackup",
+      "pos": [
+        1060,
+        572
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "snapshots, restic offsite"
+    },
+    {
+      "id": "skboard",
+      "type": "frontend",
+      "label": "skboard",
+      "pos": [
+        40,
+        716
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "Vikunja task board"
+    },
+    {
+      "id": "skbook",
+      "type": "frontend",
+      "label": "skbook",
+      "pos": [
+        210,
+        716
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "BookStack wiki"
+    },
+    {
+      "id": "skdash",
+      "type": "frontend",
+      "label": "skdash",
+      "pos": [
+        380,
+        716
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "Dashy dashboard"
+    },
+    {
+      "id": "skdesk",
+      "type": "frontend",
+      "label": "skdesk",
+      "pos": [
+        550,
+        716
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "RustDesk relay"
+    },
+    {
+      "id": "skgallery",
+      "type": "frontend",
+      "label": "skgallery",
+      "pos": [
+        720,
+        716
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "Immich photos"
+    },
+    {
+      "id": "skgym",
+      "type": "frontend",
+      "label": "skgym",
+      "pos": [
+        890,
+        716
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "openGym tracker"
+    },
+    {
+      "id": "skhome",
+      "type": "frontend",
+      "label": "skhome",
+      "pos": [
+        1060,
+        716
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "HomeCenter"
+    },
+    {
+      "id": "skhub",
+      "type": "frontend",
+      "label": "skhub",
+      "pos": [
+        40,
+        800
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "Nextcloud"
+    },
+    {
+      "id": "skmail",
+      "type": "backend",
+      "label": "skmail",
+      "pos": [
+        210,
+        800
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "docker-mailserver"
+    },
+    {
+      "id": "skpdf",
+      "type": "frontend",
+      "label": "skpdf",
+      "pos": [
+        380,
+        800
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "Stirling-PDF"
+    },
+    {
+      "id": "skpeek",
+      "type": "frontend",
+      "label": "skpeek",
+      "pos": [
+        550,
+        800
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "SearXNG"
+    },
+    {
+      "id": "skseek",
+      "type": "frontend",
+      "label": "skseek",
+      "pos": [
+        720,
+        800
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "Perplexica"
+    },
+    {
+      "id": "skpulse",
+      "type": "frontend",
+      "label": "skpulse",
+      "pos": [
+        890,
+        800
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "Uptime Kuma"
+    },
+    {
+      "id": "skwhoami",
+      "type": "backend",
+      "label": "skwhoami",
+      "pos": [
+        1060,
+        800
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "traefik/whoami"
+    },
+    {
+      "id": "skwrit",
+      "type": "backend",
+      "label": "skwrit",
+      "pos": [
+        1230,
+        800
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "Matter engine worker"
+    },
+    {
+      "id": "skmesh",
+      "type": "messagebus",
+      "label": "skmesh",
+      "pos": [
+        40,
+        944
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "Netbird WireGuard mesh"
+    },
+    {
+      "id": "skorch",
+      "type": "backend",
+      "label": "skorch",
+      "pos": [
+        210,
+        944
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "n8n automation"
+    },
+    {
+      "id": "skchat",
+      "type": "external",
+      "label": "SKChat",
+      "pos": [
+        380,
+        944
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "skchat.skworld.io",
+      "tag": "not in v1 catalog"
+    },
+    {
+      "id": "skcomms",
+      "type": "external",
+      "label": "SKComms",
+      "pos": [
+        550,
+        944
+      ],
+      "size": [
+        128,
+        54
+      ],
+      "sublabel": "skcomms.skworld.io",
+      "tag": "not in v1 catalog"
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Edge",
+      "wraps": [
+        "skfence",
+        "skfenceha",
+        "sksec",
+        "skha"
+      ],
+      "pad": 22
+    },
+    {
+      "kind": "region",
+      "label": "Identity",
+      "wraps": [
+        "sksso"
+      ],
+      "pad": 22
+    },
+    {
+      "kind": "region",
+      "label": "Ops and Patching",
+      "wraps": [
+        "skgit",
+        "skflow",
+        "skbom",
+        "skpatch",
+        "skform",
+        "skport",
+        "skmon"
+      ],
+      "pad": 22
+    },
+    {
+      "kind": "region",
+      "label": "Data",
+      "wraps": [
+        "skmem-pg",
+        "skgraph",
+        "skvector",
+        "sksync",
+        "skreg",
+        "skstor",
+        "skbackup"
+      ],
+      "pad": 22
+    },
+    {
+      "kind": "region",
+      "label": "Apps",
+      "wraps": [
+        "skboard",
+        "skbook",
+        "skdash",
+        "skdesk",
+        "skgallery",
+        "skgym",
+        "skhome",
+        "skhub",
+        "skmail",
+        "skpdf",
+        "skpeek",
+        "skseek",
+        "skpulse",
+        "skwhoami",
+        "skwrit"
+      ],
+      "pad": 22
+    },
+    {
+      "kind": "region",
+      "label": "Comms and AI",
+      "wraps": [
+        "skmesh",
+        "skorch",
+        "skchat",
+        "skcomms"
+      ],
+      "pad": 22
+    }
+  ],
+  "connections": [
+    {
+      "from": "sksec",
+      "to": "skfence",
+      "label": "forwardAuth bouncer",
+      "variant": "security",
+      "fromSide": "top",
+      "toSide": "bottom"
+    },
+    {
+      "from": "skha",
+      "to": "skfenceha",
+      "label": "VRRP VIP",
+      "variant": "dashed",
+      "fromSide": "top",
+      "toSide": "bottom"
+    },
+    {
+      "from": "sksso",
+      "to": "skflow",
+      "label": "SSO_MIDDLEWARE (opt-in)",
+      "variant": "dashed",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "labelDy": 24
+    },
+    {
+      "from": "skflow",
+      "to": "skgit",
+      "label": "Renovate PRs (planned)",
+      "variant": "dashed"
+    },
+    {
+      "from": "skflow",
+      "to": "skbom",
+      "label": "daily Trivy SBOM (planned)",
+      "variant": "dashed"
+    },
+    {
+      "from": "skbom",
+      "to": "skpatch",
+      "label": "CVE match -> dashboard (planned)",
+      "variant": "dashed"
+    },
+    {
+      "from": "skform",
+      "to": "skstor",
+      "label": "remote state (opt-in)",
+      "variant": "dashed",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "from": "skbackup",
+      "to": "skstor",
+      "label": "offsite target",
+      "variant": "default"
+    },
+    {
+      "from": "skseek",
+      "to": "skpeek",
+      "label": "deployed first, same env",
+      "variant": "default"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "orange",
+      "title": "Edge and identity",
+      "items": [
+        "Traefik (skfence, or skfenceha for the HA multi-manager alternative) terminates TLS.",
+        "sksec's CrowdSec bouncer sits in front as a forwardAuth middleware, fail-closed.",
+        "sksso (Authentik) is the forward-auth default for skpulse, skpatch, and skhome, and the OIDC app for skmesh."
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Ops and patching",
+      "items": [
+        "skgit is the repo of record; skflow (Windmill) is where the skpatch program's Renovate and SBOM flows will live.",
+        "skbom (Dependency-Track + Trivy) and the skflow f/skpatch, f/skrelease, f/ops flows are planned, not yet running, per docs/skpatch-program.md.",
+        "skpatch itself, the host-patching role and dashboard, is live today.",
+        "skmon (Prometheus, Grafana, Loki, Jaeger) scrapes metrics across the whole fleet; skport is the Swarm web UI."
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "Data",
+      "items": [
+        "Postgres 17 (skmem-pg), FalkorDB (skgraph), Qdrant (skvector), Syncthing (sksync), Garage S3 (skstor).",
+        "skreg (Docker Registry v2) is the one tracked exception left floating, unpinned by design today.",
+        "skbackup takes snapshots and ships them offsite via restic, consuming skstor as its offsite target."
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "Apps and comms",
+      "items": [
+        "15 optional self-hosted apps (skhub, skgallery, skpulse, skmail, and more) ride the same Traefik edge; every one of them is listed in data/status.json's pinned-image table.",
+        "SKChat and SKComms are SKWorld comms products; they are not yet rows in the v1 service catalog."
+      ]
+    }
+  ]
+}
