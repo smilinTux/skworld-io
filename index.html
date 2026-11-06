@@ -50,6 +50,8 @@
       <nav class="topnav">
         <a href="#stack">The stack</a>
         <a href="#pillars">Why</a>
+        <a href="#platform">Platform map</a>
+        <a href="#status">Status</a>
         <a href="https://github.com/smilinTux">GitHub &#8599;</a>
       </nav>
     </div>
@@ -89,6 +91,99 @@
     <p>Every image is pinned to a digest, its SBOM pushed into Dependency-Track, and new CVEs are matched against the fleet continuously, not on a monthly scan. Renovate opens the PRs, a release gate decides what actually ships, critical fixes go out the same day, and everything else rides the weekly batch.</p>
     <a class="btn primary" href="https://skpatch.skworld.io/">See how SKPatch patches &#8599;</a>
   </section>
+
+
+  <section class="status" id="status">
+    <div class="spot-eyebrow">Infrastructure &middot; almost realtime</div>
+    <h2>SKStacks status</h2>
+    <p class="status-sub">Pulled from the public GitHub API every hour by a workflow in this
+      repo, not a dashboard you have to trust blind: <a href="data/status.json">the raw
+      snapshot</a> is committed right here, and this page just renders it.</p>
+    <div class="stat-grid" id="status-grid">
+      <noscript><p>Live status needs JavaScript. <a href="data/status.json">View the raw
+        snapshot</a> instead.</p></noscript>
+    </div>
+    <div class="status-lanes" id="status-lanes"></div>
+    <p class="status-meta">
+      <span id="status-updated">Snapshot not loaded yet.</span>
+      &middot; <a href="https://skpatch.skworld.io/">Full SKPatch program, lanes, and
+      diagrams &#8599;</a>
+    </p>
+  </section>
+  <script>
+  (function(){
+    var grid = document.getElementById('status-grid');
+    var lanes = document.getElementById('status-lanes');
+    var updated = document.getElementById('status-updated');
+    if (!grid) { return; }
+
+    function esc(s){
+      return String(s).replace(/[&<>]/g, function(c){
+        return c === '&' ? '&amp;' : c === '<' ? '&lt;' : '&gt;';
+      });
+    }
+    function tile(label, value, sub, ok){
+      var cls = 'stat-tile' + (ok === true ? ' ok' : ok === false ? ' bad' : '');
+      return '<div class="' + cls + '"><span class="stat-label">' + esc(label) + '</span>' +
+        '<span class="stat-value">' + esc(value) + '</span>' +
+        (sub ? '<span class="stat-sub">' + esc(sub) + '</span>' : '') + '</div>';
+    }
+    function rel(iso){
+      if (!iso) { return 'unknown'; }
+      var d = new Date(iso), mins = Math.round((Date.now() - d.getTime()) / 60000);
+      if (mins < 1) { return 'moments ago'; }
+      if (mins < 60) { return mins + ' min ago'; }
+      var hrs = Math.round(mins / 60);
+      if (hrs < 48) { return hrs + ' h ago'; }
+      return Math.round(hrs / 24) + ' d ago';
+    }
+    function render(data){
+      var ss = data.skstacks || {}, sp = data.skpatch || {};
+      var rel1 = ss.latest_release;
+      var out = '';
+      out += tile('SKStacks release', rel1 ? rel1.tag : 'none yet', rel1 ? rel(rel1.published_at) : '');
+      out += tile('SKStacks CI, main', (ss.ci_main && ss.ci_main.conclusion) || 'unknown',
+        ss.ci_main ? rel(ss.ci_main.at) : '', ss.ci_main ? ss.ci_main.conclusion === 'success' : null);
+      out += tile('SKStacks open PRs', (typeof ss.open_pull_requests === 'number') ? ss.open_pull_requests : '?');
+      out += tile('SKPatch CI, main', (sp.ci_main && sp.ci_main.conclusion) || 'unknown',
+        sp.ci_main ? rel(sp.ci_main.at) : '', sp.ci_main ? sp.ci_main.conclusion === 'success' : null);
+      out += tile('Pinned services tracked', (data.pinned_images || []).length, 'v1 service catalog');
+      grid.innerHTML = out;
+
+      if (lanes){
+        var html = '';
+        (data.policy_lanes || []).forEach(function(row){
+          var l = (row.lane || '').toLowerCase();
+          var tag = l.indexOf('same day') !== -1 ? 'Same day'
+            : l.indexOf('weekly') !== -1 ? 'Weekly'
+            : l.indexOf('monthly') !== -1 ? 'Monthly' : null;
+          if (!tag) { return; }
+          html += '<div class="lane"><span class="lane-tag">' + esc(tag) + '</span>' +
+            '<span class="lane-text">' + esc(row.finding) + ': ' + esc(row.lane) + '</span></div>';
+        });
+        lanes.innerHTML = html;
+      }
+      if (updated) { updated.textContent = 'Snapshot generated ' + rel(data.generated_at) + '.'; }
+    }
+
+    fetch('data/status.json').then(function(r){ return r.json(); }).then(function(data){
+      render(data);
+      fetch('https://api.github.com/repos/smilinTux/skstacks/releases/latest')
+        .then(function(r){ return r.ok ? r.json() : null; })
+        .then(function(fresh){
+          if (fresh && data.skstacks &&
+              (!data.skstacks.latest_release || fresh.tag_name !== data.skstacks.latest_release.tag)){
+            data.skstacks.latest_release = { tag: fresh.tag_name, published_at: fresh.published_at };
+            render(data);
+            if (updated) { updated.textContent += ' (release tag refreshed live)'; }
+          }
+        }).catch(function(){});
+    }).catch(function(){
+      grid.innerHTML = '<p>Could not load the status snapshot. ' +
+        '<a href="data/status.json">View it directly</a>.</p>';
+    });
+  })();
+  </script>
 
   <div class="stackhead" id="stack">
     <h2>The stack</h2>
@@ -394,6 +489,20 @@
         </a>
       </div>
     </section>
+
+  <section class="platform" id="platform">
+    <div class="spot-eyebrow">Architecture</div>
+    <h2>The platform map</h2>
+    <p>Every SKStacks service, grouped into six layers: edge, identity, ops and patching,
+      data, apps, and comms/AI. Only documented relationships are drawn, each traced back
+      to the v1 service catalog or the skpatch program doc; a text-only Mermaid fallback of
+      the same system context lives in the
+      <a href="https://github.com/smilinTux/skworld-io/blob/main/README.md#platform-map">README</a>.</p>
+    <div class="cta">
+      <a class="btn primary" href="diagrams/skworld.platform.html" target="_blank" rel="noopener">Open the interactive map &#8599;</a>
+      <a class="btn ghost" href="diagrams/skworld.platform.json">View the source</a>
+    </div>
+  </section>
 
   <section class="closing">
     <h2>Start anywhere</h2>

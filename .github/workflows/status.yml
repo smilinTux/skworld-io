@@ -1,0 +1,49 @@
+name: status
+
+# Refreshes data/status.json from the public GitHub API: the latest SKStacks
+# and SKPatch release/CI/open-PR state, the v1 service catalog's pinned-image
+# table, and the skpatch program's cadence/policy lanes. Every value is pulled
+# live via tools/collect_status.py (no secret beyond the default Actions
+# token, which is only used to raise the public API rate limit). This never
+# deploys anything; it only commits a refreshed snapshot when it changed.
+
+on:
+  schedule:
+    - cron: '7 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: status-snapshot
+  cancel-in-progress: false
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 1
+
+      - name: Collect status snapshot
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 tools/collect_status.py > data/status.json.new
+
+      - name: Commit if changed
+        run: |
+          set -euo pipefail
+          if [ -f data/status.json ] && cmp -s data/status.json data/status.json.new; then
+            echo "No change in the snapshot, skipping commit."
+            rm -f data/status.json.new
+            exit 0
+          fi
+          mv data/status.json.new data/status.json
+          git -c user.name="Lumina" -c user.email="lumina@skworld.io" \
+            add data/status.json
+          git -c user.name="Lumina" -c user.email="lumina@skworld.io" \
+            commit -m "chore(status): refresh SKStacks/SKPatch status snapshot"
+          git push
