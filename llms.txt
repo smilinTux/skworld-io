@@ -2,7 +2,7 @@
 
 > Sovereign AI infrastructure. An owned stack from silicon to soul: identity and
 > post-quantum security, infrastructure, memory, communications, agents, and
-> soul. 36 open projects across 7 layers, all running on hardware you control.
+> soul. 37 open projects across 7 layers, all running on hardware you control.
 
 The thesis: every layer of an AI stack should be owned rather than rented. Your
 data, your keys, your hardware. Adopting one piece never obliges you to adopt
@@ -28,6 +28,7 @@ the whole, and leaving is always possible.
 
 02 Infrastructure
    skstacks.skworld.io   SKStacks, AI-first sovereign infrastructure framework
+   skpatch.skworld.io    SKPatch, patch at AI speed, every image pinned, every CVE tracked
    skgateway.skworld.io  SKGateway, enterprise AI inference proxy
    skops.skworld.io      SKOps, sovereign ITIL ops
    skharness.skworld.io  SKHarness, the autocode engine
