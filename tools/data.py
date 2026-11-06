@@ -1,14 +1,14 @@
 # Optional hero spotlight: one project called out above the stack grid.
 # (slug, eyebrow, headline, blurb, cta_text)
 SPOTLIGHT = (
-  "sksec",
-  "New · Identity and Security",
-  "Fighting back against AI-speed attacks",
-  "Exploit chains now go from disclosure to active exploitation in days, run by scanners "
-  "and agentic tooling that never sleep. SKSec puts CrowdSec's behavioral detection and "
-  "crowd-sourced reputation at the edge, fail-closed, in front of every service, with an "
-  "SSO-gated dashboard (sksec-web) for the humans watching it.",
-  "See how SKSec fights back",
+  "skpatch",
+  "New · Infrastructure",
+  "Patching at AI speed",
+  "Every image is pinned to a digest, its SBOM pushed into Dependency-Track, and new CVEs "
+  "are matched against the fleet continuously, not on a monthly scan. Renovate opens the "
+  "PRs, a release gate decides what actually ships, critical fixes go out the same day, "
+  "and everything else rides the weekly batch.",
+  "See how SKPatch patches",
 )
 
 # Layers ordered silicon -> soul, matching SKWorld's own "full vertical" thesis.
@@ -22,6 +22,7 @@ LAYERS = [
  ]),
  ("infra", "Infrastructure", "The machines, the pipes, and the discipline that keeps them honest.", [
    ("skstacks","SKStacks","AI-first sovereign infrastructure framework."),
+   ("skpatch","SKPatch","Patch at AI speed. Every image pinned, every CVE tracked, critical fixes the same day."),
    ("skgateway","SKGateway","Enterprise AI inference proxy. BlueCoat for AI."),
    ("skops","SKOps","Sovereign ITIL ops. We speak ITIL with receipts."),
    ("skharness","SKHarness","The autocode engine."),
