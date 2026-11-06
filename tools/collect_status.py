@@ -17,7 +17,7 @@ import re
 import subprocess
 import sys
 
-DASH_MAP = str.maketrans({"—": "-", "–": "-"})
+DASH_MAP = str.maketrans({chr(0x2014): "-", chr(0x2013): "-"})
 
 
 def clean(value):

@@ -71,6 +71,17 @@ the whole, and leaving is always possible.
    skoffroad.skworld.io  SKOffroad, open-source off-road sandbox
    teddybanks.skworld.io Teddy Banks
 
+## Platform map and live status
+
+The site also carries a platform map (every SKStacks service, grouped into
+six layers: edge, identity, ops and patching, data, apps, comms/AI) and an
+hourly-refreshed live status section for SKStacks and SKPatch.
+
+- Interactive platform map: https://skworld.io/diagrams/skworld.platform.html
+- Platform map source (Archify JSON): https://skworld.io/diagrams/skworld.platform.json
+- Live status snapshot (JSON, refreshed hourly): https://skworld.io/data/status.json
+- SKPatch program: https://skpatch.skworld.io/
+
 ## Links
 
 - Site: https://skworld.io/
