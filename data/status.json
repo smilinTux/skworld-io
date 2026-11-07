@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T05:46:05Z",
+  "generated_at": "2026-11-07T12:50:56Z",
   "skstacks": {
     "repo": "smilinTux/skstacks",
     "latest_release": {
@@ -7,11 +7,11 @@
       "published_at": "2026-10-05T12:31:09Z"
     },
     "changelog_top_heading": "Unreleased (v2.26.17)",
-    "open_pull_requests": 5,
+    "open_pull_requests": 4,
     "ci_main": {
-      "workflow": "skred - self-hardening security scan",
+      "workflow": "config-template-drift",
       "conclusion": "success",
-      "at": "2026-11-07T05:22:54Z"
+      "at": "2026-11-07T05:59:59Z"
     }
   },
   "skpatch": {
@@ -145,7 +145,7 @@
       "pinned_upstream": "n8n (digest-pinned) + pgvector Postgres"
     },
     {
-      "service": "skpatch",
+      "service": "skpatch-hosts",
       "tier": "optional",
       "pinned_upstream": "linux-update-dashboard `2026.10.9` (upstream, digest-pinned)"
     },
@@ -238,7 +238,7 @@
     },
     {
       "finding": "Host packages",
-      "lane": "The `skpatch` role (report-only by default) plus unattended security upgrades on every node."
+      "lane": "The `skpatch-hosts` role (report-only by default) plus unattended security upgrades on every node."
     }
   ]
 }
