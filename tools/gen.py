@@ -4,10 +4,9 @@ N = sum(len(x[3]) for x in L)
 TODAY = datetime.date.today().isoformat()
 
 SPOTLIGHT_HTML = ""
-if getattr(data, "SPOTLIGHT", None):
-    slug, eyebrow, headline, blurb, cta_text = data.SPOTLIGHT
-    SPOTLIGHT_HTML = f'''
-  <section class="spotlight">
+for slug, eyebrow, headline, blurb, cta_text in getattr(data, "SPOTLIGHTS", []):
+    SPOTLIGHT_HTML += f'''
+  <section class="spotlight" id="spotlight-{slug}">
     <div class="spot-eyebrow">{html.escape(eyebrow)}</div>
     <h2>{html.escape(headline)}</h2>
     <p>{html.escape(blurb)}</p>

@@ -1,6 +1,7 @@
-# Optional hero spotlight: one project called out above the stack grid.
-# (slug, eyebrow, headline, blurb, cta_text)
-SPOTLIGHT = (
+# Optional hero spotlights: projects called out above the stack grid, rendered
+# in this order. Each entry is (slug, eyebrow, headline, blurb, cta_text).
+SPOTLIGHTS = [
+ (
   "skpatch",
   "New · Infrastructure",
   "Patching at AI speed",
@@ -9,7 +10,18 @@ SPOTLIGHT = (
   "PRs, a release gate decides what actually ships, critical fixes go out the same day, "
   "and everything else rides the weekly batch.",
   "See how SKPatch patches",
-)
+ ),
+ (
+  "skrsi",
+  "Agents and the OS · How we measure ourselves",
+  "The improvement loop that cannot promote itself",
+  "SKRSI measures software delivery, evaluates bounded experiments, records lessons, and "
+  "proposes safer improvements. Producer and reviewer identities differ, missing data stays "
+  "missing, and an inconclusive experiment stays inconclusive. It proposes, and it never "
+  "grants authority, approves its own work, or merges.",
+  "See how SKRSI measures",
+ ),
+]
 
 # Layers ordered silicon -> soul, matching SKWorld's own "full vertical" thesis.
 LAYERS = [

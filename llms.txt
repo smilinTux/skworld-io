@@ -71,6 +71,14 @@ the whole, and leaving is always possible.
    skoffroad.skworld.io  SKOffroad, open-source off-road sandbox
    teddybanks.skworld.io Teddy Banks
 
+## Spotlights
+
+The home page calls out two projects above the stack grid, in this order:
+
+- SKPatch, patching at AI speed: https://skpatch.skworld.io/
+- SKRSI, the evidence-first improvement loop that proposes and never
+  authorizes: https://skrsi.skworld.io/
+
 ## Platform map and live status
 
 The site also carries a platform map (every SKStacks service, grouped into
