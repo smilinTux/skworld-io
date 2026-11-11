@@ -63,7 +63,7 @@ STATUS_HTML = '''
       return Math.round(hrs / 24) + ' d ago';
     }
     function render(data){
-      var ss = data.skstacks || {}, sp = data.skpatch || {};
+      var ss = data.skstacks || {}, sp = data.skpatch || {}, sa = data.skaegis || {};
       var rel1 = ss.latest_release;
       var out = '';
       out += tile('SKStacks release', rel1 ? rel1.tag : 'none yet', rel1 ? rel(rel1.published_at) : '');
@@ -72,6 +72,8 @@ STATUS_HTML = '''
       out += tile('SKStacks open PRs', (typeof ss.open_pull_requests === 'number') ? ss.open_pull_requests : '?');
       out += tile('SKPatch CI, main', (sp.ci_main && sp.ci_main.conclusion) || 'unknown',
         sp.ci_main ? rel(sp.ci_main.at) : '', sp.ci_main ? sp.ci_main.conclusion === 'success' : null);
+      out += tile('skaegis CI, main', (sa.ci_main && sa.ci_main.conclusion) || 'unknown',
+        sa.ci_main ? rel(sa.ci_main.at) : '', sa.ci_main ? sa.ci_main.conclusion === 'success' : null);
       out += tile('Pinned services tracked', (data.pinned_images || []).length, 'v1 service catalog');
       grid.innerHTML = out;
 

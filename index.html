@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SKWorld: Sovereign AI Infrastructure, Silicon to Soul</title>
-<meta name="description" content="SKWorld is a sovereign AI stack you own end to end: identity and post-quantum security, infrastructure, memory, communications, agents, and soul. 40 open projects across 7 layers. Your data, your keys, your hardware. Walk away any time and it all comes with you.">
+<meta name="description" content="SKWorld is a sovereign AI stack you own end to end: identity and post-quantum security, infrastructure, memory, communications, agents, and soul. 41 open projects across 7 layers. Your data, your keys, your hardware. Walk away any time and it all comes with you.">
 <meta name="keywords" content="sovereign AI, self-hosted AI, AI infrastructure, agent framework, post-quantum, AI memory, soul blueprints, open source, SKWorld, smilinTux">
 <link rel="canonical" href="https://skworld.io/">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://skworld.io/">
 <meta property="og:title" content="SKWorld: Sovereign AI Infrastructure, Silicon to Soul">
-<meta property="og:description" content="40 open projects across 7 layers. Identity, infrastructure, memory, comms, agents, soul. Own the whole vertical. No rented middle, no black-box bottom.">
+<meta property="og:description" content="41 open projects across 7 layers. Identity, infrastructure, memory, comms, agents, soul. Own the whole vertical. No rented middle, no black-box bottom.">
 <meta property="og:image" content="https://skworld.io/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -20,7 +20,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@smilinTux">
 <meta name="twitter:title" content="SKWorld: Sovereign AI Infrastructure, Silicon to Soul">
-<meta name="twitter:description" content="40 open projects across 7 layers. Own the whole vertical. Your data, your keys, your hardware.">
+<meta name="twitter:description" content="41 open projects across 7 layers. Own the whole vertical. Your data, your keys, your hardware.">
 <meta name="twitter:image" content="https://skworld.io/og-image.png">
 <meta name="twitter:image:alt" content="SKWorld, sovereign AI infrastructure from silicon to soul">
 
@@ -55,7 +55,7 @@
         <a href="https://github.com/smilinTux">GitHub &#8599;</a>
       </nav>
     </div>
-    <span class="eyebrow">40 open projects &middot; 7 layers &middot; one owned vertical</span>
+    <span class="eyebrow">41 open projects &middot; 7 layers &middot; one owned vertical</span>
     <h1>From silicon to soul.<br>Own the whole stack.</h1>
     <p class="sub">Every layer of an AI stack, built to be owned rather than rented. Your data, your keys, your hardware. Walk away any time and all of it comes with you.</p>
     <div class="cta">
@@ -90,6 +90,13 @@
     <h2>Patching at AI speed</h2>
     <p>Every image is pinned to a digest, its SBOM pushed into Dependency-Track, and new CVEs are matched against the fleet continuously, not on a monthly scan. Renovate opens the PRs, a release gate decides what actually ships, critical fixes go out the same day, and everything else rides the weekly batch.</p>
     <a class="btn primary" href="https://skpatch.skworld.io/">See how SKPatch patches &#8599;</a>
+  </section>
+
+  <section class="spotlight" id="spotlight-skaegis">
+    <div class="spot-eyebrow">New · Detect · Security suite</div>
+    <h2>Your continuous shield</h2>
+    <p>Defend, Detect, Remediate: SKSec keeps hostile traffic out, skaegis sees every known CVE on every Linux, Windows and macOS host you run, and SKPatch closes the gap. skaegis is built on unmodified upstream Wazuh and runs on your own infrastructure. It reports known, published CVEs, hands each finding to the patch pipeline, and counts a finding closed only when a re-scan shows it gone. It drafts, and it never auto-merges.</p>
+    <a class="btn primary" href="https://skaegis.skworld.io/">See how skaegis detects &#8599;</a>
   </section>
 
   <section class="spotlight" id="spotlight-skrsi">
@@ -145,7 +152,7 @@
       return Math.round(hrs / 24) + ' d ago';
     }
     function render(data){
-      var ss = data.skstacks || {}, sp = data.skpatch || {};
+      var ss = data.skstacks || {}, sp = data.skpatch || {}, sa = data.skaegis || {};
       var rel1 = ss.latest_release;
       var out = '';
       out += tile('SKStacks release', rel1 ? rel1.tag : 'none yet', rel1 ? rel(rel1.published_at) : '');
@@ -154,6 +161,8 @@
       out += tile('SKStacks open PRs', (typeof ss.open_pull_requests === 'number') ? ss.open_pull_requests : '?');
       out += tile('SKPatch CI, main', (sp.ci_main && sp.ci_main.conclusion) || 'unknown',
         sp.ci_main ? rel(sp.ci_main.at) : '', sp.ci_main ? sp.ci_main.conclusion === 'success' : null);
+      out += tile('skaegis CI, main', (sa.ci_main && sa.ci_main.conclusion) || 'unknown',
+        sa.ci_main ? rel(sa.ci_main.at) : '', sa.ci_main ? sa.ci_main.conclusion === 'success' : null);
       out += tile('Pinned services tracked', (data.pinned_images || []).length, 'v1 service catalog');
       grid.innerHTML = out;
 
@@ -213,7 +222,7 @@
           <h2>Identity and Security</h2>
           <p class="lsub">The floor. Who you are, and what only you can open.</p>
         </div>
-        <span class="lcount">5</span>
+        <span class="lcount">6</span>
       </div>
       <div class="pgrid">
         <a class="pcard" href="https://capauth.skworld.io/">
@@ -230,6 +239,11 @@
           <span class="pname">SKSec</span>
           <span class="pblurb">CrowdSec at the edge, fail-closed, fighting back against AI-speed attacks.</span>
           <span class="phost">sksec.skworld.io</span>
+        </a>
+        <a class="pcard" href="https://skaegis.skworld.io/">
+          <span class="pname">skaegis</span>
+          <span class="pblurb">Your continuous shield. Every CVE seen across Linux, Windows and macOS, every gap closed.</span>
+          <span class="phost">skaegis.skworld.io</span>
         </a>
         <a class="pcard" href="https://skpqc.skworld.io/">
           <span class="pname">sk_pqc</span>

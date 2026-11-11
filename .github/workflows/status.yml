@@ -1,7 +1,7 @@
 name: status
 
 # Refreshes data/status.json from the public GitHub API: the latest SKStacks
-# and SKPatch release/CI/open-PR state, the v1 service catalog's pinned-image
+# SKPatch and skaegis release/CI/open-PR state, the v1 service catalog's pinned-image
 # table, and the skpatch program's cadence/policy lanes. Every value is pulled
 # live via tools/collect_status.py (no secret beyond the default Actions
 # token, which is only used to raise the public API rate limit). This never
@@ -45,5 +45,5 @@ jobs:
           git -c user.name="Lumina" -c user.email="lumina@skworld.io" \
             add data/status.json
           git -c user.name="Lumina" -c user.email="lumina@skworld.io" \
-            commit -m "chore(status): refresh SKStacks/SKPatch status snapshot"
+            commit -m "chore(status): refresh SKStacks/SKPatch/skaegis status snapshot"
           git push
