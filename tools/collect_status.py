@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Collect a live snapshot of SKStacks + SKPatch status from the public GitHub API.
+"""Collect a live snapshot of SKStacks + SKPatch + skaegis status from the public GitHub API.
 
 Used by both a local run (to seed data/status.json with real numbers before the
 first commit) and the `status` GitHub Actions workflow (hourly refresh). Reads
@@ -161,6 +161,17 @@ def main():
             "repo": "smilinTux/skpatch-skworld-io",
             "open_pull_requests": open_pr_count("smilinTux/skpatch-skworld-io"),
             "ci_main": last_ci_main("smilinTux/skpatch-skworld-io"),
+        },
+        "skaegis": {
+            "repo": "smilinTux/skaegis",
+            "latest_release": latest_release("smilinTux/skaegis"),
+            "open_pull_requests": open_pr_count("smilinTux/skaegis"),
+            "ci_main": last_ci_main("smilinTux/skaegis"),
+        },
+        "skaegis_site": {
+            "repo": "smilinTux/skaegis-skworld-io",
+            "open_pull_requests": open_pr_count("smilinTux/skaegis-skworld-io"),
+            "ci_main": last_ci_main("smilinTux/skaegis-skworld-io"),
         },
         "pinned_images": parse_pinned_images("smilinTux/skstacks"),
         "policy_lanes": parse_policy_lanes("smilinTux/skstacks"),

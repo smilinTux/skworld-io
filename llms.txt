@@ -23,6 +23,7 @@ the whole, and leaving is always possible.
    capauth.skworld.io    CapAuth, sovereign identity protocol, auth without OAuth
    sksecurity.skworld.io SKSecurity, security built for AI agents
    sksec.skworld.io      SKSec, CrowdSec at the edge, fail-closed, fighting AI-speed attacks
+   skaegis.skworld.io    skaegis, your continuous shield, every CVE seen, every gap closed
    skpqc.skworld.io      sk_pqc, hybrid post-quantum crypto, X25519 + ML-KEM-768
    skvault.skworld.io    SKVault, the sovereign secrets vault
 
@@ -73,9 +74,11 @@ the whole, and leaving is always possible.
 
 ## Spotlights
 
-The home page calls out two projects above the stack grid, in this order:
+The home page calls out three projects above the stack grid, in this order:
 
 - SKPatch, patching at AI speed: https://skpatch.skworld.io/
+- skaegis, continuous CVE detection (Detect in the Defend, Detect, Remediate
+  suite with SKSec and SKPatch): https://skaegis.skworld.io/
 - SKRSI, the evidence-first improvement loop that proposes and never
   authorizes: https://skrsi.skworld.io/
 
@@ -83,7 +86,7 @@ The home page calls out two projects above the stack grid, in this order:
 
 The site also carries a platform map (every SKStacks service, grouped into
 six layers: edge, identity, ops and patching, data, apps, comms/AI) and an
-hourly-refreshed live status section for SKStacks and SKPatch.
+hourly-refreshed live status section for SKStacks, SKPatch and skaegis.
 
 - Interactive platform map: https://skworld.io/diagrams/skworld.platform.html
 - Platform map source (Archify JSON): https://skworld.io/diagrams/skworld.platform.json

@@ -61,7 +61,7 @@ flowchart LR
 ```
 
 See `data/status.json` for the live, hourly-refreshed numbers that go with
-this map (SKStacks/SKPatch release and CI state, the pinned-image table, and
+this map (SKStacks/SKPatch/skaegis release and CI state, the pinned-image table, and
 the skpatch program's cadence lanes).
 
 ## Editing the project list
@@ -89,7 +89,7 @@ llms.txt        machine-readable summary of the whole ecosystem
 og-image.svg    social card source
 og-image.png    social card, 1200x630
 diagrams/       the platform map: Archify JSON source + rendered HTML
-data/status.json  live SKStacks/SKPatch snapshot, refreshed hourly by status.yml
+data/status.json  live SKStacks/SKPatch/skaegis snapshot, refreshed hourly by status.yml
 tools/collect_status.py  the script that builds data/status.json (also run by status.yml)
 ```
 

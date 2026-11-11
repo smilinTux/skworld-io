@@ -12,6 +12,17 @@ SPOTLIGHTS = [
   "See how SKPatch patches",
  ),
  (
+  "skaegis",
+  "New · Detect · Security suite",
+  "Your continuous shield",
+  "Defend, Detect, Remediate: SKSec keeps hostile traffic out, skaegis sees every known CVE on "
+  "every Linux, Windows and macOS host you run, and SKPatch closes the gap. skaegis is built on "
+  "unmodified upstream Wazuh and runs on your own infrastructure. It reports known, published "
+  "CVEs, hands each finding to the patch pipeline, and counts a finding closed only when a "
+  "re-scan shows it gone. It drafts, and it never auto-merges.",
+  "See how skaegis detects",
+ ),
+ (
   "skrsi",
   "Agents and the OS · How we measure ourselves",
   "The improvement loop that cannot promote itself",
@@ -29,6 +40,7 @@ LAYERS = [
    ("capauth","CapAuth","Sovereign identity protocol. Authentication without OAuth, without a landlord."),
    ("sksecurity","SKSecurity","Security built for AI agents, not retrofitted onto them."),
    ("sksec","SKSec","CrowdSec at the edge, fail-closed, fighting back against AI-speed attacks."),
+   ("skaegis","skaegis","Your continuous shield. Every CVE seen across Linux, Windows and macOS, every gap closed."),
    ("skpqc","sk_pqc","Hybrid post-quantum crypto you can actually install. X25519 plus ML-KEM-768."),
    ("skvault","SKVault","The sovereign secrets vault. Your keys stay yours."),
  ]),
