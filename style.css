@@ -94,6 +94,13 @@ code,.mono{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,monospace}
   text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
 .spotlight h2{font-size:clamp(1.4rem,3vw,1.9rem);letter-spacing:-.02em;margin-bottom:.7rem}
 .spotlight p{color:var(--ink-2);max-width:60ch;margin:0 0 1.2rem}
+.spotlight .pgrid{margin:0 0 1rem}
+.spotlight .cta{margin-top:.4rem}
+.spot-list{list-style:none;margin:0 0 1.3rem;padding:0;display:grid;gap:.55rem;max-width:68ch;color:var(--ink-2)}
+.spot-list li{border-left:3px solid var(--teal);padding-left:.8rem}
+.spot-list strong{color:var(--ink)}
+.spotlight .btn.ghost{border:1px solid var(--line);color:var(--ink)}
+.spotlight .btn.ghost:hover{border-color:var(--accent);color:var(--accent)}
 
 /* live status */
 .status{padding:2.2rem 0 1rem;border-top:1px solid var(--line-2)}

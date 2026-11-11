@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SKWorld: Sovereign AI Infrastructure, Silicon to Soul</title>
-<meta name="description" content="SKWorld is a sovereign AI stack you own end to end: identity and post-quantum security, infrastructure, memory, communications, agents, and soul. 40 open projects across 7 layers. Your data, your keys, your hardware. Walk away any time and it all comes with you.">
+<meta name="description" content="SKWorld is a sovereign AI stack you own end to end: security by architecture, post-quantum-ready identity, infrastructure, memory, communications, agents, and soul. 41 open projects across 7 layers. Detect, defend and patch on your own hardware. Your data, your keys. Walk away any time and it all comes with you.">
 <meta name="keywords" content="sovereign AI, self-hosted AI, AI infrastructure, agent framework, post-quantum, AI memory, soul blueprints, open source, SKWorld, smilinTux">
 <link rel="canonical" href="https://skworld.io/">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://skworld.io/">
 <meta property="og:title" content="SKWorld: Sovereign AI Infrastructure, Silicon to Soul">
-<meta property="og:description" content="40 open projects across 7 layers. Identity, infrastructure, memory, comms, agents, soul. Own the whole vertical. No rented middle, no black-box bottom.">
+<meta property="og:description" content="41 open projects across 7 layers. Identity, infrastructure, memory, comms, agents, soul. Own the whole vertical. No rented middle, no black-box bottom.">
 <meta property="og:image" content="https://skworld.io/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -20,7 +20,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@smilinTux">
 <meta name="twitter:title" content="SKWorld: Sovereign AI Infrastructure, Silicon to Soul">
-<meta name="twitter:description" content="40 open projects across 7 layers. Own the whole vertical. Your data, your keys, your hardware.">
+<meta name="twitter:description" content="41 open projects across 7 layers. Own the whole vertical. Your data, your keys, your hardware.">
 <meta name="twitter:image" content="https://skworld.io/og-image.png">
 <meta name="twitter:image:alt" content="SKWorld, sovereign AI infrastructure from silicon to soul">
 
@@ -50,16 +50,18 @@
       <nav class="topnav">
         <a href="#stack">The stack</a>
         <a href="#pillars">Why</a>
+        <a href="#spotlight-security">Security</a>
         <a href="#platform">Platform map</a>
         <a href="#status">Status</a>
         <a href="https://github.com/smilinTux">GitHub &#8599;</a>
       </nav>
     </div>
-    <span class="eyebrow">40 open projects &middot; 7 layers &middot; one owned vertical</span>
+    <span class="eyebrow">41 open projects &middot; 7 layers &middot; one owned vertical</span>
     <h1>From silicon to soul.<br>Own the whole stack.</h1>
-    <p class="sub">Every layer of an AI stack, built to be owned rather than rented. Your data, your keys, your hardware. Walk away any time and all of it comes with you.</p>
+    <p class="sub">Every layer of an AI stack, built to be owned rather than rented, with security designed into the foundation instead of bolted on. Your data, your keys, your hardware. Walk away any time and all of it comes with you.</p>
     <div class="cta">
       <a class="btn primary" href="#stack">Explore the stack</a>
+      <a class="btn ghost" href="#spotlight-security">Security through architecture</a>
       <a class="btn ghost" href="https://github.com/smilinTux">Read the source</a>
     </div>
   </div>
@@ -82,6 +84,44 @@
       <span class="pico">&#128274;</span>
       <h3>Data sovereignty</h3>
       <p>Your data is yours, cryptographically and physically. It never leaves your control, and leaving is always possible.</p>
+    </div>
+  </section>
+
+  <section class="spotlight" id="spotlight-security">
+    <div class="spot-eyebrow">Security through architecture</div>
+    <h2>Security is not a product you bolt on. It is how the whole stack is built.</h2>
+    <p>Most stacks add security at the end and hope it holds. SKWorld builds it into the floor, so every layer above inherits it. On top of that foundation sits a closed loop that runs on your own hardware: find the problem, stop the attack, fix the hole.</p>
+    <div class="pgrid">
+      <a class="pcard" href="https://sksec.skworld.io/">
+        <span class="pname">Defend: sksec</span>
+        <span class="pblurb">Stops live threats at the edge, fail-closed, before they reach your services.</span>
+        <span class="phost">sksec.skworld.io</span>
+      </a>
+      <a class="pcard" href="https://skaegis.skworld.io/">
+        <span class="pname">Detect: skaegis</span>
+        <span class="pblurb">Finds every known CVE on every host the moment it lands, Linux, Windows and macOS.</span>
+        <span class="phost">skaegis.skworld.io</span>
+      </a>
+      <a class="pcard" href="https://skpatch.skworld.io/">
+        <span class="pname">Remediate: skpatch</span>
+        <span class="pblurb">Closes what skaegis finds, on a schedule, with critical fixes shipped the same day.</span>
+        <span class="phost">skpatch.skworld.io</span>
+      </a>
+    </div>
+    <p class="spot-note">Detect to remediate, one closed loop, no third-party cloud in the middle.</p>
+    <ul class="spot-list">
+      <li><strong>Post-quantum-ready cryptography.</strong> Hybrid X25519 plus ML-KEM-768 (skpqc), so today's traffic is harder to harvest and decrypt later.</li>
+      <li><strong>Identity without OAuth.</strong> CapAuth handles sign-in and signing with keys you hold, not a landlord's login page.</li>
+      <li><strong>A vault sealed to your identity.</strong> SKVault keeps secrets openable only by you.</li>
+      <li><strong>Signed and reversible changes.</strong> Every change to shared state carries provenance, and can be rolled back.</li>
+      <li><strong>Separate trust domains.</strong> Clusters stay isolated from each other, so one compromise does not become all of them.</li>
+      <li><strong>Nothing leaves your walls.</strong> Self-hosted, no SaaS, and you hold the keys.</li>
+    </ul>
+    <p>No system is unbreakable, and we do not pretend otherwise. What you get is a stack that is honest about risk, shrinks it continuously, and stays under your control. You own the keys, the hardware and the data. Walk away any time and all of it comes with you.</p>
+    <div class="cta">
+      <a class="btn primary" href="https://skaegis.skworld.io/">See skaegis detect &#8599;</a>
+      <a class="btn ghost" href="https://sksec.skworld.io/">sksec &#8599;</a>
+      <a class="btn ghost" href="https://skpatch.skworld.io/">skpatch &#8599;</a>
     </div>
   </section>
 
@@ -213,7 +253,7 @@
           <h2>Identity and Security</h2>
           <p class="lsub">The floor. Who you are, and what only you can open.</p>
         </div>
-        <span class="lcount">5</span>
+        <span class="lcount">6</span>
       </div>
       <div class="pgrid">
         <a class="pcard" href="https://capauth.skworld.io/">
@@ -230,6 +270,11 @@
           <span class="pname">SKSec</span>
           <span class="pblurb">CrowdSec at the edge, fail-closed, fighting back against AI-speed attacks.</span>
           <span class="phost">sksec.skworld.io</span>
+        </a>
+        <a class="pcard" href="https://skaegis.skworld.io/">
+          <span class="pname">skaegis</span>
+          <span class="pblurb">Continuous CVE detection across every host you run, Linux, Windows, macOS, wired straight into the patch loop.</span>
+          <span class="phost">skaegis.skworld.io</span>
         </a>
         <a class="pcard" href="https://skpqc.skworld.io/">
           <span class="pname">sk_pqc</span>
