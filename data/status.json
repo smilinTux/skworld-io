@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-11-12T02:49:37Z",
+  "generated_at": "2026-11-12T10:53:34Z",
   "skstacks": {
     "repo": "smilinTux/skstacks",
     "latest_release": {
       "tag": "skstacks-v2.26.0",
       "published_at": "2026-10-05T12:31:09Z"
     },
-    "changelog_top_heading": "Unreleased (v2.26.20)",
-    "open_pull_requests": 6,
+    "changelog_top_heading": "Unreleased",
+    "open_pull_requests": 4,
     "ci_main": {
-      "workflow": "skred - self-hardening security scan",
-      "conclusion": "failure",
-      "at": "2026-11-11T15:09:38Z"
+      "workflow": "config-template-drift",
+      "conclusion": "success",
+      "at": "2026-11-12T08:20:56Z"
     }
   },
   "skpatch": {
@@ -53,6 +53,11 @@
       "service": "sksec",
       "tier": "core",
       "pinned_upstream": "crowdsec `v1.6.11` + bouncer `0.5.0`"
+    },
+    {
+      "service": "skaegis",
+      "tier": "optional",
+      "pinned_upstream": "Wazuh `4.14.10` indexer + manager + dashboard (upstream, digest-pinned)"
     },
     {
       "service": "skboard",
