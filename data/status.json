@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T18:48:11Z",
+  "generated_at": "2026-11-13T00:06:19Z",
   "skstacks": {
     "repo": "smilinTux/skstacks",
     "latest_release": {
@@ -7,11 +7,11 @@
       "published_at": "2026-10-05T12:31:09Z"
     },
     "changelog_top_heading": "Unreleased",
-    "open_pull_requests": 3,
+    "open_pull_requests": 2,
     "ci_main": {
-      "workflow": "skred - self-hardening security scan",
-      "conclusion": "success",
-      "at": "2026-11-12T15:57:25Z"
+      "workflow": "framework tests",
+      "conclusion": null,
+      "at": "2026-11-12T23:40:14Z"
     }
   },
   "skpatch": {
@@ -142,7 +142,7 @@
     {
       "service": "skmon",
       "tier": "optional",
-      "pinned_upstream": "Prometheus `v3.15.0`, Grafana `13.2.2`, Loki `3.5.4`, Jaeger `1.76.0`"
+      "pinned_upstream": "VictoriaMetrics `v1.155.0`, Grafana Alloy `v1.21.3`, Loki `3.7.9`, Grafana `13.3.0`, Alertmanager `v0.34.2` (all digest-pinned, `pins.yml`)"
     },
     {
       "service": "skorch",
