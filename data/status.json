@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T16:32:25Z",
+  "generated_at": "2026-11-14T21:17:58Z",
   "skstacks": {
     "repo": "smilinTux/skstacks",
     "latest_release": {
@@ -7,11 +7,11 @@
       "published_at": "2026-10-05T12:31:09Z"
     },
     "changelog_top_heading": "Unreleased",
-    "open_pull_requests": 39,
+    "open_pull_requests": 38,
     "ci_main": {
-      "workflow": "config-template-drift",
+      "workflow": "skred - self-hardening security scan",
       "conclusion": "success",
-      "at": "2026-11-14T16:02:45Z"
+      "at": "2026-11-14T16:41:10Z"
     }
   },
   "skpatch": {
