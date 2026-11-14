@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T02:12:53Z",
+  "generated_at": "2026-11-14T10:04:58Z",
   "skstacks": {
     "repo": "smilinTux/skstacks",
     "latest_release": {
@@ -7,11 +7,11 @@
       "published_at": "2026-10-05T12:31:09Z"
     },
     "changelog_top_heading": "Unreleased",
-    "open_pull_requests": 31,
+    "open_pull_requests": 37,
     "ci_main": {
       "workflow": "skred - self-hardening security scan",
       "conclusion": "success",
-      "at": "2026-11-13T15:22:46Z"
+      "at": "2026-11-14T07:23:42Z"
     }
   },
   "skpatch": {
@@ -37,12 +37,12 @@
     {
       "service": "skfence",
       "tier": "core",
-      "pinned_upstream": "Traefik `v3.7.16`"
+      "pinned_upstream": "Traefik `v3.7.18`"
     },
     {
       "service": "skfenceha",
       "tier": "core",
-      "pinned_upstream": "Traefik `v3.7.16`"
+      "pinned_upstream": "Traefik `v3.7.18`"
     },
     {
       "service": "skha",
