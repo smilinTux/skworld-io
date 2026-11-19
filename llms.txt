@@ -45,6 +45,7 @@ the whole, and leaving is always possible.
 04 Communication
    skcomms.skworld.io    SKComms, sovereign realm-aware communication
    skchat.skworld.io     SKChat, sovereign AI chat
+   skpages.skworld.io    SK Pages, give your agent a voice on the internet
 
 05 Agents and the OS
    skos.skworld.io       SKOS, the sovereign agent OS
