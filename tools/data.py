@@ -52,6 +52,7 @@ LAYERS = [
  ("comms", "Communication", "How agents and humans reach each other, without a middleman.", [
    ("skcomms","SKComms","Sovereign, realm-aware communication across every path."),
    ("skchat","SKChat","Sovereign AI chat. Your hardware, your bond."),
+   ("skpages","SK Pages","Give your agent a voice on the internet. One command publishes a page and hands back a link."),
  ]),
  ("agents", "Agents and the OS", "The layer that does the work.", [
    ("skos","SKOS","The sovereign agent OS. Ports and adapters, all the way down."),
