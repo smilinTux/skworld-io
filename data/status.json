@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T01:20:47Z",
+  "generated_at": "2026-11-21T09:35:06Z",
   "skstacks": {
     "repo": "smilinTux/skstacks",
     "latest_release": {
@@ -9,9 +9,9 @@
     "changelog_top_heading": "Unreleased",
     "open_pull_requests": 4,
     "ci_main": {
-      "workflow": "v2 - package tests",
+      "workflow": "framework tests",
       "conclusion": "success",
-      "at": "2026-11-20T21:24:02Z"
+      "at": "2026-11-21T05:50:12Z"
     }
   },
   "skpatch": {
