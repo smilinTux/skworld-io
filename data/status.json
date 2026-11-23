@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-11-23T08:53:13Z",
+  "generated_at": "2026-11-23T21:11:31Z",
   "skstacks": {
     "repo": "smilinTux/skstacks",
     "latest_release": {
       "tag": "skstacks-v2.26.0",
       "published_at": "2026-10-05T12:31:09Z"
     },
-    "changelog_top_heading": "Unreleased (v2.26.32)",
-    "open_pull_requests": 17,
+    "changelog_top_heading": "skstacks-v2.26.32 - 2026-11-23",
+    "open_pull_requests": 13,
     "ci_main": {
       "workflow": "framework tests",
-      "conclusion": "success",
-      "at": "2026-11-23T07:01:10Z"
+      "conclusion": null,
+      "at": "2026-11-23T21:11:02Z"
     }
   },
   "skpatch": {
@@ -21,7 +21,7 @@
     "ci_main": {
       "workflow": "skred: self-hardening security scan",
       "conclusion": "success",
-      "at": "2026-11-22T15:17:30Z"
+      "at": "2026-11-23T19:14:38Z"
     }
   },
   "skpatch_site": {
@@ -30,7 +30,7 @@
     "ci_main": {
       "workflow": "pages build and deployment",
       "conclusion": "success",
-      "at": "2026-11-22T14:41:43Z"
+      "at": "2026-11-23T18:24:32Z"
     }
   },
   "pinned_images": [
@@ -67,7 +67,7 @@
     {
       "service": "skbom",
       "tier": "optional",
-      "pinned_upstream": "Dependency-Track `4.14.6` apiserver + frontend, Postgres `17.7` (all digest-pinned)"
+      "pinned_upstream": "Dependency-Track `4.14.7` apiserver + frontend, Postgres `17.7` (all digest-pinned)"
     },
     {
       "service": "skbook",
@@ -87,7 +87,7 @@
     {
       "service": "skflow",
       "tier": "optional",
-      "pinned_upstream": "Windmill `1.837.0` + Postgres `17.7` (digest-pinned)"
+      "pinned_upstream": "Windmill `1.882.0` + Postgres `17.12` (digest-pinned)"
     },
     {
       "service": "skform",
@@ -102,7 +102,7 @@
     {
       "service": "skgit",
       "tier": "optional",
-      "pinned_upstream": "Forgejo `15.0.9`, runner `11.1.2`"
+      "pinned_upstream": "Forgejo `17.0.2`, runner `11.1.2`"
     },
     {
       "service": "skgraph",
@@ -112,12 +112,12 @@
     {
       "service": "skgym",
       "tier": "optional",
-      "pinned_upstream": "openGym `1.4.1` api + web (upstream, digest-pinned)"
+      "pinned_upstream": "openGym `1.4.5` api + web (upstream, digest-pinned)"
     },
     {
       "service": "skhome",
       "tier": "optional",
-      "pinned_upstream": "HomeCenter `2.3.1` app (upstream, digest-pinned)"
+      "pinned_upstream": "HomeCenter `3.3.0` app (upstream, digest-pinned)"
     },
     {
       "service": "skhub",
@@ -137,12 +137,12 @@
     {
       "service": "skmesh",
       "tier": "optional",
-      "pinned_upstream": "netbird `0.80.0` (mgmt/signal/relay), dashboard `v2.94.0`"
+      "pinned_upstream": "netbird `0.83.2` (mgmt/signal/relay), dashboard `v2.98.0`"
     },
     {
       "service": "skmon",
       "tier": "optional",
-      "pinned_upstream": "VictoriaMetrics `v1.155.0`, Grafana Alloy `v1.21.3`, Loki `3.7.9`, Grafana `13.3.0`, Alertmanager `v0.34.2` (all digest-pinned, `pins.yml`)"
+      "pinned_upstream": "VictoriaMetrics `v1.155.0`, Grafana Alloy `v1.21.3`, Loki `3.7.9`, Grafana `13.3.0`, Alertmanager `v0.35.0` (all digest-pinned, `pins.yml`)"
     },
     {
       "service": "skorch",
@@ -152,12 +152,12 @@
     {
       "service": "skpatch-hosts",
       "tier": "optional",
-      "pinned_upstream": "linux-update-dashboard `2026.10.9` (upstream, digest-pinned)"
+      "pinned_upstream": "linux-update-dashboard `2026.11.6` (upstream, digest-pinned)"
     },
     {
       "service": "skpdf",
       "tier": "optional",
-      "pinned_upstream": "Stirling-PDF `2.14.3`"
+      "pinned_upstream": "Stirling-PDF `3.5.0`"
     },
     {
       "service": "skpeek",
@@ -167,7 +167,12 @@
     {
       "service": "skport",
       "tier": "optional",
-      "pinned_upstream": "Portainer CE `2.45.1`"
+      "pinned_upstream": "Portainer CE `2.45.4`"
+    },
+    {
+      "service": "skpods",
+      "tier": "optional",
+      "pinned_upstream": "instance-built engine image (official Nextcloud + Solid app, digest-pinned), Postgres `17.7`, Redis `8.10.3`"
     },
     {
       "service": "skpulse",
@@ -212,7 +217,7 @@
     {
       "service": "skwrit",
       "tier": "optional",
-      "pinned_upstream": "per-site image, digest-pinned; optional nextcloud-mcp `0.199.4`"
+      "pinned_upstream": "per-site image, digest-pinned; optional nextcloud-mcp `0.218.0`"
     },
     {
       "service": "skbackup",
