@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-11-26T23:41:21Z",
+  "generated_at": "2026-11-27T08:03:50Z",
   "skstacks": {
     "repo": "smilinTux/skstacks",
     "latest_release": {
       "tag": "skstacks-v2.26.0",
       "published_at": "2026-10-05T12:31:09Z"
     },
-    "changelog_top_heading": "skstacks-v2.26.34 - 2026-11-26",
-    "open_pull_requests": 14,
+    "changelog_top_heading": "skstacks-v2.26.35 - 2026-11-27",
+    "open_pull_requests": 5,
     "ci_main": {
-      "workflow": "skred - self-hardening security scan",
+      "workflow": "framework tests",
       "conclusion": "success",
-      "at": "2026-11-26T17:42:20Z"
+      "at": "2026-11-27T05:14:55Z"
     }
   },
   "skpatch": {
@@ -19,9 +19,9 @@
     "latest_release": null,
     "open_pull_requests": 1,
     "ci_main": {
-      "workflow": "skred: self-hardening security scan",
+      "workflow": "validate-docs",
       "conclusion": "success",
-      "at": "2026-11-26T17:43:40Z"
+      "at": "2026-11-27T03:34:48Z"
     }
   },
   "skpatch_site": {
