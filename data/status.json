@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-11-27T08:03:50Z",
+  "generated_at": "2026-11-27T18:05:02Z",
   "skstacks": {
     "repo": "smilinTux/skstacks",
     "latest_release": {
       "tag": "skstacks-v2.26.0",
       "published_at": "2026-10-05T12:31:09Z"
     },
-    "changelog_top_heading": "skstacks-v2.26.35 - 2026-11-27",
-    "open_pull_requests": 5,
+    "changelog_top_heading": "Unreleased (v2.26.36)",
+    "open_pull_requests": 6,
     "ci_main": {
-      "workflow": "framework tests",
+      "workflow": "skred - self-hardening security scan",
       "conclusion": "success",
-      "at": "2026-11-27T05:14:55Z"
+      "at": "2026-11-27T17:31:28Z"
     }
   },
   "skpatch": {
@@ -19,9 +19,9 @@
     "latest_release": null,
     "open_pull_requests": 1,
     "ci_main": {
-      "workflow": "validate-docs",
+      "workflow": "skred: self-hardening security scan",
       "conclusion": "success",
-      "at": "2026-11-27T03:34:48Z"
+      "at": "2026-11-27T17:27:47Z"
     }
   },
   "skpatch_site": {
@@ -30,7 +30,7 @@
     "ci_main": {
       "workflow": "pages build and deployment",
       "conclusion": "success",
-      "at": "2026-11-26T17:01:49Z"
+      "at": "2026-11-27T16:47:44Z"
     }
   },
   "pinned_images": [
@@ -142,7 +142,7 @@
     {
       "service": "skmon",
       "tier": "optional",
-      "pinned_upstream": "VictoriaMetrics `v1.155.0`, Grafana Alloy `v1.21.3`, Loki `3.7.9`, Grafana `13.3.0`, Alertmanager `v0.35.0` (all digest-pinned, `pins.yml`)"
+      "pinned_upstream": "VictoriaMetrics `v1.155.0`, Grafana Alloy `v1.21.3`, Loki `3.7.10`, Grafana `13.3.1`, Alertmanager `v0.35.0` (all digest-pinned, `pins.yml`)"
     },
     {
       "service": "sknet",
